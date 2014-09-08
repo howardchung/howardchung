@@ -1,0 +1,81 @@
+{
+    "quotes":
+    [
+        "I like fish.",
+        "I do things with computers.",
+        "This site runs on Node.js, with data from the LinkedIn API.",
+        "I don't like cheese or butter.",
+        "I can't whistle or snap my fingers.",
+        "My favorite brand of soy sauce is Kikkoman.",
+        "I mine cryptocurrency.",
+        "I sometimes wear glasses."
+    ],
+    "facts":{
+        "full_name": "Howard Chung",
+        "gender": "male",
+        "height_cm": 177,
+        "handedness": "right",
+        "shoe_size": 11,
+        "languages": ["en", "es", "zh"],
+        "born_at":726126840,
+        "interests": ["planespotting", "soy sauce"],
+        "digits_pi_memorized": 120,
+        "pet_peeves": ["gratuity charges", "Daylight Savings Time", "the imperial system"],
+        "signature_apparel": "black Nike hoodie",
+        "favorite_text_editor": "notepad++",
+        "favorite_browser": "Chrome",
+        "favorite_data_structure": "hashtable",
+        "bio":
+        [
+            "My full name is Howard Chung. (no middle name)",
+            "I was born in the former British colony of Hong Kong in 1993.",
+            "My family moved to Portland, Oregon eight months later.",
+            "In 1998, we moved to Beaverton, Oregon.",
+            "I completed most of my secondary education in Oregon before dropping out of high school.",
+            "In 2011, I enrolled at Duke University. (B.S. Computer Science, Trinity 2015)",
+            "I enjoy programming, playing ultimate, hiking, rock climbing, Dota 2, and card/board games."
+        ]
+    },
+    "links":[
+        {
+            "name":"Facebook",
+            "url":"http://facebook.com/howardc93",
+            "icon":"fa fa-fw fa-facebook"
+        },
+        {
+            "name":"Twitter",
+            "url":"http://twitter.com/ChungFuHoward",
+            "icon":"fa fa-fw fa-twitter "
+        },
+        {
+            "name":"LinkedIn",
+            "url":"http://www.linkedin.com/pub/howard-chung/72/547/19",
+            "icon":"fa fa-fw fa-linkedin"
+        },
+        {
+            "name":"Google+",
+            "url":"https://plus.google.com/u/0/115307917489359738692",
+            "icon":"fa fa-fw fa-google-plus"
+        },
+        {
+            "name":"Bitcoin",
+            "url":"https://blockchain.info/address/13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
+            "icon":"fa fa-fw fa-bitcoin"
+        },
+        {
+            "name":"Email",
+            "url":"mailto:howardc93@gmail.com",
+            "icon":"fa fa-fw fa-envelope"
+        },
+        {
+            "name":"GitHub",
+            "url":"http://github.com/howardc93",
+            "icon":"fa fa-fw fa-github"
+        },
+        {
+            "name":"Résumé (PDF)",
+            "url":"http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=pdf",
+            "icon":"fa fa-fw fa-file"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+extend layout
+block content
+  div.text-center
+    h1= data.facts.full_name
+    img(src="profile.jpg", height="300px")
+    p
+      blockquote(style="display: inline-block;width:auto")
+        p #{data.quotes[Math.floor(Math.random()*data.quotes.length)]}
+        small A random fact
+    each link in data.links
+      a(href=link.url).btn
+        i(class="#{link.icon}")
+        =link.name
+  pre= JSON.stringify(data.facts, null, 4)
+  div.row
+    div.col-xs-6
+      h2 Positions
+      each position in linkedin.positions.all
+        div.panel.panel-primary
+          div.panel-heading
+            h3.panel-title #{position.title} - #{position.company.name]
+          div.panel-body= position.summary
+    div.col-xs-6
+      h2 Projects
+      each project in linkedin.projects.all
+        div.panel.panel-success
+          div.panel-heading
+             h3.panel-title
+               a(href=project.url) #{project.name}
+          div.panel-body= project.description
