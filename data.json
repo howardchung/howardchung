@@ -16,24 +16,41 @@
         "height_cm": 177,
         "handedness": "right",
         "shoe_size": 11,
-        "languages": ["en", "es", "zh"],
-        "born_at":726126840,
-        "interests": ["planespotting", "soy sauce"],
+        "languages": [
+            "en",
+            "es",
+            "zh"
+        ],
+        "born_at": 726126840,
+        "interests": [
+            "planespotting",
+            "soy sauce"
+        ],
+        "activities":[
+            "programming",
+            "ultimate",
+            "hiking",
+            "rock climbing",
+            "Dota 2",
+            "card/board games"
+        ],
         "digits_pi_memorized": 120,
-        "pet_peeves": ["gratuity charges", "Daylight Savings Time", "the imperial system"],
+        "pet_peeves": [
+            "gratuity charges",
+            "Daylight Savings Time",
+            "the imperial system"
+        ],
         "signature_apparel": "black Nike hoodie",
         "favorite_text_editor": "notepad++",
         "favorite_browser": "Chrome",
         "favorite_data_structure": "hashtable",
-        "bio":
-        [
+        "bio": [
             "My full name is Howard Chung. (no middle name)",
-            "I was born in the former British colony of Hong Kong in 1993.",
+            "I was born in Hong Kong in 1993, while it was a British colony.",
             "My family moved to Portland, Oregon eight months later.",
             "In 1998, we moved to Beaverton, Oregon.",
-            "I completed most of my secondary education in Oregon before dropping out of high school.",
-            "In 2011, I enrolled at Duke University. (B.S. Computer Science, Trinity 2015)",
-            "I enjoy programming, playing ultimate, hiking, rock climbing, Dota 2, and card/board games."
+            "I dropped out of high school, then enrolled at Duke University.",
+            "I am working toward a B.S. Computer Science, Trinity 2015."
         ]
     },
     "links":[

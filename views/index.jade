@@ -11,7 +11,13 @@ block content
       a(href=link.url).btn
         i(class="#{link.icon}")
         =link.name
-  pre= JSON.stringify(data.facts, null, 4)
+        
+  div.row.text-center
+    div.col-xs-8.col-xs-offset-2
+      h2 About
+        p
+          pre.text-left= JSON.stringify(data.facts, null, 4)
+  
   div.row
     div.col-xs-6
       h2 Positions
