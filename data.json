@@ -1,5 +1,5 @@
 {  
-    "quotes":[  
+    "facts":[  
         "I like fish.",
         "I do things with computers.",
         "This site runs on Node.js, with data from the LinkedIn API.",
@@ -10,7 +10,8 @@
         "I sometimes wear glasses.",
         "I dropped out of high school."
     ],
-    "facts":{  
+    "welcome":"Hello, and welcome to my site!  You can find some information about me in JSON format below, or look on the right side for some of the positions and projects I've been involved with.  Enjoy your stay! (and refresh for more facts)",
+    "json":{  
         "full_name":"Howard Chung",
         "gender":"male",
         "height_cm":177,
