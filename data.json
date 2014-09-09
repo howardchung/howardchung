@@ -2,15 +2,24 @@
     "facts":[  
         "I like fish.",
         "I do things with computers.",
-        "This site runs on Node.js, with data from the LinkedIn API.",
+        "This site runs on Heroku with Node.js, and gets data from the LinkedIn API.",
         "I don't like cheese or butter.",
         "I can't whistle or snap my fingers.",
         "My favorite brand of soy sauce is Kikkoman.",
         "I mine cryptocurrency.",
         "I sometimes wear glasses.",
-        "I dropped out of high school."
+        "I dropped out of high school.",
+        "My favorite film is Finding Nemo (2003)",
+        "I know approximately the first hundred digits of pi",
+        "I can say that I don't speak a language in 11 languages.",
+        "I prefer vim to emacs."
     ],
-    "welcome":"Hello, and welcome to my site!  You can find some information about me in JSON format below, or look on the right side for some of the positions and projects I've been involved with.  Enjoy your stay! (and refresh for more facts)",
+    "welcome":[
+        "Hello, and welcome to my site!",
+        "You can find some information about me in JSON format below.",
+        "Look to the right for some positions and projects I've been involved with.",
+        "Enjoy your stay! (and refresh for more facts)"
+    ],
     "json":{  
         "full_name":"Howard Chung",
         "gender":"male",
@@ -19,7 +28,6 @@
         "shoe_size":11,
         "birth_time":726126840,
         "birth_city":"Hong Kong",
-        "digits_pi_memorized":120,
         "favorite_apparel":"black Nike hoodie",
         "favorite_text_editor":"Notepad++",
         "favorite_browser":"Chrome",
@@ -29,29 +37,19 @@
             "es",
             "zh"
         ],
-        "interests":[  
-            "planespotting",
-            "soy sauce"
-        ],
         "activities":[  
             "programming",
             "ultimate",
             "hiking",
             "rock climbing",
             "Dota 2",
-            "card/board games"
+            "card/board games",
+            "planespotting"
         ],
         "pet_peeves":[  
             "the institution of tipping",
             "Daylight Savings Time",
             "the imperial system"
-        ],
-        "cities":[  
-            "Hong Kong",
-            "Portland, OR, USA",
-            "Beaverton, OR, USA",
-            "Durham, NC, USA",
-            "Redmond, WA, USA"
         ],
         "schools":[  
             {  

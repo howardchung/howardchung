@@ -1,40 +1,51 @@
-extend layout
-block content
-  div.text-center
-    h1= data.facts.full_name
+doctype
+html
+  head
+   title= data.json.full_name 
+   link(href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/darkly/bootstrap.min.css", rel="stylesheet")
+   link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel="stylesheet")
+   script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+  body
+  .container
+   div.text-center
+    h1= data.json.full_name
     img(src="profile.jpg", height="300px")
     p
       blockquote(style="display: inline-block;width:auto")
-        p #{data.quotes[Math.floor(Math.random()*data.quotes.length)]}
+        p #{fact}
         small A random fact
     each link in data.links
       a(href=link.url).btn
         i(class="#{link.icon}")
         =link.name
         
-  div.row.text-center
+   div.row.text-center
+  
     div.col-md-6
       h2 About
-      div.panel.panel-default.text-left
+      div.panel.panel-danger.text-left
         div.panel-heading 
-          h3.panel-title Welcome
-        div.panel-body=data.welcome
-      div.panel.panel-default.text-left
+          h3.panel-title Welcome!
+        div.panel-body
+         ul
+          each line in data.welcome
+           li=line
+      div.panel.panel-warning.text-left
         div.panel-heading 
           h3.panel-title JSON
         div.panel-body
-          pre.text-left= JSON.stringify(data.facts, null, 4)
+          pre.text-left= JSON.stringify(data.json, null, 4)
  
     div.col-md-6
       h2 Positions
-      each position in linkedin.positions.all
+      each position in data.linkedin.positions.all
         div.panel.panel-primary.text-left
           div.panel-heading
             h3.panel-title #{position.title} - #{position.company.name]
           div.panel-body= position.summary
 
       h2 Projects
-      each project in linkedin.projects.all
+      each project in data.linkedin.projects.all
         div.panel.panel-success.text-left
           div.panel-heading
              h3.panel-title

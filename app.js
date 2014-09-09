@@ -5,8 +5,8 @@ app.use(express.static(__dirname + '/public'))
 app.set('port', (process.env.PORT || 5000))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
-app.locals.data = require('./data.json')
 app.locals.moment = require('moment')
+app.locals.data = require('./data.json')
 
 app.listen(app.get('port'), function() {
     console.log("Node app is running on port " + app.get('port'))
@@ -14,8 +14,10 @@ app.listen(app.get('port'), function() {
 
 app.get('/', function(req, res) {
     getLinkedInData(function(err, data){
-        app.locals.linkedin = data
-        res.render('index', {})
+        app.locals.data.linkedin = data
+        res.render('index', {
+            fact: app.locals.data.facts[Math.floor(Math.random()*app.locals.data.facts.length)]
+        })
     })
 })
 
