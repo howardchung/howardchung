@@ -17,6 +17,10 @@ block content
       h2 About
       div.panel.panel-default.text-left
         div.panel-heading 
+          h3.panel-title Welcome
+        div.panel-body=data.welcome
+      div.panel.panel-default.text-left
+        div.panel-heading 
           h3.panel-title JSON
         div.panel-body
           pre.text-left= JSON.stringify(data.facts, null, 4)
