@@ -12,13 +12,13 @@
         "My favorite film is Finding Nemo (2003).",
         "I know approximately the first hundred digits of pi.",
         "I can say that I don't speak a language in 11 languages.",
-        "I prefer vim to emacs."
+        "I prefer vim to emacs.",
+        "I believe Daylight Savings Time should be abolished.",
+        "I try to use the metric system whenever possible."
     ],
-    "welcome":[
-        "Hello, and welcome to my site!",
-        "You can find some information about me in JSON format below.",
-        "Look to the right for some positions and projects I've been involved with.",
-        "Enjoy your stay! (and refresh for more facts)"
+    "intro":[
+        "I am an undergraduate studying Computer Science at Duke University, graduating in 2015.",
+        "Refresh for more facts!"
     ],
     "json":{  
         "full_name":"Howard Chung",
@@ -45,18 +45,6 @@
             "Dota 2",
             "card/board games",
             "planespotting"
-        ],
-        "pet_peeves":[  
-            "the institution of tipping",
-            "Daylight Savings Time",
-            "the imperial system"
-        ],
-        "schools":[  
-            {  
-                "name":"Duke University",
-                "graduation_year":2015,
-                "degree":"B.S. Computer Science"
-            }
         ]
     },
     "links":[  
