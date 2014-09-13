@@ -40,7 +40,14 @@ html
               a(href=link.url).btn
                 i(class="#{link.icon}")
                 =link.name
-                
+      div.panel.panel-info.text-center
+        div.panel-heading
+          h3.panel-title Bitcoin
+        div.panel-body
+          p=data.bitcoin
+          p
+            img(src="https://blockchain.info/qr?data=#{data.bitcoin}&size=200")
+      
     div.col-md-7
       h2 Positions
       each position in linkedin.positions.all

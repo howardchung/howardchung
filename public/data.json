@@ -47,6 +47,7 @@
             "planespotting"
         ]
     },
+    "bitcoin":"13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
     "links":[  
         {  
             "name":"Facebook",
@@ -67,11 +68,6 @@
             "name":"Google+",
             "url":"https://plus.google.com/u/0/115307917489359738692",
             "icon":"fa fa-fw fa-google-plus"
-        },
-        {  
-            "name":"Bitcoin",
-            "url":"https://blockchain.info/address/13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
-            "icon":"fa fa-fw fa-bitcoin"
         },
         {  
             "name":"Email",
