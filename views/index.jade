@@ -14,27 +14,27 @@ html
       blockquote(style="display: inline-block;width:auto")
         p #{fact}
         small A random fact
-    each link in data.links
-      a(href=link.url).btn
-        i(class="#{link.icon}")
-        =link.name
         
    div.row.text-center
-  
     div.col-md-6
-      h2 About
+      h2 Welcome
       div.panel.panel-danger.text-left
         div.panel-heading 
-          h3.panel-title Welcome!
+          h3.panel-title Intro
         div.panel-body
          ul
-          each line in data.welcome
+          each line in data.intro
            li=line
       div.panel.panel-warning.text-left
         div.panel-heading 
           h3.panel-title JSON
         div.panel-body
           pre.text-left= JSON.stringify(data.json, null, 4)
+      h2 Links
+      each link in data.links
+        a(href=link.url).btn
+          i(class="#{link.icon}")
+          =link.name
  
     div.col-md-6
       h2 Positions
