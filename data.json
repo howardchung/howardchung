@@ -84,5 +84,6 @@
             "url":"http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=pdf",
             "icon":"fa fa-fw fa-file"
         }
-    ]
+    ],
+    "linkedin":"http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=json"
 }

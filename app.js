@@ -11,22 +11,23 @@ app.listen(app.get('port'), function() {
     console.log("Node app is running on port " + app.get('port'))
 })
 app.get('/', function(req, res) {
-    async.map([req.protocol + '://' + req.get('host') + "/data.json", "http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=json"], getData, function(err, result) {
+    var data = require("./data.json")
+    getData(data.linkedin, function(err, result){
         res.render('index', {
-            data: result[0],
-            linkedin: result[1]
+            data: data,
+            linkedin: result
         })
     })
 })
 
-    function getData(url, cb) {
-        request({
-            url: url
-        }, function(err, res, body) {
-            if(err || res.statusCode != 200) {
-                cb(err || "response code != 200")
-            } else {
-                cb(null, JSON.parse(body))
-            }
-        })
-    }
+function getData(url, cb) {
+    request({
+        url: url
+    }, function(err, res, body) {
+        if(err || res.statusCode != 200) {
+            cb(err || "response code != 200")
+        } else {
+            cb(null, JSON.parse(body))
+        }
+    })
+}
