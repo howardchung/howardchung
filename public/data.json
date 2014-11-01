@@ -1,6 +1,5 @@
 {
     "facts": ["I like seafood, especially fish.", "This site is hosted by GitHub Pages.", "I do things with computers.", "I don't like cheese or butter.", "I can't whistle or snap my fingers.", "My favorite brand of soy sauce is Kikkoman.", "I mine cryptocurrency.", "I sometimes wear glasses.", "I dropped out of high school.", "My favorite film is Finding Nemo (2003).", "I know approximately the first hundred digits of pi.", "I can say that I don't speak a language in 11 languages.", "I prefer vim to emacs.", "I disapprove of Daylight Savings Time.", "I try to use the metric system whenever possible.", "I frequently wear a black Nike hoodie.", "My favorite data structure is the hash table.", "My favorite browser is Google Chrome.", "I am very frugal.", "I prefer Android to iOS.", "I use a Nexus smartphone and a Microsoft Surface tablet."],
-    "intro": ["I am an undergraduate studying Computer Science at Duke University, graduating in 2015."],
     "json": {
         "full_name": "Howard Chung",
         "gender": "male",
@@ -35,7 +34,7 @@
         "url": "http://github.com/howardc93",
         "icon": "fa fa-fw fa-github"
     }, {
-        "name": "Résumé (PDF)",
+        "name": "Résumé",
         "url": "http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=pdf",
         "icon": "fa fa-fw fa-file"
     }],

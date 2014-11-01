@@ -5,33 +5,25 @@ html(lang='en')
    meta(charset='utf-8')
    link(href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/darkly/bootstrap.min.css", rel="stylesheet")
    link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", rel="stylesheet")
-   script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
   body
     .container
      div.row.text-center
       div.col-md-12.text-center
-        h1= data.json.full_name
+        h1=data.json.full_name
         img(src="profile.jpg" alt=data.json.full_name)
         div
           blockquote(style="display: inline-block;width:auto")
-            p #{data.facts[Math.floor(Math.random() * data.facts.length)]}
+            p#fact #{data.facts[Math.floor(Math.random() * data.facts.length)]}
             small A random fact
   
      div.row.text-center             
-      div.col-md-5
+      div.col-md-4
         h2 About
-        div.panel.panel-danger.text-left
-          div.panel-heading 
-            h3.panel-title Intro
-          div.panel-body
-           ul
-            each line in data.intro
-             li=line
         div.panel.panel-warning.text-left
           div.panel-heading 
             h3.panel-title JSON
           div.panel-body
-            pre.text-left= JSON.stringify(data.json, null, 4)
+            pre#json.text-left= JSON.stringify(data.json, null, 4)
         div.panel.panel-default.text-left
           div.panel-heading
             h3.panel-title Links
@@ -45,11 +37,10 @@ html(lang='en')
           div.panel-heading
             h3.panel-title Bitcoin
           div.panel-body
-            p=data.bitcoin
-            p
-              img(src="https://blockchain.info/qr?data=#{data.bitcoin}&size=150", alt=data.bitcoin)
+            p#bitcoin=data.bitcoin
+            img(src="https://blockchain.info/qr?data=#{data.bitcoin}&size=200", alt=data.bitcoin)
         
-      div.col-md-7
+      div.col-md-8
         h2 Positions
         each position in data.positions.all
           div.panel.panel-primary.text-left

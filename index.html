@@ -1,163 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>Howard Chung</title>
+        <meta charset="utf-8">
+        <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/darkly/bootstrap.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <script>
+            var xmlhttp=new XMLHttpRequest();
+            xmlhttp.open("GET","public/data.json",true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange=function()
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    var data = JSON.parse(xmlhttp.responseText);
+                    console.log(data)
+                    document.getElementById("fact").innerHTML = data.facts[Math.floor(Math.random() * data.facts.length)]
+                    document.getElementById("json").innerHTML = JSON.stringify(data.json, null , 4)
+                    document.getElementById("bitcoin").innerHTML = data.bitcoin
+                    data.links.forEach(function(link){
+                        var icon = "<i class='"+link.icon+"'></i>"
+                        document.getElementById("links").innerHTML += "<div><a href='"+link.url+"' class='btn'>"+icon+link.name+"</a></div>"
+                    })
+                    //add positions
+                    //add projects
+                }
+            }        
+        </script>
+    </head>
 
-<head>
-    <title>Howard Chung</title>
-    <meta charset="utf-8">
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/darkly/bootstrap.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script>
-    </script>
-</head>
-
-<body>
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12 text-center">
-                <h1>Howard Chung</h1>
-                <img src="public/profile.jpg" alt="Howard Chung">
-                <div>
-                    <blockquote style="display: inline-block;width:auto">
-                        <p>I do things with computers.</p><small>A random fact</small>
-                    </blockquote>
+    <body>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12 text-center">
+                    <h1>Howard Chung</h1>
+                    <img src="public/profile.jpg" alt="Howard Chung">
+                    <div>
+                        <blockquote style="display: inline-block;width:auto">
+                            <p id="fact"></p><small>A random fact</small>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-5">
+                    <h2>About</h2>
+                    <div class="panel panel-warning text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">JSON</h3>
+                        </div>
+                        <div class="panel-body"><pre class="text-left" id="json"></pre>
+                        </div>
+                    </div>
+                    <div class="panel panel-default text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Links</h3>
+                        </div>
+                        <div class="panel-body" id="links">
+                        </div>
+                    </div>
+                    <div class="panel panel-info text-center">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Bitcoin</h3>
+                        </div>
+                        <div class="panel-body">
+                            <p id="bitcoin"></p>
+                            <img src="https://blockchain.info/qr?data=13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i&amp;size=200" alt="13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h2>Positions</h2>
+                    <div class="panel panel-primary text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Software Development Engineer in Test - Microsoft</h3>
+                        </div>
+                        <div class="panel-body">Engineer on SQL Azure team. Enabled incremental build to provide up to a 15x speed improvement. Improved runner security with dynamic certificates and randomly generated passwords. Tracked down unit test failures and repaired them.</div>
+                    </div>
+                    <div class="panel panel-primary text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Undergraduate Teaching Assistant - Duke University</h3>
+                        </div>
+                        <div class="panel-body">Graded assignments. Staffed office hours for students. Led lab sections of 15-30 students.</div>
+                    </div>
+                    <div class="panel panel-primary text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Research Assistant - Duke University</h3>
+                        </div>
+                        <div class="panel-body">Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems. Improved Cyclops algorithm by adding timing metrics for each stage. Built user interface for BigFrame, a benchmark generator for distributed data processing systems. Wrote shell scripts to maintain and deploy Storm across a 15-node cluster.</div>
+                    </div>
+                    <div class="panel panel-primary text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Document Services Intern - Moda Health</h3>
+                        </div>
+                        <div class="panel-body">Developed graphical Java (Swing) utilities for LPRing jobs to printers. Automated data retrieval and analysis from Xerox printers with Excel macros and batch files.</div>
+                    </div>
+                    <h2>Projects</h2>
+                    <div class="panel panel-success text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="http://yasp.co">YASP (YASP: Another Stats Page)</a></h3>
+                        </div>
+                        <div class="panel-body">Parses replays of Dota 2 games and provides stats for users.</div>
+                    </div>
+                    <div class="panel panel-success text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="http://foodpoints.herokuapp.com">FoodPoints+</a></h3>
+                        </div>
+                        <div class="panel-body">Computes the number of food points that a student should have during the semester. Automatically tracks balances and provides visualizations for users. Provides a budgeting tool to help manage food points.</div>
+                    </div>
+                    <div class="panel panel-success text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="http://linkedinresume.herokuapp.com">LinkedIn Resume</a></h3>
+                        </div>
+                        <div class="panel-body">Generates a PDF resume from data supplied on LinkedIn. Users can hotlink others directly to the latest version. Resumes update automatically when their LinkedIn profile changes.</div>
+                    </div>
+                    <div class="panel panel-success text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="http://twittermarkov.herokuapp.com">TweetBot</a></h3>
+                        </div>
+                        <div class="panel-body">Generates Markov-chain random tweets from a user's tweet history.</div>
+                    </div>
+                    <div class="panel panel-success text-left">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><a href="http://flowghost.herokuapp.com">FlowGhost</a></h3>
+                        </div>
+                        <div class="panel-body">Developed for two Duke professors. Allows instructors to present grade feedback in a visual manner. Uses nodes and tags to allow students to filter and display grades interactively.</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row text-center">
-            <div class="col-md-5">
-                <h2>About</h2>
-                <div class="panel panel-danger text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Intro</h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul>
-                            <li>I am an undergraduate studying Computer Science at Duke University, graduating in 2015.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="panel panel-warning text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">JSON</h3>
-                    </div>
-                    <div class="panel-body"><pre class="text-left">{
-    &quot;full_name&quot;: &quot;Howard Chung&quot;,
-    &quot;gender&quot;: &quot;male&quot;,
-    &quot;height_cm&quot;: 177,
-    &quot;right_handed&quot;: true,
-    &quot;shoe_size&quot;: 11,
-    &quot;blood_type&quot;: &quot;&quot;,
-    &quot;birth_time&quot;: 726126840,
-    &quot;birth_city&quot;: &quot;Hong Kong&quot;,
-    &quot;languages&quot;: [
-        &quot;en&quot;,
-        &quot;es&quot;,
-        &quot;zh&quot;
-    ],
-    &quot;activities&quot;: [
-        &quot;programming&quot;,
-        &quot;ultimate&quot;,
-        &quot;hiking&quot;,
-        &quot;rock climbing&quot;,
-        &quot;Dota 2&quot;,
-        &quot;card/board games&quot;,
-        &quot;planespotting&quot;
-    ]
-}</pre>
-                    </div>
-                </div>
-                <div class="panel panel-default text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Links</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div><a href="http://facebook.com/howardc93" class="btn"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
-                        </div>
-                        <div><a href="http://twitter.com/ChungFuHoward" class="btn"><i class="fa fa-fw fa-twitter "></i>Twitter</a>
-                        </div>
-                        <div><a href="https://plus.google.com/u/0/115307917489359738692" class="btn"><i class="fa fa-fw fa-google-plus"></i>Google+</a>
-                        </div>
-                        <div><a href="mailto:howardc93@gmail.com" class="btn"><i class="fa fa-fw fa-envelope"></i>Email</a>
-                        </div>
-                        <div><a href="http://github.com/howardc93" class="btn"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                        </div>
-                        <div><a href="http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&amp;format=pdf" class="btn"><i class="fa fa-fw fa-file"></i>Résumé (PDF)</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-info text-center">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Bitcoin</h3>
-                    </div>
-                    <div class="panel-body">
-                        <p>13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i</p>
-                        <p>
-                            <img src="https://blockchain.info/qr?data=13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i&amp;size=150" alt="13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i">
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-7">
-                <h2>Positions</h2>
-                <div class="panel panel-primary text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Software Development Engineer in Test - Microsoft</h3>
-                    </div>
-                    <div class="panel-body">Engineer on SQL Azure team. Enabled incremental build to provide up to a 15x speed improvement. Improved runner security with dynamic certificates and randomly generated passwords. Tracked down unit test failures and repaired them.</div>
-                </div>
-                <div class="panel panel-primary text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Undergraduate Teaching Assistant - Duke University</h3>
-                    </div>
-                    <div class="panel-body">Graded assignments. Staffed office hours for students. Led lab sections of 15-30 students.</div>
-                </div>
-                <div class="panel panel-primary text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Research Assistant - Duke University</h3>
-                    </div>
-                    <div class="panel-body">Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems. Improved Cyclops algorithm by adding timing metrics for each stage. Built user interface for BigFrame, a benchmark generator for distributed data processing systems. Wrote shell scripts to maintain and deploy Storm across a 15-node cluster.</div>
-                </div>
-                <div class="panel panel-primary text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Document Services Intern - Moda Health</h3>
-                    </div>
-                    <div class="panel-body">Developed graphical Java (Swing) utilities for LPRing jobs to printers. Automated data retrieval and analysis from Xerox printers with Excel macros and batch files.</div>
-                </div>
-                <h2>Projects</h2>
-                <div class="panel panel-success text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://yasp.co">YASP (YASP: Another Stats Page)</a></h3>
-                    </div>
-                    <div class="panel-body">Parses replays of Dota 2 games and provides stats for users.</div>
-                </div>
-                <div class="panel panel-success text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://foodpoints.herokuapp.com">FoodPoints+</a></h3>
-                    </div>
-                    <div class="panel-body">Computes the number of food points that a student should have during the semester. Automatically tracks balances and provides visualizations for users. Provides a budgeting tool to help manage food points.</div>
-                </div>
-                <div class="panel panel-success text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://linkedinresume.herokuapp.com">LinkedIn Resume</a></h3>
-                    </div>
-                    <div class="panel-body">Generates a PDF resume from data supplied on LinkedIn. Users can hotlink others directly to the latest version. Resumes update automatically when their LinkedIn profile changes.</div>
-                </div>
-                <div class="panel panel-success text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://twittermarkov.herokuapp.com">TweetBot</a></h3>
-                    </div>
-                    <div class="panel-body">Generates Markov-chain random tweets from a user's tweet history.</div>
-                </div>
-                <div class="panel panel-success text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://flowghost.herokuapp.com">FlowGhost</a></h3>
-                    </div>
-                    <div class="panel-body">Developed for two Duke professors. Allows instructors to present grade feedback in a visual manner. Uses nodes and tags to allow students to filter and display grades interactively.</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+    </body>
 
 </html>
