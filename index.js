@@ -1,7 +1,5 @@
 var express = require('express')
 var app = express();
-var request = require('request')
-var async = require('async')
 app.use(express.static(__dirname + '/public'))
 var port = process.env.PORT || 3000
 app.set('views', __dirname + '/views')

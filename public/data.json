@@ -23,10 +23,6 @@
         "url": "http://twitter.com/ChungFuHoward",
         "icon": "fa fa-fw fa-twitter "
     }, {
-        "name": "LinkedIn",
-        "url": "http://www.linkedin.com/pub/howard-chung/72/547/19",
-        "icon": "fa fa-fw fa-linkedin"
-    }, {
         "name": "Google+",
         "url": "https://plus.google.com/u/0/115307917489359738692",
         "icon": "fa fa-fw fa-google-plus"
@@ -44,7 +40,6 @@
         "icon": "fa fa-fw fa-file"
     }],
     "educations": {
-        "total": 1,
         "all": [{
             "degree": "Bachelor of Science (BS)",
             "end_date": {
@@ -61,22 +56,8 @@
     },
     "email_address": "howardc93@gmail.com",
     "first_name": "Howard",
-    "id": "isADiQdkje",
     "last_name": "Chung",
-    "member_url_resources": {
-        "total": 2,
-        "all": [{
-            "id": 13,
-            "name": "Personal Website",
-            "url": "http://www.howardchung.net"
-        }, {
-            "id": 18,
-            "name": "Portfolio",
-            "url": "http://github.com/howardc93"
-        }]
-    },
     "positions": {
-        "total": 4,
         "all": [{
             "company": {
                 "id": 1035,
@@ -92,7 +73,10 @@
                 "month": 5,
                 "year": 2014
             },
-            "summary": "Engineer on SQL Azure team.\nEnabled incremental build to provide up to a 15x speed improvement.\nImproved runner security with dynamic certificates and randomly generated passwords.\nTracked down unit test failures and repaired them.",
+            "summary": ["Engineer on SQL Azure team.",
+                        "Enabled incremental build to provide up to a 15x speed improvement.",
+                        "Improved runner security with dynamic certificates and randomly generated passwords.",
+                        "Tracked down unit test failures and repaired them."],
             "title": "Software Development Engineer in Test"
         }, {
             "company": {
@@ -108,7 +92,9 @@
                 "month": 1,
                 "year": 2012
             },
-            "summary": "Graded assignments.\nStaffed office hours for students.\nLed lab sections of 15-30 students.",
+            "summary": ["Graded assignments.",
+                        "Staffed office hours for students.",
+                        "Led lab sections of 15-30 students."],
             "title": "Undergraduate Teaching Assistant"
         }, {
             "company": {
@@ -128,7 +114,10 @@
                 "month": 5,
                 "year": 2013
             },
-            "summary": "Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems.\nImproved Cyclops algorithm by adding timing metrics for each stage.\nBuilt user interface for BigFrame, a benchmark generator for distributed data processing systems.\nWrote shell scripts to maintain and deploy Storm across a 15-node cluster.",
+            "summary": ["Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems.",
+                        "Improved Cyclops algorithm by adding timing metrics for each stage.",
+                        "Built user interface for BigFrame, a benchmark generator for distributed data processing systems.",
+                        "Wrote shell scripts to maintain and deploy Storm across a 15-node cluster."],
             "title": "Research Assistant"
         }, {
             "company": {
@@ -148,12 +137,12 @@
                 "month": 5,
                 "year": 2012
             },
-            "summary": "Developed graphical Java (Swing) utilities for LPRing jobs to printers.\nAutomated data retrieval and analysis from Xerox printers with Excel macros and batch files.",
+            "summary": ["Developed graphical Java (Swing) utilities for LPRing jobs to printers.",
+                        "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."],
             "title": "Document Services Intern"
         }]
     },
     "projects": {
-        "total": 5,
         "all": [{
             "description": "Parses replays of Dota 2 games and provides stats for users.",
             "id": 203,
@@ -181,9 +170,7 @@
             "url": "http://flowghost.herokuapp.com"
         }]
     },
-    "public_profile_url": "https://www.linkedin.com/pub/howard-chung/72/547/19",
     "skills": {
-        "total": 14,
         "all": [{
             "id": 205,
             "skill": {
