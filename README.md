@@ -1,4 +1,0 @@
-howard
-======
-
-A personal website.
