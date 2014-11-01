@@ -10,23 +10,12 @@ app.listen(port, function() {
     console.log("Node app is running on port " + port)
 })
 app.get('/', function(req, res) {
-    var data = require("./data.json")
-    getData(data.linkedin, function(err, result){
+    request({url:"http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=json"}, function(err, resp, body){
+        var linkedin = JSON.parse(body)
+        var data = require('./public/data.json')
         res.render('index', {
             data: data,
-            linkedin: result
+            linkedin: linkedin
         })
     })
 })
-
-function getData(url, cb) {
-    request({
-        url: url
-    }, function(err, res, body) {
-        if(err || res.statusCode != 200) {
-            cb(err || "response code != 200")
-        } else {
-            cb(null, JSON.parse(body))
-        }
-    })
-}
