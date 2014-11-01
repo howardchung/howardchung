@@ -51,7 +51,7 @@ html(lang='en')
         
       div.col-md-7
         h2 Positions
-        each position in linkedin.positions.all
+        each position in data.positions.all
           div.panel.panel-primary.text-left
             div.panel-heading
               h3.panel-title #{position.title} - #{position.company.name]
@@ -59,7 +59,7 @@ html(lang='en')
             
   
         h2 Projects
-        each project in linkedin.projects.all
+        each project in data.projects.all
           div.panel.panel-success.text-left
             div.panel-heading
                h3.panel-title

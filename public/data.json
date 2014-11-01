@@ -1,90 +1,259 @@
-{  
-    "facts":[  
-        "I like seafood, especially fish.",
-        "I do things with computers.",
-        "This site runs on Heroku with Node.js, and gets data from the LinkedIn API.",
-        "I don't like cheese or butter.",
-        "I can't whistle or snap my fingers.",
-        "My favorite brand of soy sauce is Kikkoman.",
-        "I mine cryptocurrency.",
-        "I sometimes wear glasses.",
-        "I dropped out of high school.",
-        "My favorite film is Finding Nemo (2003).",
-        "I know approximately the first hundred digits of pi.",
-        "I can say that I don't speak a language in 11 languages.",
-        "I prefer vim to emacs.",
-        "I disapprove of Daylight Savings Time.",
-        "I try to use the metric system whenever possible.",
-        "I frequently wear a black Nike hoodie.",
-        "My favorite data structure is the hash table.",
-        "My favorite browser is Google Chrome.",
-        "I am very frugal.",
-        "I prefer Android to iOS.",
-        "I use a Nexus smartphone and a Microsoft Surface tablet."
-    ],
-    "intro":[
-        "I am an undergraduate studying Computer Science at Duke University, graduating in 2015."
-    ],
-    "json":{  
-        "full_name":"Howard Chung",
-        "gender":"male",
-        "height_cm":177,
-        "right_handed":true,
-        "shoe_size":11,
-        "blood_type":"",
-        "birth_time":726126840,
-        "birth_city":"Hong Kong",
-        "languages":[  
-            "en",
-            "es",
-            "zh"
-        ],
-        "activities":[  
-            "programming",
-            "ultimate",
-            "hiking",
-            "rock climbing",
-            "Dota 2",
-            "card/board games",
-            "planespotting"
-        ]
+{
+    "facts": ["I like seafood, especially fish.", "This site is hosted by GitHub Pages.", "I do things with computers.", "I don't like cheese or butter.", "I can't whistle or snap my fingers.", "My favorite brand of soy sauce is Kikkoman.", "I mine cryptocurrency.", "I sometimes wear glasses.", "I dropped out of high school.", "My favorite film is Finding Nemo (2003).", "I know approximately the first hundred digits of pi.", "I can say that I don't speak a language in 11 languages.", "I prefer vim to emacs.", "I disapprove of Daylight Savings Time.", "I try to use the metric system whenever possible.", "I frequently wear a black Nike hoodie.", "My favorite data structure is the hash table.", "My favorite browser is Google Chrome.", "I am very frugal.", "I prefer Android to iOS.", "I use a Nexus smartphone and a Microsoft Surface tablet."],
+    "intro": ["I am an undergraduate studying Computer Science at Duke University, graduating in 2015."],
+    "json": {
+        "full_name": "Howard Chung",
+        "gender": "male",
+        "height_cm": 177,
+        "right_handed": true,
+        "shoe_size": 11,
+        "blood_type": "",
+        "birth_time": 726126840,
+        "birth_city": "Hong Kong",
+        "languages": ["en", "es", "zh"],
+        "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "card/board games", "planespotting"]
     },
-    "bitcoin":"13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
-    "links":[  
-        {  
-            "name":"Facebook",
-            "url":"http://facebook.com/howardc93",
-            "icon":"fa fa-fw fa-facebook"
-        },
-        {  
-            "name":"Twitter",
-            "url":"http://twitter.com/ChungFuHoward",
-            "icon":"fa fa-fw fa-twitter "
-        },
-        {  
-            "name":"LinkedIn",
-            "url":"http://www.linkedin.com/pub/howard-chung/72/547/19",
-            "icon":"fa fa-fw fa-linkedin"
-        },
-        {  
-            "name":"Google+",
-            "url":"https://plus.google.com/u/0/115307917489359738692",
-            "icon":"fa fa-fw fa-google-plus"
-        },
-        {  
-            "name":"Email",
-            "url":"mailto:howardc93@gmail.com",
-            "icon":"fa fa-fw fa-envelope"
-        },
-        {  
-            "name":"GitHub",
-            "url":"http://github.com/howardc93",
-            "icon":"fa fa-fw fa-github"
-        },
-        {  
-            "name":"Résumé (PDF)",
-            "url":"http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=pdf",
-            "icon":"fa fa-fw fa-file"
-        }
-    ]
+    "bitcoin": "13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
+    "links": [{
+        "name": "Facebook",
+        "url": "http://facebook.com/howardc93",
+        "icon": "fa fa-fw fa-facebook"
+    }, {
+        "name": "Twitter",
+        "url": "http://twitter.com/ChungFuHoward",
+        "icon": "fa fa-fw fa-twitter "
+    }, {
+        "name": "LinkedIn",
+        "url": "http://www.linkedin.com/pub/howard-chung/72/547/19",
+        "icon": "fa fa-fw fa-linkedin"
+    }, {
+        "name": "Google+",
+        "url": "https://plus.google.com/u/0/115307917489359738692",
+        "icon": "fa fa-fw fa-google-plus"
+    }, {
+        "name": "Email",
+        "url": "mailto:howardc93@gmail.com",
+        "icon": "fa fa-fw fa-envelope"
+    }, {
+        "name": "GitHub",
+        "url": "http://github.com/howardc93",
+        "icon": "fa fa-fw fa-github"
+    }, {
+        "name": "Résumé (PDF)",
+        "url": "http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=pdf",
+        "icon": "fa fa-fw fa-file"
+    }],
+    "educations": {
+        "total": 1,
+        "all": [{
+            "degree": "Bachelor of Science (BS)",
+            "end_date": {
+                "year": 2015
+            },
+            "field_of_study": "Computer Science",
+            "id": 161388668,
+            "notes": "GPA: 3.7",
+            "school_name": "Duke University",
+            "start_date": {
+                "year": 2011
+            }
+        }]
+    },
+    "email_address": "howardc93@gmail.com",
+    "first_name": "Howard",
+    "id": "isADiQdkje",
+    "last_name": "Chung",
+    "member_url_resources": {
+        "total": 2,
+        "all": [{
+            "id": 13,
+            "name": "Personal Website",
+            "url": "http://www.howardchung.net"
+        }, {
+            "id": 18,
+            "name": "Portfolio",
+            "url": "http://github.com/howardc93"
+        }]
+    },
+    "positions": {
+        "total": 4,
+        "all": [{
+            "company": {
+                "id": 1035,
+                "industry": "Computer Software",
+                "name": "Microsoft",
+                "size": "10,001+ employees",
+                "ticker": "MSFT",
+                "type": "Public Company"
+            },
+            "id": 536798517,
+            "is_current": true,
+            "start_date": {
+                "month": 5,
+                "year": 2014
+            },
+            "summary": "Engineer on SQL Azure team.\nEnabled incremental build to provide up to a 15x speed improvement.\nImproved runner security with dynamic certificates and randomly generated passwords.\nTracked down unit test failures and repaired them.",
+            "title": "Software Development Engineer in Test"
+        }, {
+            "company": {
+                "id": 3356,
+                "industry": "Higher Education",
+                "name": "Duke University",
+                "size": "10,001+ employees",
+                "type": "Educational Institution"
+            },
+            "id": 401487419,
+            "is_current": true,
+            "start_date": {
+                "month": 1,
+                "year": 2012
+            },
+            "summary": "Graded assignments.\nStaffed office hours for students.\nLed lab sections of 15-30 students.",
+            "title": "Undergraduate Teaching Assistant"
+        }, {
+            "company": {
+                "id": 3356,
+                "industry": "Higher Education",
+                "name": "Duke University",
+                "size": "10,001+ employees",
+                "type": "Educational Institution"
+            },
+            "end_date": {
+                "month": 12,
+                "year": 2013
+            },
+            "id": 401487296,
+            "is_current": false,
+            "start_date": {
+                "month": 5,
+                "year": 2013
+            },
+            "summary": "Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems.\nImproved Cyclops algorithm by adding timing metrics for each stage.\nBuilt user interface for BigFrame, a benchmark generator for distributed data processing systems.\nWrote shell scripts to maintain and deploy Storm across a 15-node cluster.",
+            "title": "Research Assistant"
+        }, {
+            "company": {
+                "id": 41604,
+                "industry": "Insurance",
+                "name": "Moda Health",
+                "size": "1001-5000 employees",
+                "type": "Privately Held"
+            },
+            "end_date": {
+                "month": 8,
+                "year": 2012
+            },
+            "id": 401487528,
+            "is_current": false,
+            "start_date": {
+                "month": 5,
+                "year": 2012
+            },
+            "summary": "Developed graphical Java (Swing) utilities for LPRing jobs to printers.\nAutomated data retrieval and analysis from Xerox printers with Excel macros and batch files.",
+            "title": "Document Services Intern"
+        }]
+    },
+    "projects": {
+        "total": 5,
+        "all": [{
+            "description": "Parses replays of Dota 2 games and provides stats for users.",
+            "id": 203,
+            "name": "YASP (YASP: Another Stats Page)",
+            "url": "http://yasp.co"
+        }, {
+            "description": "Computes the number of food points that a student should have during the semester.\nAutomatically tracks balances and provides visualizations for users.\nProvides a budgeting tool to help manage food points.",
+            "id": 137,
+            "name": "FoodPoints+",
+            "url": "http://foodpoints.herokuapp.com"
+        }, {
+            "description": "Generates a PDF resume from data supplied on LinkedIn.\nUsers can hotlink others directly to the latest version.\nResumes update automatically when their LinkedIn profile changes.",
+            "id": 201,
+            "name": "LinkedIn Resume",
+            "url": "http://linkedinresume.herokuapp.com"
+        }, {
+            "description": "Generates Markov-chain random tweets from a user's tweet history.",
+            "id": 139,
+            "name": "TweetBot",
+            "url": "http://twittermarkov.herokuapp.com"
+        }, {
+            "description": "Developed for two Duke professors.\nAllows instructors to present grade feedback in a visual manner.\nUses nodes and tags to allow students to filter and display grades interactively.",
+            "id": 83,
+            "name": "FlowGhost",
+            "url": "http://flowghost.herokuapp.com"
+        }]
+    },
+    "public_profile_url": "https://www.linkedin.com/pub/howard-chung/72/547/19",
+    "skills": {
+        "total": 14,
+        "all": [{
+            "id": 205,
+            "skill": {
+                "name": "Java"
+            }
+        }, {
+            "id": 206,
+            "skill": {
+                "name": "Python"
+            }
+        }, {
+            "id": 207,
+            "skill": {
+                "name": "Ruby on Rails"
+            }
+        }, {
+            "id": 208,
+            "skill": {
+                "name": "C#"
+            }
+        }, {
+            "id": 209,
+            "skill": {
+                "name": "C"
+            }
+        }, {
+            "id": 210,
+            "skill": {
+                "name": "Node.js"
+            }
+        }, {
+            "id": 211,
+            "skill": {
+                "name": "JavaScript"
+            }
+        }, {
+            "id": 212,
+            "skill": {
+                "name": "HTML/CSS"
+            }
+        }, {
+            "id": 213,
+            "skill": {
+                "name": "d3.js"
+            }
+        }, {
+            "id": 214,
+            "skill": {
+                "name": "Git"
+            }
+        }, {
+            "id": 215,
+            "skill": {
+                "name": "TFS"
+            }
+        }, {
+            "id": 216,
+            "skill": {
+                "name": "Heroku"
+            }
+        }, {
+            "id": 217,
+            "skill": {
+                "name": "MSBuild"
+            }
+        }, {
+            "id": 218,
+            "skill": {
+                "name": "SQL"
+            }
+        }]
+    }
 }

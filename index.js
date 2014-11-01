@@ -10,12 +10,8 @@ app.listen(port, function() {
     console.log("Node app is running on port " + port)
 })
 app.get('/', function(req, res) {
-    request({url:"http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=json"}, function(err, resp, body){
-        var linkedin = JSON.parse(body)
-        var data = require('./public/data.json')
-        res.render('index', {
-            data: data,
-            linkedin: linkedin
-        })
+    var data = require('./public/data.json')
+    res.render('index', {
+        data: data
     })
 })
