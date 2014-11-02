@@ -148,26 +148,26 @@
             "name": "YASP (YASP: Another Stats Page)",
             "url": "http://yasp.co"
         }, {
-            "description": ["Computes the number of food points that a student should have during the semester.",
+            "summary": ["Computes the number of food points that a student should have during the semester.",
             "Automatically tracks balances and provides visualizations for users.",
             "Provides a budgeting tool to help manage food points."],
             "id": 137,
             "name": "FoodPoints+",
             "url": "http://foodpoints.herokuapp.com"
         }, {
-            "description": ["Generates a PDF resume from data supplied on LinkedIn.",
+            "summary": ["Generates a PDF resume from data supplied on LinkedIn.",
             "Users can hotlink others directly to the latest version.",
             "Resumes update automatically when their LinkedIn profile changes."],
             "id": 201,
             "name": "LinkedIn Resume",
             "url": "http://linkedinresume.herokuapp.com"
         }, {
-            "description": ["Generates Markov-chain random tweets from a user's tweet history."],
+            "summary": ["Generates Markov-chain random tweets from a user's tweet history."],
             "id": 139,
             "name": "TweetBot",
             "url": "http://twittermarkov.herokuapp.com"
         }, {
-            "description": ["Developed for two Duke professors.",
+            "summary": ["Developed for two Duke professors.",
             "Allows instructors to present grade feedback in a visual manner.",
             "Uses nodes and tags to allow students to filter and display grades interactively."],
             "id": 83,
