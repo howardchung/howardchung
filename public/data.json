@@ -33,10 +33,6 @@
         "name": "GitHub",
         "url": "http://github.com/howardc93",
         "icon": "fa fa-fw fa-github"
-    }, {
-        "name": "Résumé",
-        "url": "http://linkedinresume.herokuapp.com/home/resume?id=isADiQdkje&format=pdf",
-        "icon": "fa fa-fw fa-file"
     }],
     "educations": {
         "all": [{
