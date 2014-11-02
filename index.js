@@ -8,8 +8,5 @@ app.listen(port, function() {
     console.log("Node app is running on port " + port)
 })
 app.get('/', function(req, res) {
-    var data = require('./public/data.json')
-    res.render('index', {
-        data: data
-    })
+    res.render('index')
 })
