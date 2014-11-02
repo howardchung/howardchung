@@ -4,6 +4,6 @@ function howardController($scope, $http) {
         data=JSON.parse(response)
         console.log(data)
         $scope.data = data;
-        $scope.random = Math.floor(Math.random() * data.facts.length;
+        $scope.random = Math.floor(Math.random() * data.facts.length);
     });
 }
