@@ -23,10 +23,10 @@
                     document.getElementById("links").innerHTML += "<div><a href='"+link.url+"' class='btn'>"+icon+link.name+"</a></div>"
                 })
                 data.positions.all.forEach(function(position){
-                    var heading = "<div class='panel-heading'><h3 class='panel-title'>"+position.title + "-" + position.company.name+"</h3>"
+                    var heading = "<div class='panel-heading'><h3 class='panel-title'>"+position.title + "-" + position.company.name+"</h3></div>"
                     var body = "<div class='panel-body'><ul>"
                     position.summary.forEach(function(sum){
-                        body+=sum
+                        body+="<li>"+sum+"</li>"
                     })
                     body+="</ul></div>"
                     document.getElementById("positions").innerHTML += "<div class='panel panel-primary text-left'>"+heading+body+"</div>"
