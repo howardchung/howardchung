@@ -11,7 +11,6 @@
   "author": "Howard Chung",
   "license": "ISC",
   "dependencies": {
-    "express": "~4.8.8",
-    "jade": "~1.6.0"
+    "express": "~4.8.8"
   }
 }

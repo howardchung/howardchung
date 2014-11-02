@@ -33,6 +33,10 @@
         "name": "GitHub",
         "url": "http://github.com/howardc93",
         "icon": "fa fa-fw fa-github"
+    }, {
+        "name": "Resume",
+        "url": "resume.html",
+        "icon": "fa fa-fw fa-file"
     }],
     "educations": {
         "all": [{
@@ -50,8 +54,8 @@
         }]
     },
     "email_address": "howardc93@gmail.com",
-    "first_name": "Howard",
-    "last_name": "Chung",
+    "website": "http://www.howardchung.net",
+    "github": "http://github.com/howardc93",
     "positions": {
         "all": [{
             "company": {
@@ -68,10 +72,7 @@
                 "month": 5,
                 "year": 2014
             },
-            "summary": ["Engineer on SQL Azure team.",
-                        "Enabled incremental build to provide up to a 15x speed improvement.",
-                        "Improved runner security with dynamic certificates and randomly generated passwords.",
-                        "Tracked down unit test failures and repaired them."],
+            "summary": ["Engineer on SQL Azure team.", "Enabled incremental build to provide up to a 15x speed improvement.", "Improved runner security with dynamic certificates and randomly generated passwords.", "Tracked down unit test failures and repaired them."],
             "title": "Software Development Engineer in Test"
         }, {
             "company": {
@@ -87,9 +88,7 @@
                 "month": 1,
                 "year": 2012
             },
-            "summary": ["Graded assignments.",
-                        "Staffed office hours for students.",
-                        "Led lab sections of 15-30 students."],
+            "summary": ["Graded assignments.", "Staffed office hours for students.", "Led lab sections of 15-30 students."],
             "title": "Undergraduate Teaching Assistant"
         }, {
             "company": {
@@ -109,10 +108,7 @@
                 "month": 5,
                 "year": 2013
             },
-            "summary": ["Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems.",
-                        "Improved Cyclops algorithm by adding timing metrics for each stage.",
-                        "Built user interface for BigFrame, a benchmark generator for distributed data processing systems.",
-                        "Wrote shell scripts to maintain and deploy Storm across a 15-node cluster."],
+            "summary": ["Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems.", "Improved Cyclops algorithm by adding timing metrics for each stage.", "Built user interface for BigFrame, a benchmark generator for distributed data processing systems.", "Wrote shell scripts to maintain and deploy Storm across a 15-node cluster."],
             "title": "Research Assistant"
         }, {
             "company": {
@@ -132,8 +128,7 @@
                 "month": 5,
                 "year": 2012
             },
-            "summary": ["Developed graphical Java (Swing) utilities for LPRing jobs to printers.",
-                        "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."],
+            "summary": ["Developed graphical Java (Swing) utilities for LPRing jobs to printers.", "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."],
             "title": "Document Services Intern"
         }]
     },
@@ -141,31 +136,20 @@
         "all": [{
             "summary": ["Parses replays of Dota 2 games and provides stats for users."],
             "id": 203,
-            "name": "YASP (YASP: Another Stats Page)",
+            "name": "YASP",
             "url": "http://yasp.co"
         }, {
-            "summary": ["Computes the number of food points that a student should have during the semester.",
-            "Automatically tracks balances and provides visualizations for users.",
-            "Provides a budgeting tool to help manage food points."],
+            "summary": ["Computes the number of food points that a student should have during the semester.", "Automatically tracks balances and provides visualizations for users.", "Provides a budgeting tool to help manage food points."],
             "id": 137,
             "name": "FoodPoints+",
             "url": "http://foodpoints.herokuapp.com"
-        }, {
-            "summary": ["Generates a PDF resume from data supplied on LinkedIn.",
-            "Users can hotlink others directly to the latest version.",
-            "Resumes update automatically when their LinkedIn profile changes."],
-            "id": 201,
-            "name": "LinkedIn Resume",
-            "url": "http://linkedinresume.herokuapp.com"
         }, {
             "summary": ["Generates Markov-chain random tweets from a user's tweet history."],
             "id": 139,
             "name": "TweetBot",
             "url": "http://twittermarkov.herokuapp.com"
         }, {
-            "summary": ["Developed for two Duke professors.",
-            "Allows instructors to present grade feedback in a visual manner.",
-            "Uses nodes and tags to allow students to filter and display grades interactively."],
+            "summary": ["Developed for two Duke professors.", "Allows instructors to present grade feedback in a visual manner.", "Uses nodes and tags to allow students to filter and display grades interactively."],
             "id": 83,
             "name": "FlowGhost",
             "url": "http://flowghost.herokuapp.com"
