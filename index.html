@@ -31,8 +31,16 @@
                     body+="</ul></div>"
                     document.getElementById("positions").innerHTML += "<div class='panel panel-primary text-left'>"+heading+body+"</div>"
                     })
-                //add projects
-            }
+                data.projects.all.forEach(function(project){
+                    var heading = "<div class='panel-heading'><h3 class='panel-title'>"+project.name+"</h3></div>"
+                    var body = "<div class='panel-body'><ul>"
+                    position.description.forEach(function(sum){
+                        body+="<li>"+sum+"</li>"
+                    })
+                    body+="<li>"+"<a href'"+project.url+"'>"+Demo+"</a></li>"
+                    body+="</ul></div>"
+                    document.getElementById("projects").innerHTML += "<div class='panel panel-success text-left'>"+heading+body+"</div>"
+                    })            }
         }        
     </script>
 </head>
@@ -80,40 +88,10 @@
             <div class="col-md-7" id="positions">
                 <h2>Positions</h2>
                </div>
+            <div class="col-md-7" id="projects">
                 <h2>Projects</h2>
-                <div class="panel panel-success text-left" id="projects">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://yasp.co">YASP (YASP: Another Stats Page)</a></h3>
-                    </div>
-                    <div class="panel-body">Parses replays of Dota 2 games and provides stats for users.</div>
-                </div>
-                <div class="panel panel-success text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://foodpoints.herokuapp.com">FoodPoints+</a></h3>
-                    </div>
-                    <div class="panel-body">Computes the number of food points that a student should have during the semester. Automatically tracks balances and provides visualizations for users. Provides a budgeting tool to help manage food points.</div>
-                </div>
-                <div class="panel panel-success text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://linkedinresume.herokuapp.com">LinkedIn Resume</a></h3>
-                    </div>
-                    <div class="panel-body">Generates a PDF resume from data supplied on LinkedIn. Users can hotlink others directly to the latest version. Resumes update automatically when their LinkedIn profile changes.</div>
-                </div>
-                <div class="panel panel-success text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://twittermarkov.herokuapp.com">TweetBot</a></h3>
-                    </div>
-                    <div class="panel-body">Generates Markov-chain random tweets from a user's tweet history.</div>
-                </div>
-                <div class="panel panel-success text-left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><a href="http://flowghost.herokuapp.com">FlowGhost</a></h3>
-                    </div>
-                    <div class="panel-body">Developed for two Duke professors. Allows instructors to present grade feedback in a visual manner. Uses nodes and tags to allow students to filter and display grades interactively.</div>
-                </div>
             </div>
         </div>
     </div>
 </body>
-
 </html>
