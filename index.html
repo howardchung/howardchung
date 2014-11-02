@@ -34,7 +34,7 @@
                 data.projects.all.forEach(function(project){
                     var heading = "<div class='panel-heading'><h3 class='panel-title'>"+project.name+"</h3></div>"
                     var body = "<div class='panel-body'><ul>"
-                    position.description.forEach(function(sum){
+                    project.description.forEach(function(sum){
                         body+="<li>"+sum+"</li>"
                     })
                     body+="<li>"+"<a href'"+project.url+"'>"+Demo+"</a></li>"
