@@ -42,7 +42,7 @@
   },
   "bitcoin": "13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
   "links": {
-    "facebook":    {
+    "facebook": {
       "name": "Facebook",
       "url": "http://facebook.com/howardc93"
     },
@@ -58,7 +58,7 @@
       "name": "Email",
       "url": "mailto:howardc93@gmail.com"
     },
-    "github":    {
+    "github": {
       "name": "GitHub",
       "url": "http://github.com/howardc93"
     },
@@ -66,9 +66,9 @@
       "name": "Resume",
       "url": "resume.html"
     },
-    "website":{
-    "name":"Website",
-    "url": "http://www.howardchung.net"
+    "website": {
+      "name": "Website",
+      "url": "http://www.howardchung.net"
     }
   },
   "educations": {
@@ -277,7 +277,7 @@
         }
       },
       {
-        "skill":{
+        "skill": {
           "name": "MongoDB"
         }
       }
