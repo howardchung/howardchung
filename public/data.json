@@ -1,286 +1,204 @@
 {
-  "facts": [
-    "I like seafood, especially fish.",
-    "This site is hosted by GitHub Pages.",
-    "I can't whistle or snap my fingers.",
-    "My favorite brand of soy sauce is Kikkoman.",
-    "I mine cryptocurrency.",
-    "I sometimes wear glasses.",
-    "I dropped out of high school.",
-    "My favorite film is Finding Nemo (2003).",
-    "I know approximately the first hundred digits of pi.",
-    "I can say that I don't speak a language in 11 languages.",
-    "I prefer vim to emacs.",
-    "I try to use the metric system whenever possible.",
-    "I frequently wear a black Nike hoodie.",
-    "My favorite data structure is the hash table.",
-    "My favorite browser is Google Chrome."
-  ],
-  "json": {
-    "full_name": "Howard Chung",
-    "gender": "male",
-    "height_cm": 177,
-    "right_handed": true,
-    "shoe_size": 11,
-    "blood_type": "",
-    "birth_time": 726126840,
-    "birth_city": "Hong Kong",
-    "languages": [
-      "en",
-      "es",
-      "zh"
+    "facts": ["I like seafood, especially fish.", "This site is hosted by GitHub Pages.", "I can't whistle or snap my fingers.", "My favorite brand of soy sauce is Kikkoman.", "I mine cryptocurrency.", "I sometimes wear glasses.", "I dropped out of high school.", "My favorite film is Finding Nemo (2003).", "I know approximately the first hundred digits of pi.", "I can say that I don't speak a language in 11 languages.", "I prefer vim to emacs.", "I try to use the metric system whenever possible.", "I frequently wear a black Nike hoodie.", "My favorite data structure is the hash table.", "My favorite browser is Google Chrome."],
+    "json": {
+        "full_name": "Howard Chung",
+        "gender": "male",
+        "height_cm": 177,
+        "right_handed": true,
+        "shoe_size": 11,
+        "blood_type": "",
+        "birth_time": 726126840,
+        "birth_city": "Hong Kong",
+        "languages": ["en", "es", "zh"],
+        "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "card/board games", "planespotting"]
+    },
+    "bitcoin": "13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
+    "email": "howardc93@gmail.com",
+    "welcome":[
+        "I'm Howard Chung, an undergraduate at Duke University.",
+        "I've attempted to design this site to be highly maintainable.  Duplication is eliminated and text strings are served from an external content file."
     ],
-    "activities": [
-      "programming",
-      "ultimate",
-      "hiking",
-      "rock climbing",
-      "Dota 2",
-      "card/board games",
-      "planespotting"
-    ]
-  },
-  "bitcoin": "13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
-  "links": {
-    "facebook": {
-      "name": "Facebook",
-      "url": "http://facebook.com/howardc93"
+    "links": {
+        "facebook": {
+            "name": "Facebook",
+            "url": "http://facebook.com/howardc93"
+        },
+        "twitter": {
+            "name": "Twitter",
+            "url": "http://twitter.com/ChungFuHoward"
+        },
+        "google": {
+            "name": "Google+",
+            "url": "https://plus.google.com/u/0/115307917489359738692"
+        },
+        "github": {
+            "name": "GitHub",
+            "url": "http://github.com/howardc93"
+        },
+        "website": {
+            "name": "Website",
+            "url": "http://www.howardchung.net"
+        }
     },
-    "twitter": {
-      "name": "Twitter",
-      "url": "http://twitter.com/ChungFuHoward"
+    "educations": {
+        "all": [{
+            "degree": "Bachelor of Science (BS)",
+            "end_date": {
+                "year": 2015
+            },
+            "field_of_study": "Computer Science",
+            "id": 161388668,
+            "notes": "GPA: 3.7",
+            "school_name": "Duke University",
+            "start_date": {
+                "year": 2011
+            }
+        }]
     },
-    "google": {
-      "name": "Google+",
-      "url": "https://plus.google.com/u/0/115307917489359738692"
+    "positions": {
+        "all": [{
+            "company": {
+                "id": 1035,
+                "industry": "Computer Software",
+                "name": "Microsoft",
+                "size": "10,001+ employees",
+                "ticker": "MSFT",
+                "type": "Public Company"
+            },
+            "id": 536798517,
+            "is_current": true,
+            "start_date": {
+                "month": 5,
+                "year": 2014
+            },
+            "summary": ["Engineer on SQL Azure team.", "Enabled incremental build to provide up to a 15x speed improvement.", "Improved runner security with dynamic certificates and randomly generated passwords.", "Tracked down and repaired unit test failures."],
+            "title": "Software Development Engineer in Test"
+        }, {
+            "company": {
+                "id": 3356,
+                "industry": "Higher Education",
+                "name": "Duke University",
+                "size": "10,001+ employees",
+                "type": "Educational Institution"
+            },
+            "id": 401487419,
+            "is_current": true,
+            "start_date": {
+                "month": 1,
+                "year": 2012
+            },
+            "summary": ["Graded assignments.", "Staffed office hours for students.", "Led lab sections of 15-30 students."],
+            "title": "Undergraduate Teaching Assistant"
+        }, {
+            "company": {
+                "id": 3356,
+                "industry": "Higher Education",
+                "name": "Duke University",
+                "size": "10,001+ employees",
+                "type": "Educational Institution"
+            },
+            "end_date": {
+                "month": 12,
+                "year": 2013
+            },
+            "id": 401487296,
+            "is_current": false,
+            "start_date": {
+                "month": 5,
+                "year": 2013
+            },
+            "summary": ["Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems.", "Improved Cyclops algorithm by adding timing metrics for each stage.", "Wrote shell scripts to maintain and deploy Storm across a 15-node cluster."],
+            "title": "Research Assistant"
+        }, {
+            "company": {
+                "id": 41604,
+                "industry": "Insurance",
+                "name": "Moda Health",
+                "size": "1001-5000 employees",
+                "type": "Privately Held"
+            },
+            "end_date": {
+                "month": 8,
+                "year": 2012
+            },
+            "id": 401487528,
+            "is_current": false,
+            "start_date": {
+                "month": 5,
+                "year": 2012
+            },
+            "summary": ["Developed graphical Java (Swing) utilities for LPRing jobs to printers.", "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."],
+            "title": "Document Services Intern"
+        }]
     },
-    "email": {
-      "name": "Email",
-      "url": "mailto:howardc93@gmail.com"
+    "projects": {
+        "all": [{
+            "summary": ["Parses replays of Dota 2 games and provides stats for users."],
+            "id": 203,
+            "name": "YASP",
+            "url": "http://yasp.co"
+        }, {
+            "summary": ["Computes the number of food points that a student should have during the semester.", "Automatically tracks balances and provides visualizations for users.", "Provides a budgeting tool to help manage food points."],
+            "id": 137,
+            "name": "FoodPoints+",
+            "url": "http://foodpoints.herokuapp.com"
+        }, {
+            "summary": ["Generates Markov-chain random tweets from a user's tweet history."],
+            "id": 139,
+            "name": "TweetBot",
+            "url": "http://twittermarkov.herokuapp.com"
+        }, {
+            "summary": ["Developed for two Duke professors.", "Allows instructors to present grade feedback in a visual manner.", "Uses nodes and tags to allow students to filter and display grades interactively."],
+            "id": 83,
+            "name": "FlowGhost",
+            "url": "http://flowghost.herokuapp.com"
+        }]
     },
-    "github": {
-      "name": "GitHub",
-      "url": "http://github.com/howardc93"
-    },
-    "resume": {
-      "name": "Resume",
-      "url": "resume.html"
-    },
-    "website": {
-      "name": "Website",
-      "url": "http://www.howardchung.net"
+    "skills": {
+        "all": [{
+            "id": 205,
+            "skill": {
+                "name": "Java"
+            }
+        }, {
+            "id": 206,
+            "skill": {
+                "name": "Python"
+            }
+        }, {
+            "id": 207,
+            "skill": {
+                "name": "Ruby on Rails"
+            }
+        }, {
+            "id": 208,
+            "skill": {
+                "name": "C#"
+            }
+        }, {
+            "id": 210,
+            "skill": {
+                "name": "Node.js"
+            }
+        }, {
+            "id": 211,
+            "skill": {
+                "name": "JavaScript"
+            }
+        }, {
+            "id": 212,
+            "skill": {
+                "name": "HTML/CSS"
+            }
+        }, {
+            "id": 218,
+            "skill": {
+                "name": "SQL"
+            }
+        }, {
+            "skill": {
+                "name": "MongoDB"
+            }
+        }]
     }
-  },
-  "educations": {
-    "all": [
-      {
-        "degree": "Bachelor of Science (BS)",
-        "end_date": {
-          "year": 2015
-        },
-        "field_of_study": "Computer Science",
-        "id": 161388668,
-        "notes": "GPA: 3.7",
-        "school_name": "Duke University",
-        "start_date": {
-          "year": 2011
-        }
-      }
-    ]
-  },
-  "positions": {
-    "all": [
-      {
-        "company": {
-          "id": 1035,
-          "industry": "Computer Software",
-          "name": "Microsoft",
-          "size": "10,001+ employees",
-          "ticker": "MSFT",
-          "type": "Public Company"
-        },
-        "id": 536798517,
-        "is_current": true,
-        "start_date": {
-          "month": 5,
-          "year": 2014
-        },
-        "summary": [
-          "Engineer on SQL Azure team.",
-          "Enabled incremental build to provide up to a 15x speed improvement.",
-          "Improved runner security with dynamic certificates and randomly generated passwords.",
-          "Tracked down unit test failures and repaired them."
-        ],
-        "title": "Software Development Engineer in Test"
-      },
-      {
-        "company": {
-          "id": 3356,
-          "industry": "Higher Education",
-          "name": "Duke University",
-          "size": "10,001+ employees",
-          "type": "Educational Institution"
-        },
-        "id": 401487419,
-        "is_current": true,
-        "start_date": {
-          "month": 1,
-          "year": 2012
-        },
-        "summary": [
-          "Graded assignments.",
-          "Staffed office hours for students.",
-          "Led lab sections of 15-30 students."
-        ],
-        "title": "Undergraduate Teaching Assistant"
-      },
-      {
-        "company": {
-          "id": 3356,
-          "industry": "Higher Education",
-          "name": "Duke University",
-          "size": "10,001+ employees",
-          "type": "Educational Institution"
-        },
-        "end_date": {
-          "month": 12,
-          "year": 2013
-        },
-        "id": 401487296,
-        "is_current": false,
-        "start_date": {
-          "month": 5,
-          "year": 2013
-        },
-        "summary": [
-          "Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems.",
-          "Improved Cyclops algorithm by adding timing metrics for each stage.",
-          "Built user interface for BigFrame, a benchmark generator for distributed data processing systems.",
-          "Wrote shell scripts to maintain and deploy Storm across a 15-node cluster."
-        ],
-        "title": "Research Assistant"
-      },
-      {
-        "company": {
-          "id": 41604,
-          "industry": "Insurance",
-          "name": "Moda Health",
-          "size": "1001-5000 employees",
-          "type": "Privately Held"
-        },
-        "end_date": {
-          "month": 8,
-          "year": 2012
-        },
-        "id": 401487528,
-        "is_current": false,
-        "start_date": {
-          "month": 5,
-          "year": 2012
-        },
-        "summary": [
-          "Developed graphical Java (Swing) utilities for LPRing jobs to printers.",
-          "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."
-        ],
-        "title": "Document Services Intern"
-      }
-    ]
-  },
-  "projects": {
-    "all": [
-      {
-        "summary": [
-          "Parses replays of Dota 2 games and provides stats for users."
-        ],
-        "id": 203,
-        "name": "YASP",
-        "url": "http://yasp.co"
-      },
-      {
-        "summary": [
-          "Computes the number of food points that a student should have during the semester.",
-          "Automatically tracks balances and provides visualizations for users.",
-          "Provides a budgeting tool to help manage food points."
-        ],
-        "id": 137,
-        "name": "FoodPoints+",
-        "url": "http://foodpoints.herokuapp.com"
-      },
-      {
-        "summary": [
-          "Generates Markov-chain random tweets from a user's tweet history."
-        ],
-        "id": 139,
-        "name": "TweetBot",
-        "url": "http://twittermarkov.herokuapp.com"
-      },
-      {
-        "summary": [
-          "Developed for two Duke professors.",
-          "Allows instructors to present grade feedback in a visual manner.",
-          "Uses nodes and tags to allow students to filter and display grades interactively."
-        ],
-        "id": 83,
-        "name": "FlowGhost",
-        "url": "http://flowghost.herokuapp.com"
-      }
-    ]
-  },
-  "skills": {
-    "all": [
-      {
-        "id": 205,
-        "skill": {
-          "name": "Java"
-        }
-      },
-      {
-        "id": 206,
-        "skill": {
-          "name": "Python"
-        }
-      },
-      {
-        "id": 207,
-        "skill": {
-          "name": "Ruby on Rails"
-        }
-      },
-      {
-        "id": 208,
-        "skill": {
-          "name": "C#"
-        }
-      },
-      {
-        "id": 210,
-        "skill": {
-          "name": "Node.js"
-        }
-      },
-      {
-        "id": 211,
-        "skill": {
-          "name": "JavaScript"
-        }
-      },
-      {
-        "id": 212,
-        "skill": {
-          "name": "HTML/CSS"
-        }
-      },
-      {
-        "id": 218,
-        "skill": {
-          "name": "SQL"
-        }
-      },
-      {
-        "skill": {
-          "name": "MongoDB"
-        }
-      }
-    ]
-  }
 }
