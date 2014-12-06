@@ -44,32 +44,27 @@
   "links": {
     "facebook":    {
       "name": "Facebook",
-      "url": "http://facebook.com/howardc93",
+      "url": "http://facebook.com/howardc93"
     },
     "twitter": {
       "name": "Twitter",
-      "url": "http://twitter.com/ChungFuHoward",
-      "icon": "fa fa-fw fa-twitter "
+      "url": "http://twitter.com/ChungFuHoward"
     },
     "google": {
       "name": "Google+",
-      "url": "https://plus.google.com/u/0/115307917489359738692",
-      "icon": "fa fa-fw fa-google-plus"
+      "url": "https://plus.google.com/u/0/115307917489359738692"
     },
     "email": {
       "name": "Email",
-      "url": "mailto:howardc93@gmail.com",
-      "icon": "fa fa-fw fa-envelope"
+      "url": "mailto:howardc93@gmail.com"
     },
     "github":    {
       "name": "GitHub",
-      "url": "http://github.com/howardc93",
-      "icon": "fa fa-fw fa-github"
+      "url": "http://github.com/howardc93"
     },
     "resume": {
       "name": "Resume",
-      "url": "resume.html",
-      "icon": "fa fa-fw fa-file"
+      "url": "resume.html"
     },
     "website":{
     "name":"Website",
