@@ -41,38 +41,41 @@
     ]
   },
   "bitcoin": "13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
-  "links": [
-    {
+  "links": {
+    "facebook":    {
       "name": "Facebook",
       "url": "http://facebook.com/howardc93",
-      "icon": "fa fa-fw fa-facebook"
     },
-    {
+    "twitter": {
       "name": "Twitter",
       "url": "http://twitter.com/ChungFuHoward",
       "icon": "fa fa-fw fa-twitter "
     },
-    {
+    "google": {
       "name": "Google+",
       "url": "https://plus.google.com/u/0/115307917489359738692",
       "icon": "fa fa-fw fa-google-plus"
     },
-    {
+    "email": {
       "name": "Email",
       "url": "mailto:howardc93@gmail.com",
       "icon": "fa fa-fw fa-envelope"
     },
-    {
+    "github":    {
       "name": "GitHub",
       "url": "http://github.com/howardc93",
       "icon": "fa fa-fw fa-github"
     },
-    {
+    "resume": {
       "name": "Resume",
       "url": "resume.html",
       "icon": "fa fa-fw fa-file"
+    },
+    "website":{
+    "name":"Website",
+    "url": "http://www.howardchung.net"
     }
-  ],
+  },
   "educations": {
     "all": [
       {
@@ -90,9 +93,6 @@
       }
     ]
   },
-  "email_address": "howardc93@gmail.com",
-  "website": "http://www.howardchung.net",
-  "github": "http://github.com/howardc93",
   "positions": {
     "all": [
       {
@@ -258,12 +258,6 @@
         }
       },
       {
-        "id": 209,
-        "skill": {
-          "name": "C"
-        }
-      },
-      {
         "id": 210,
         "skill": {
           "name": "Node.js"
@@ -282,39 +276,14 @@
         }
       },
       {
-        "id": 213,
-        "skill": {
-          "name": "d3.js"
-        }
-      },
-      {
-        "id": 214,
-        "skill": {
-          "name": "Git"
-        }
-      },
-      {
-        "id": 215,
-        "skill": {
-          "name": "TFS"
-        }
-      },
-      {
-        "id": 216,
-        "skill": {
-          "name": "Heroku"
-        }
-      },
-      {
-        "id": 217,
-        "skill": {
-          "name": "MSBuild"
-        }
-      },
-      {
         "id": 218,
         "skill": {
           "name": "SQL"
+        }
+      },
+      {
+        "skill":{
+          "name": "MongoDB"
         }
       }
     ]
