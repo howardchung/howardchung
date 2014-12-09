@@ -17,12 +17,6 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                     <a class="navbar-brand" href="">{{data.json.full_name}}</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
@@ -55,11 +49,10 @@
                     <div class="panel-body text-center">
                         <p ng-repeat="x in data.welcome">{{x}}</p>
                         <img src="public/profile.jpg" style="width:200px;" alt="{{data.json.full_name}}">
-                        <div>
-                        <blockquote style="display: inline-block;width:auto">
-                            <p id="fact">{{random}}</p><small>A random fact</small>
+                        <blockquote>
+                            <p id="fact">{{random}}</p>
+                            <small>A random fact</small>
                         </blockquote>
-                        </div>
                     </div>
                 </div>
                 <div class="panel panel-warning">
