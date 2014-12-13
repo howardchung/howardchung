@@ -19,10 +19,9 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="">{{data.json.full_name}}</a>
                 </div>
@@ -30,15 +29,7 @@
                     <ul class="nav navbar-nav">
                         <li ng-repeat="x in data.links"><a href="{{x.url}}">{{x.name}}</a>
                         </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <p class="navbar-btn">
-                                <a href="#" id="resume" class="btn btn-success">
-                                Generate PDF Resume
-                            </a>
-                            </p>
-                        </li>
+                        <li><a href="#" id="resume">Resume</a></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
@@ -48,40 +39,25 @@
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <h2>About</h2>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Welcome!</h3>
+                        <h3 class="panel-title">{{data.welcome.heading}}</h3>
                     </div>
                     <div class="panel-body text-center">
-                        <p class="text-left" ng-repeat="x in data.welcome">{{x}}</p>
+                        <p class="text-left" ng-repeat="x in data.welcome.content">{{x}}</p>
                         <img src="public/profile.jpg" style="width:200px;" alt="{{data.json.full_name}}">
                         <blockquote>
                             <p id="fact">{{random}}</p>
-                            <small>A random fact</small>
+                            <small>{{data.json.full_name}}</small>
                         </blockquote>
-                    </div>
-                </div>
-                <div class="panel panel-warning">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">JSON</h3>
-                    </div>
-                    <div class="panel-body">
-                        <pre id="json">{{json}}</pre>
-                    </div>
-                </div>
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Bitcoin</h3>
-                    </div>
-                    <div class="panel-body text-center">
-                        <p id="bitcoin">{{data.bitcoin}}</p>
-                        <img src="https://blockchain.info/qr?size=200&data={{data.bitcoin}}" alt="{{data.bitcoin}}">
+                        <pre class="text-left">{{json}}</pre>
+                        <p id="bitcoin">{{data.json.bitcoin}}</p>
+                        <img src="https://blockchain.info/qr?size=200&data={{data.json.bitcoin}}" alt="{{data.json.bitcoin}}">
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <h2>Positions</h2>
+                <h2>{{data.positions.heading}}</h2>
                 <div class='panel panel-primary' ng-repeat="x in data.positions.all">
                     <div class='panel-heading'>
                         <h3 class='panel-title'>{{x.title}} ({{x.company.name}})</h3>
@@ -92,7 +68,7 @@
                         </ul>
                     </div>
                 </div>
-                <h2>Projects</h2>
+                <h2>{{data.projects.heading}}</h2>
                 <div class='panel panel-success' ng-repeat="x in data.projects.all">
                     <div class='panel-heading'>
                         <h3 class='panel-title'>{{x.name}} <a href="{{x.url}}">({{x.url}})</a></h3>

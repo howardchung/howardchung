@@ -1,5 +1,21 @@
 {
-    "facts": ["I like seafood, especially fish.", "This site is hosted by GitHub Pages.", "I can't whistle or snap my fingers.", "My favorite brand of soy sauce is Kikkoman.", "I mine cryptocurrency.", "I sometimes wear glasses.", "I dropped out of high school.", "My favorite film is Finding Nemo (2003).", "I know approximately the first hundred digits of pi.", "I can say that I don't speak a language in 11 languages.", "I prefer vim to emacs.", "I try to use the metric system whenever possible.", "I frequently wear a black Nike hoodie.", "My favorite data structure is the hash table.", "My favorite browser is Google Chrome."],
+    "facts": [
+        "I like seafood, especially fish.",
+        "This site is hosted by GitHub Pages.",
+        "I can't whistle or snap my fingers.",
+        "My favorite brand of soy sauce is Kikkoman.",
+        "I mine cryptocurrency.",
+        "I sometimes wear glasses.",
+        "I dropped out of high school.",
+        "My favorite film is Finding Nemo (2003).",
+        "I know approximately the first hundred digits of pi.",
+        "I can say that I don't speak a language in 11 languages.",
+        "I prefer vim over emacs.",
+        "I try to use the metric system whenever possible.",
+        "I frequently wear a black Nike hoodie.",
+        "My favorite data structure is the hash table.",
+        "My favorite browser is Google Chrome."
+    ],
     "json": {
         "full_name": "Howard Chung",
         "gender": "male",
@@ -10,14 +26,18 @@
         "birth_time": 726126840,
         "birth_city": "Hong Kong",
         "languages": ["en", "es", "zh"],
+        "bitcoin": "13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
+        "email": "howardc93@gmail.com",
         "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "card/board games", "planespotting"]
     },
-    "bitcoin": "13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
-    "email": "howardc93@gmail.com",
-    "welcome":[
-        "I'm Howard Chung, an undergraduate at Duke University.",
-        "I've attempted to design this site to be highly maintainable.  Duplication is eliminated and text strings are served from an external content file."
-    ],
+    "welcome": {
+        "heading": "Welcome!",
+        "content": [
+            "I'm an undergraduate at Duke University.",
+            "I've attempted to design this site to be highly maintainable.",
+            "Duplication is eliminated and text strings are served from an external content file."
+        ]
+    },
     "links": {
         "facebook": {
             "name": "Facebook",
@@ -41,6 +61,7 @@
         }
     },
     "educations": {
+        "heading": "Education",
         "all": [{
             "degree": "Bachelor of Science (BS)",
             "end_date": {
@@ -56,6 +77,8 @@
         }]
     },
     "positions": {
+        "heading": "Positions",
+
         "all": [{
             "company": {
                 "id": 1035,
@@ -132,6 +155,8 @@
         }]
     },
     "projects": {
+        "heading": "Projects",
+
         "all": [{
             "summary": ["Parses replays of Dota 2 games and provides stats for users."],
             "id": 203,
@@ -155,6 +180,7 @@
         }]
     },
     "skills": {
+        "heading": "Skills",
         "all": [{
             "id": 205,
             "skill": {
