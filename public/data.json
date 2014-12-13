@@ -26,7 +26,6 @@
         "birth_time": 726126840,
         "birth_city": "Hong Kong",
         "languages": ["en", "es", "zh"],
-        "bitcoin": "13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i",
         "email": "howardc93@gmail.com",
         "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "card/board games", "planespotting"]
     },
@@ -38,6 +37,10 @@
             "Duplication is eliminated and text strings are served from an external content file."
         ]
     },
+    "bitcoin":{
+        "heading":"Bitcoin",
+        "address":"13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i"
+    }
     "links": {
         "facebook": {
             "name": "Facebook",
