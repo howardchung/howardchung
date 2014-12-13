@@ -1,4 +1,7 @@
 {
+    "strings":{
+        "generate_resume":"Generate Resume"
+    },
     "facts": [
         "I like seafood, especially fish.",
         "This site is hosted by GitHub Pages.",
