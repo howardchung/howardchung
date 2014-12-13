@@ -39,7 +39,7 @@
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <div class="panel panel-default">
+                <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{data.welcome.heading}}</h3>
                     </div>
@@ -51,8 +51,15 @@
                             <small>{{data.json.full_name}}</small>
                         </blockquote>
                         <pre class="text-left">{{json}}</pre>
-                        <p id="bitcoin">{{data.json.bitcoin}}</p>
-                        <img src="https://blockchain.info/qr?size=200&data={{data.json.bitcoin}}" alt="{{data.json.bitcoin}}">
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{data.bitcoin.heading}}</h3>
+                    </div>
+                    <div class="panel-body text-center">
+                        <p>{{data.bitcoin.address}}</p>
+                        <img src="https://blockchain.info/qr?size=200&data={{data.bitcoin.address}}" alt="{{data.bitcoin.address}}">
                     </div>
                 </div>
             </div>
