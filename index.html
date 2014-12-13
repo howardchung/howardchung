@@ -11,6 +11,11 @@
     <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
     <script src="//cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js"></script>
     <script src="howard.js"></script>
+    <style>
+        .profile{
+            width:200px;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,7 +54,7 @@
                     </div>
                     <div class="panel-body text-center">
                         <p class="text-left" data-ng-repeat="x in data.welcome.content">{{x}}</p>
-                        <img src="public/profile.jpg" style="width:200px;" alt="{{data.json.full_name}}">
+                        <img class="profile" src="public/profile.jpg" alt="{{data.json.full_name}}">
                         <blockquote>
                             <p id="fact">{{random}}</p>
                             <small>{{data.json.full_name}}</small>
@@ -63,7 +68,7 @@
                     </div>
                     <div class="panel-body text-center">
                         <p>{{data.bitcoin.address}}</p>
-                        <img data-ng-src="https://blockchain.info/qr?size=200&amp;data={{data.bitcoin.address}}" alt="{{data.bitcoin.address}}">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-ng-src="https://blockchain.info/qr?size=200&amp;data={{data.bitcoin.address}}" alt="{{data.bitcoin.address}}">
                     </div>
                 </div>
             </div>
