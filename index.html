@@ -29,7 +29,11 @@
                     <ul class="nav navbar-nav">
                         <li data-ng-repeat="x in data.links"><a ng-href="{{x.url}}">{{x.name}}</a>
                         </li>
-                        <li class="navbar navbar-btn"><a ng-href="#" id="resume" class="btn btn-success">Generate Resume</a></li>
+                        <li>
+                        <p class="navbar-btn">
+                            <a ng-href="#" id="resume" class="btn btn-success">Generate Resume</a>
+                        </p>
+                        </li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
