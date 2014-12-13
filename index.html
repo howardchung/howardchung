@@ -23,13 +23,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="">{{data.json.full_name}}</a>
+                    <a class="navbar-brand" ng-href="">{{data.json.full_name}}</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li data-ng-repeat="x in data.links"><a href="{{x.url}}">{{x.name}}</a>
+                        <li data-ng-repeat="x in data.links"><a ng-href="{{x.url}}">{{x.name}}</a>
                         </li>
-                        <li><a href="#" id="resume">Resume</a></li>
+                        <li class="navbar navbar-btn"><a ng-href="#" id="resume" class="btn btn-success">Generate Resume</a></li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
@@ -59,7 +59,7 @@
                     </div>
                     <div class="panel-body text-center">
                         <p>{{data.bitcoin.address}}</p>
-                        <img src="https://blockchain.info/qr?size=200&data={{data.bitcoin.address}}" alt="{{data.bitcoin.address}}">
+                        <img src="https://blockchain.info/qr?size=200&amp;data={{data.bitcoin.address}}" alt="{{data.bitcoin.address}}">
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                 <h2>{{data.projects.heading}}</h2>
                 <div class='panel panel-success' data-ng-repeat="x in data.projects.all">
                     <div class='panel-heading'>
-                        <h3 class='panel-title'>{{x.name}} <a href="{{x.url}}">({{x.url}})</a></h3>
+                        <h3 class='panel-title'>{{x.name}} <a ng-href="{{x.url}}">({{x.url}})</a></h3>
                     </div>
                     <div class='panel-body'>
                         <ul data-ng-repeat="y in x.summary">
