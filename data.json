@@ -35,9 +35,7 @@
     "welcome": {
         "heading": "Welcome!",
         "content": [
-            "I'm an undergraduate at Duke University.",
-            "I've attempted to design this site to be highly maintainable.",
-            "Duplication is eliminated and text strings are served from an external content file."
+            "I'm an undergraduate at Duke University."
         ]
     },
     "bitcoin":{
