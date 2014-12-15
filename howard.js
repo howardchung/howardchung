@@ -1,5 +1,5 @@
         angular.module('howard', []).controller('howardController', function($scope, $http) {
-            $http.get("public/data.json").success(function(data) {
+            $http.get("data.json").success(function(data) {
                 console.log(data)
                 $scope.data = data;
                 $scope.random = data.facts[Math.floor(Math.random() * data.facts.length)];
