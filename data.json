@@ -3,8 +3,7 @@
         "generate_resume":"Generate Resume"
     },
     "facts": [
-        "I like seafood, especially fish.",
-        "This site is hosted by GitHub Pages.",
+        "I like seafood, particularly fish.",
         "I can't whistle or snap my fingers.",
         "My favorite brand of soy sauce is Kikkoman.",
         "I mine cryptocurrency.",
@@ -12,12 +11,11 @@
         "I dropped out of high school.",
         "My favorite film is Finding Nemo (2003).",
         "I know approximately the first hundred digits of pi.",
-        "I can say that I don't speak a language in 11 languages.",
+        "I can say that I don't speak a language in multiple languages.",
         "I prefer vim over emacs.",
         "I try to use the metric system whenever possible.",
-        "I frequently wear a black Nike hoodie.",
-        "My favorite data structure is the hash table.",
-        "My favorite browser is Google Chrome."
+        "I often wear a black Nike hoodie.",
+        "My favorite data structure is the hash table."
     ],
     "json": {
         "full_name": "Howard Chung",
@@ -39,7 +37,7 @@
         ]
     },
     "bitcoin":{
-        "heading":"Bitcoin",
+        "heading":"BTC",
         "address":"13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i"
     },
     "links": {
@@ -82,7 +80,6 @@
     },
     "positions": {
         "heading": "Positions",
-
         "all": [{
             "company": {
                 "id": 1035,
@@ -160,25 +157,20 @@
     },
     "projects": {
         "heading": "Projects",
-
         "all": [{
             "summary": ["Parses replays of Dota 2 games and provides stats for users."],
-            "id": 203,
             "name": "YASP",
             "url": "http://yasp.co"
         }, {
-            "summary": ["Computes the number of food points that a student should have during the semester.", "Automatically tracks balances and provides visualizations for users.", "Provides a budgeting tool to help manage food points."],
-            "id": 137,
+            "summary": ["Tool for helping Duke students manage food points", "Automatically tracks balances and provides visualizations.", "Provides budgeting and alert features."],
             "name": "FoodPoints+",
             "url": "http://foodpoints.herokuapp.com"
         }, {
             "summary": ["Generates Markov-chain random tweets from a user's tweet history."],
-            "id": 139,
             "name": "TweetBot",
             "url": "http://twittermarkov.herokuapp.com"
         }, {
             "summary": ["Developed for two Duke professors.", "Allows instructors to present grade feedback in a visual manner.", "Uses nodes and tags to allow students to filter and display grades interactively."],
-            "id": 83,
             "name": "FlowGhost",
             "url": "http://flowghost.herokuapp.com"
         }]
@@ -186,49 +178,34 @@
     "skills": {
         "heading": "Skills",
         "all": [{
-            "id": 205,
             "skill": {
                 "name": "Java"
             }
         }, {
-            "id": 206,
             "skill": {
                 "name": "Python"
             }
         }, {
-            "id": 207,
             "skill": {
                 "name": "Ruby on Rails"
             }
         }, {
-            "id": 208,
             "skill": {
                 "name": "C#"
             }
         }, {
-            "id": 210,
             "skill": {
                 "name": "Node.js"
             }
         }, {
-            "id": 211,
             "skill": {
                 "name": "JavaScript"
             }
         }, {
-            "id": 212,
             "skill": {
                 "name": "HTML/CSS"
             }
-        }, {
-            "id": 218,
-            "skill": {
-                "name": "SQL"
-            }
-        }, {
-            "skill": {
-                "name": "MongoDB"
-            }
-        }]
+        }
+        ]
     }
 }
