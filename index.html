@@ -78,7 +78,7 @@
                     </div>
                     <div class="panel-body">
                     <ul>
-                        <li>
+                        <li data-ng-repeat="x in data.projects.all">
                             <a data-ng-href="{{x.url}}">{{x.name}} - {{x.url}}</a>
                    <ul data-ng-repeat="y in x.summary">
                                     <li>{{y}}</li>
