@@ -6,16 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1">
 
-    <script src="//code.jquery.com/jquery-latest.min.js"></script>
-    <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
-
     <link href="//cdn.rawgit.com/twbs/bootstrap/master/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.rawgit.com/FortAwesome/Font-Awesome/master/css/font-awesome.min.css" rel="stylesheet">
-
-    <script src="//cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js"></script>
-
-    <script src="howard.js"></script>
     <link href="howard.css" rel="stylesheet">
+
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+    <script src="//cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js"></script>
+    <script src="howard.js"></script>
 
 </head>
 
@@ -47,17 +45,6 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="panel panel-warning">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">{{data.positions.heading}}</h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul>
-                            <li data-ng-repeat="x in data.positions.all">{{x.title}}, {{x.company.name}}</li>
-                        </ul>
-                    </div>
-                </div>
-
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{data.projects.heading}}</h3>
@@ -74,14 +61,12 @@
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-    <hr>
-    <div class="text-center">
-        <p>{{data.bitcoin.heading}}: {{data.bitcoin.address}}</p>
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-ng-src="https://blockchain.info/qr?size=100&amp;data={{data.bitcoin.address}}" alt="{{data.bitcoin.address}}">
-    </div>
+        <hr>
+        <div class="text-center">
+            <p>{{data.bitcoin.heading}}: {{data.bitcoin.address}}</p>
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-ng-src="https://blockchain.info/qr?size=100&amp;data={{data.bitcoin.address}}" alt="{{data.bitcoin.address}}">
+        </div>
     </div>
 </body>
 
