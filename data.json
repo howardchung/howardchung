@@ -15,36 +15,37 @@
         "My favorite data structure is the hash table.",
         "I'm a huge fan of pho.",
         "I don't like cheese.",
-        "I CAN believe it's not butter."
+        "I CAN believe it's not butter.",
+        "I develop software."
     ],
     "json": {
-        "full_name": "Howard Chung",
-        "gender": "male",
-        "height_cm": 177,
-        "right_handed": true,
-        "shoe_size": 11,
-        "blood_type": "",
-        "birth_time": 726126840,
-        "birth_city": "Hong Kong",
-        "languages": ["en", "es", "zh"],
+        "heading": "JSON",
+        "content": {
+            "full_name": "Howard Chung",
+            "gender": "male",
+            "height_cm": 177,
+            "right_handed": true,
+            "shoe_size": 11,
+            "blood_type": "",
+            "birth_time": 726126840,
+            "birth_city": "Hong Kong",
+            "languages": ["en", "es", "zh"],
+            "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "card/board games", "planespotting"]
+        }
+    },
+    "contact": {
+        "phone": 5035679740,
         "email": "howardc93@gmail.com",
-        "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "card/board games", "planespotting"]
-    },
-    "welcome": {
-        "heading": "Welcome!",
-        "content": [
-            "I'm Howard Chung, a software developer.",
-            "A random fact is displayed in the heading above on each page load.",
-            "You cn find some of my projects and industry work here."
-        ]
-    },
-    "bitcoin":{
-        "heading":"BTC",
-        "address":"13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i"
+        "url": "http://howardchung.net"
     },
     "links": {
+        "bitcoin": {
+            "name": "Bitcoin",
+            "icon": "fa fa-bitcoin",
+            "url": "https://blockchain.info/address/13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i"
+        },
         "facebook": {
-            "name": "facebook",
+            "name": "Facebook",
             "icon": "fa fa-facebook",
             "url": "http://facebook.com/howardc93"
         },
@@ -62,11 +63,6 @@
             "name": "GitHub",
             "icon": "fa fa-github",
             "url": "http://github.com/howardc93"
-        },
-        "website": {
-            "name": "Website",
-            "icon": "fa fa-globe",
-            "url": "http://www.howardchung.net"
         }
     },
     "educations": {
@@ -162,26 +158,6 @@
             "title": "Document Services Intern"
         }]
     },
-    "projects": {
-        "heading": "Projects",
-        "all": [{
-            "summary": ["Parses replays of Dota 2 games and provides stats for users."],
-            "name": "YASP",
-            "url": "http://yasp.co"
-        }, {
-            "summary": ["Tool for helping Duke students manage food points", "Automatically tracks balances and provides visualizations.", "Provides budgeting and alert features."],
-            "name": "FoodPoints+",
-            "url": "http://foodpoints.herokuapp.com"
-        }, {
-            "summary": ["Generates Markov-chain random tweets from a user's tweet history."],
-            "name": "TweetBot",
-            "url": "http://twittermarkov.herokuapp.com"
-        }, {
-            "summary": ["Developed for two Duke professors.", "Allows instructors to present grade feedback in a visual manner.", "Uses nodes and tags to allow students to filter and display grades interactively."],
-            "name": "FlowGhost",
-            "url": "http://flowghost.herokuapp.com"
-        }]
-    },
     "skills": {
         "heading": "Skills",
         "all": [{
@@ -212,7 +188,6 @@
             "skill": {
                 "name": "HTML/CSS"
             }
-        }
-        ]
+        }]
     }
 }

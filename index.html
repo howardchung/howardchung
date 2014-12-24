@@ -14,14 +14,14 @@
     <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
     <script src="//cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js"></script>
     <script src="howard.js"></script>
-
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <img class="profile img-rounded" src="profile.jpg" alt="{{data.json.full_name}}">
-            <h1>{{data.json.full_name}} <small>{{random}}</small></h1>
+            <a href=""><img class="profile img-rounded" src="profile.jpg" alt="{{data.json.full_name}}">
+            </a>
+            <h1>{{data.json.content.full_name}} <small>{{random}}</small></h1>
             <a data-ng-href="#" id="resume" class="btn btn-success resume"><i class="fa fa-file"></i></a>
             <span data-ng-repeat="x in data.links">
                 <a data-ng-href="{{x.url}}" class="btn btn-default"><i class="{{x.icon}}"></i></a>
@@ -32,15 +32,10 @@
             <div class="col-md-6">
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title">{{data.welcome.heading}}</h3>
+                        <h3 class="panel-title">{{data.json.heading}}</h3>
                     </div>
                     <div class="panel-body">
-                        <ul>
-                            <li data-ng-repeat="x in data.welcome.content">{{x}}</li>
-                        </ul>
-                        <p>
-                            <pre class="text-left">{{json}}</pre>
-                        </p>
+                        <pre class="text-left">{{json}}</pre>
                     </div>
                 </div>
             </div>
@@ -52,10 +47,8 @@
                     <div class="panel-body">
                         <ul>
                             <li data-ng-repeat="x in data.projects.all">
-                                <a data-ng-href="{{x.url}}">{{x.name}}</a>
-                                <ul data-ng-repeat="y in x.summary">
-                                    <li>{{y}}</li>
-                                </ul>
+                                <a data-ng-href="{{x.html_url}}">{{x.name}}</a>
+                                <small> {{x.description}}</small>
                             </li>
                         </ul>
                     </div>
@@ -63,10 +56,6 @@
             </div>
         </div>
         <hr>
-        <div class="text-center">
-            <p>{{data.bitcoin.heading}}: {{data.bitcoin.address}}</p>
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-ng-src="https://blockchain.info/qr?size=100&amp;data={{data.bitcoin.address}}" alt="{{data.bitcoin.address}}">
-        </div>
     </div>
 </body>
 
