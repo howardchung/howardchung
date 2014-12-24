@@ -1,9 +1,7 @@
 .profile {
-    height: 100px;
     margin: 5px;
     float: left;
 }
-
-.resume {
-    float:right;
+#links a {
+    margin: 1px;
 }

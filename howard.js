@@ -18,6 +18,18 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
                 start = (start + 1) % data.facts.length;
                 setTimeout(randomFact, 5000);
             })();
+            for (var key in data.links) {
+                var l = data.links[key]
+                $("#links").append($("<a>", {
+                    href: l.url,
+                    class: "btn btn-default",
+                    html: "<i class='" + l.icon + "'></i>",
+                    id: key,
+                    title: l.name,
+                    "data-toggle": "tooltip"
+                }));
+            }
+            $('[data-toggle="tooltip"]').tooltip()
             $('#resume').click(function(e) {
                 function textWithPad(doc, size, text, indent) {
                     y += size / 2
@@ -25,7 +37,6 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
                     doc.setFontSize(size)
                     doc.text(indent, y, text)
                 }
-                e.preventDefault();
                 var doc = new jsPDF();
                 var y = 0;
                 var secBreak = 10;
@@ -35,29 +46,33 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
                 })
                 textWithPad(doc, 18, data.educations.heading)
                 data.educations.all.forEach(function(e) {
-                    textWithPad(doc, 10, [e.school_name, e.end_date.year].join())
-                    textWithPad(doc, 8, [e.degree, e.field_of_study].join(), 10)
+                    textWithPad(doc, 12, [e.school_name, e.end_date.year].join())
+                    textWithPad(doc, 10, [e.degree, e.field_of_study].join(), 10)
                 })
                 textWithPad(doc, 18, data.positions.heading)
                 data.positions.all.forEach(function(e) {
-                    textWithPad(doc, 10, [e.title, e.company.name, e.start_date.year].join())
+                    textWithPad(doc, 12, [e.title, e.company.name, e.start_date.year].join())
                     e.summary.forEach(function(f) {
-                        textWithPad(doc, 8, f, 10)
+                        textWithPad(doc, 10, f, 10)
                     })
                 })
                 textWithPad(doc, 18, data.projects.heading)
                 data.projects.all.forEach(function(e) {
-                    textWithPad(doc, 10, [e.name, e.html_url].join())
-                    textWithPad(doc, 8, e.description, 10)
+                    textWithPad(doc, 12, [e.name, e.homepage || e.html_url].join(" - "))
+                    textWithPad(doc, 10, e.description, 10)
 
                 })
                 textWithPad(doc, 18, data.skills.heading)
                 data.skills.all.forEach(function(e) {
-                    textWithPad(doc, 10, e.skill.name, 10)
+                    textWithPad(doc, 10, e.skill.name)
                 })
                 doc.output('dataurlnewwindow');
+                return false;
             });
         })
-
     });
-})
+}).filter('fromNow', function() {
+    return function(date) {
+        return moment(date).fromNow();
+    }
+});

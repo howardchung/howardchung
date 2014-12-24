@@ -12,24 +12,25 @@
 
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+    <script src="//cdn.rawgit.com/twbs/bootstrap/master/dist/js/bootstrap.min.js"></script>
     <script src="//cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js"></script>
+    <script src="//cdn.rawgit.com/moment/moment/develop/min/moment.min.js"></script>
     <script src="howard.js"></script>
 </head>
 
 <body>
     <div class="container">
+        <hr>
         <div class="row">
-            <a href=""><img class="profile img-rounded" src="profile.jpg" alt="{{data.json.full_name}}">
-            </a>
-            <h1>{{data.json.content.full_name}} <small id="random"></small></h1>
-            <a data-ng-href="#" id="resume" class="btn btn-success resume"><i class="fa fa-file"></i></a>
-            <span data-ng-repeat="x in data.links">
-                <a data-ng-href="{{x.url}}" class="btn btn-default"><i class="{{x.icon}}"></i></a>
-            </span>
+            <div class="col-md-12">
+                <img class="img-rounded profile" height=120 src="profile.jpg" alt="{{data.json.full_name}}">
+                <div id="links"></div>
+                <h1>{{data.json.content.full_name}} <small id="random"></small></h1>
+            </div>
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{data.json.heading}}</h3>
@@ -39,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{data.projects.heading}}</h3>
@@ -47,8 +48,10 @@
                     <div class="panel-body">
                         <ul>
                             <li data-ng-repeat="x in data.projects.all">
-                                <a data-ng-href="{{x.html_url}}">{{x.name}}</a>
+                                <a data-ng-href="{{x.homepage || x.html_url}}">{{x.name}}</a>
                                 <small> {{x.description}}</small>
+                                <span class="label label-default">{{x.language}}</span>
+                                <span class="label label-success">{{x.pushed_at | fromNow}}</span>
                             </li>
                         </ul>
                     </div>

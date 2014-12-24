@@ -7,13 +7,12 @@
         "I sometimes wear glasses.",
         "I dropped out of high school.",
         "My favorite film is Finding Nemo (2003).",
-        "I've memorized approximately the first hundred digits of pi.",
-        "I can say that I don't speak a language in multiple languages.",
+        "I know the first hundred digits of pi.",
+        "I can say I don't speak a language in many languages.",
         "I prefer vim over emacs.",
-        "I try to use the metric system whenever possible.",
         "I often wear a black Nike hoodie.",
         "My favorite data structure is the hash table.",
-        "I'm a huge fan of pho.",
+        "One of my favorite foods is pho.",
         "I don't like cheese.",
         "I CAN believe it's not butter.",
         "I develop software."
@@ -63,6 +62,11 @@
             "name": "GitHub",
             "icon": "fa fa-github",
             "url": "http://github.com/howardc93"
+        },
+        "resume": {
+            "name": "Resume",
+            "icon": "fa fa-file",
+            "url": "javascript:;"
         }
     },
     "educations": {
