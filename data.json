@@ -98,7 +98,7 @@
                 "month": 5,
                 "year": 2014
             },
-            "summary": ["Engineer on SQL Azure team.", "Enabled incremental build to provide up to a 15x speed improvement.", "Improved runner security with dynamic certificates and randomly generated passwords.", "Tracked down and repaired unit test failures."],
+            "summary": ["Software engineer on SQL Azure team.", "Improved build system to provide up to 15x speed.", "Improved runner security with dynamic certificates and randomly generated passwords."],
             "title": "Software Development Engineer in Test"
         }, {
             "company": {
@@ -114,7 +114,7 @@
                 "month": 1,
                 "year": 2012
             },
-            "summary": ["Graded assignments.", "Staffed office hours for students.", "Led lab sections of 15-30 students."],
+            "summary": ["Graded student assignments.", "Staffed office hours for student help.", "Led lab sections of 15-30 students."],
             "title": "Undergraduate Teaching Assistant"
         }, {
             "company": {
@@ -134,7 +134,7 @@
                 "month": 5,
                 "year": 2013
             },
-            "summary": ["Developed Rails web interface for Cyclops, a tool for tuning distributed data processing systems.", "Improved Cyclops algorithm by adding timing metrics for each stage.", "Wrote shell scripts to maintain and deploy Storm across a 15-node cluster."],
+            "summary": ["Developed Rails web interface for Cyclops, a tuning tool for distributed systems.", "Improved Cyclops algorithm by adding timing metrics for each stage."],
             "title": "Research Assistant"
         }, {
             "company": {
@@ -154,7 +154,7 @@
                 "month": 5,
                 "year": 2012
             },
-            "summary": ["Developed graphical Java (Swing) utilities for LPRing jobs to printers.", "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."],
+            "summary": ["Developed graphical Java utilities for sending jobs to printers.", "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."],
             "title": "Document Services Intern"
         }]
     },
