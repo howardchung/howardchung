@@ -21,7 +21,7 @@
         <div class="row">
             <a href=""><img class="profile img-rounded" src="profile.jpg" alt="{{data.json.full_name}}">
             </a>
-            <h1>{{data.json.content.full_name}} <small>{{random}}</small></h1>
+            <h1>{{data.json.content.full_name}} <small id="random"></small></h1>
             <a data-ng-href="#" id="resume" class="btn btn-success resume"><i class="fa fa-file"></i></a>
             <span data-ng-repeat="x in data.links">
                 <a data-ng-href="{{x.url}}" class="btn btn-default"><i class="{{x.icon}}"></i></a>

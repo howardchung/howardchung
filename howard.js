@@ -9,8 +9,15 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
                 "all": projects
             };
             $scope.data = data;
-            $scope.random = data.facts[Math.floor(Math.random() * data.facts.length)];
             $scope.json = JSON.stringify(data.json.content, null, 4)
+            var start = Math.floor(Math.random() * data.facts.length);
+            (function randomFact() {
+                $("#random").fadeOut(500, function() {
+                    $(this).html(data.facts[start])
+                }).fadeIn(500);
+                start = (start + 1) % data.facts.length;
+                setTimeout(randomFact, 5000);
+            })();
             $('#resume').click(function(e) {
                 function textWithPad(doc, size, text, indent) {
                     y += size / 2
@@ -40,7 +47,7 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
                 })
                 textWithPad(doc, 18, data.projects.heading)
                 data.projects.all.forEach(function(e) {
-                    textWithPad(doc, 10, [e.name,e.html_url].join())
+                    textWithPad(doc, 10, [e.name, e.html_url].join())
                     textWithPad(doc, 8, e.description, 10)
 
                 })
