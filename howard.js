@@ -12,9 +12,9 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
             $scope.json = JSON.stringify(data.json.content, null, 4)
             var start = Math.floor(Math.random() * data.facts.length);
             (function randomFact() {
-                $("#random").fadeOut(500, function() {
+                $("#random").fadeOut(function() {
                     $(this).html(data.facts[start])
-                }).fadeIn(500);
+                }).fadeIn();
                 start = (start + 1) % data.facts.length;
                 setTimeout(randomFact, 5000);
             })();
