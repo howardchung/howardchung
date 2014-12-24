@@ -23,7 +23,8 @@
             "I'm Howard Chung, a software engineer with experience at Microsoft, Duke University, and Moda Health.",
             "On this site, you can find a JSON summary of me, random facts in the header above, and some of the software projects I've been involved with.",
             "Project data comes directly from the GitHub API, so it updates dynamically and contains cool stats like language and last commit time.",
-            "I've designed this site to serve all its content strings from an external data file, which keeps the source lean."
+            "I've designed this site to serve all its content strings from an external data file, which keeps the source lean.",
+            "The resume link will generate a PDF on-demand using JavaScript.  No static .pdf files here!"
         ]
     },
     "json": {
