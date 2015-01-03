@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Oregon State University (39)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Molly Halstead&lt;br&gt;Kaitlyn Eyman&lt;br&gt;Kamilah Buker&lt;br&gt;Melissa Choy&lt;br&gt;Kyle Garske&lt;br&gt;Amy McCarthy&lt;br&gt;Brian Morgan&lt;br&gt;Kyler Critchett&lt;br&gt;Grace Burleson (Honors)&lt;br&gt;Cory Zielinski&lt;br&gt;Kelly Mohammed&lt;br&gt;Riley Nelson&lt;br&gt;Evan McGrew&lt;br&gt;Emily Oldfield&lt;br&gt;Cole Bonzer&lt;br&gt;Tyler Kluempke&lt;br&gt;Danna Safadi&lt;br&gt;Kat Panaccione&lt;br&gt;Lucas Lovell&lt;br&gt;Trenton  Lovell&lt;br&gt;Emily Hansen&lt;br&gt;Kendall Knotz&lt;br&gt;Satoshi Kosaka&lt;br&gt;Nicole Elsmore&lt;br&gt;Dani Meyer&lt;br&gt;John Richter&lt;br&gt;Ibrahem Al-Jilani&lt;br&gt;Jace Fry&lt;br&gt;Hannah Bellairs&lt;br&gt;Haley Hunt&lt;br&gt;Katie Stonesifer&lt;br&gt;Jacob Hartung&lt;br&gt;Olivia Gonzales&lt;br&gt;Abby Komin&lt;br&gt;Haley Rife&lt;br&gt;Caroline Begins&lt;br&gt;Lauren Henneford&lt;br&gt;Mitch Tohlen&lt;br&gt;Ojes Athyantha&lt;br&gt;</description>
+  <Point>
+    <coordinates>-123.2789766,44.5628538</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Oregon (39)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Sydney Saunders&lt;br&gt;Juliauna Greene&lt;br&gt;Jordan Kuck&lt;br&gt;Steve Lantz&lt;br&gt;Jessa Cassezza&lt;br&gt;Taylor Johnson&lt;br&gt;Calvin Lee&lt;br&gt;Hillary Murphy&lt;br&gt;Trent Fitzgerald&lt;br&gt;Julian Shamloo&lt;br&gt;David Swanson (Honors)&lt;br&gt;Elsa Byrholdt&lt;br&gt;Tyler Weber&lt;br&gt;Katherine Casey&lt;br&gt;Louai Naboulsi&lt;br&gt;Amir Kamali&lt;br&gt;Jessica Glackin&lt;br&gt;Dallas Smelley&lt;br&gt;Dominic Wasson&lt;br&gt;Tiara Prince&lt;br&gt;Kathy Le&lt;br&gt;Kaley Vincent&lt;br&gt;Kathy Nam&lt;br&gt;Sophie Sichel&lt;br&gt;Andrew Lubash&lt;br&gt;Tina Wang&lt;br&gt;Jeff Fan&lt;br&gt;Diana Dragnea&lt;br&gt;Leila Hawana&lt;br&gt;Alison Wong (Honors)&lt;br&gt;Joe Packer&lt;br&gt;Santrell Nadarajah&lt;br&gt;Mary Ingram&lt;br&gt;Shelby Bradley&lt;br&gt;Joey Dulley&lt;br&gt;Minsu Kim&lt;br&gt;Andrew Mohr&lt;br&gt;Gabby Lindquist&lt;br&gt;Frank Leng&lt;br&gt;</description>
+  <Point>
+    <coordinates>-123.0702749,44.0441731</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Portland Community College (10)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Alan Schmidt&lt;br&gt;Andrew Flores&lt;br&gt;Marshall Peak&lt;br&gt;Austin Perry&lt;br&gt;Perry Lampman&lt;br&gt;Megan Bulman&lt;br&gt;Lacey Shumway&lt;br&gt;Alex Mishkin&lt;br&gt;Mia Sideras&lt;br&gt;Emily Crowe-Lawler&lt;br&gt;                                                                                      </description>
+  <Point>
+    <coordinates>-122.9777096,45.5200349</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Portland State University (10)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Allison Greene&lt;br&gt;Nageen Sarpak&lt;br&gt;Grace Song&lt;br&gt;Ethan Drakeley&lt;br&gt;Andrew Kaneta (Honors)&lt;br&gt;Chloe Deeds&lt;br&gt;Rod Vidomskiy&lt;br&gt;Jamaal Qutub&lt;br&gt;Audrey Farr&lt;br&gt;Kourt Bacon&lt;br&gt;                                                                                           </description>
+  <Point>
+    <coordinates>-122.6839178,45.5103332</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Lane Community College (6)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Michael Maisonville&lt;br&gt;Kylee Swanson&lt;br&gt;Derek Keller&lt;br&gt;Ryan Howard&lt;br&gt;Blake Montague&lt;br&gt;Miguel Rivera&lt;br&gt;                                                                                                  </description>
+  <Point>
+    <coordinates>-123.0342977,44.0106150</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Washington (4)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Rian Morgan&lt;br&gt;Chris Chen (Honors)&lt;br&gt;Kirtana Vedire&lt;br&gt;Erik Steringer&lt;br&gt;                                                                                                        </description>
+  <Point>
+    <coordinates>-122.3081762,47.6516448</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Concordia University (3)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Tiffany Wong&lt;br&gt;Della Simerly&lt;br&gt;Prell Prasertsri&lt;br&gt;                                                                                                           </description>
+  <Point>
+    <coordinates>-122.6377110,45.5684479</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Eastern Oregon University (3)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Lyssa Greene&lt;br&gt;Emily Palmer&lt;br&gt;Sarah Palmer&lt;br&gt;                                                                                                           </description>
+  <Point>
+    <coordinates>-118.0916528,45.3176489</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Brigham Young University (Idaho) (2)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Maddie Allred&lt;br&gt;Carly McDermott&lt;br&gt;                                                                                                              </description>
+  <Point>
+    <coordinates>-111.7835149,43.8141883</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Brigham Young University (Provo) (2)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Nikki Barney&lt;br&gt;Morgan Williams&lt;br&gt;                                                                                                              </description>
+  <Point>
+    <coordinates>-111.6477199,40.2545445</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Arizona (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Nick Rupp&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-110.9454478,32.2402988</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Pacific University (2)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Vicky Nguyen&lt;br&gt;Lora Ross&lt;br&gt;                                                                                                              </description>
+  <Point>
+    <coordinates>-123.1102014,45.5225699</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of San Francisco (2)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Taylor Darneille&lt;br&gt;Christina Nguyen&lt;br&gt;                                                                                                              </description>
+  <Point>
+    <coordinates>-122.4150840,37.8009226</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Utah (2)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Will Taylor&lt;br&gt;Alyssa Black&lt;br&gt;                                                                                                              </description>
+  <Point>
+    <coordinates>-111.8389726,40.7585639</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Pacific Lutheran University (2)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Lindsay Crook&lt;br&gt;Thomas Kim&lt;br&gt;                                                                                                              </description>
+  <Point>
+    <coordinates>-122.4428706,47.1458016</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>American University (2)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Alex Dickel&lt;br&gt;Daniel Kim&lt;br&gt;                                                                                                              </description>
+  <Point>
+    <coordinates>-77.0890706,38.9379362</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Butte-Glenn Community College (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Kyle Grimes&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-121.5563590,39.5137752</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>California Maritime Academy (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Erik Olson&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-122.2303240,38.0692100</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Carroll College (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Jared Howes&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-112.0384696,46.6017647</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>College of the Siskiyous (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Hamoudi Shaer&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-122.3898162,41.4115433</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Emily Carr University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Becca Keithley&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-123.1331737,49.2703995</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Fashion Institute of Design &amp; Merchandising (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Kaitlin Mount&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-118.2605608,34.0437423</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>George Fox University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Eric Lorenzen&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-122.9665737,45.3048828</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Grand Canyon University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Chloe Killingsworth&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-112.1298486,33.5122747</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Lewis &amp; Clark College (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Loren Naldoza&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-122.6722526,45.4498973</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Oregon College of Arts and Crafts (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Liz Koopman&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-122.7611751,45.5112276</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Roosevelt University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Soukayna Houdroge&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-87.6251904,41.8763509</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Saint John's University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Austin Parker&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-94.3941639,45.5813883</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>San Diego State University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Taylor Lakey&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-117.0705820,32.7750242</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Stanford University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Ryoko Hamaguchi&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-122.1689284,37.4327599</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Lackland Air Force Base (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Trent Smith&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-98.5811111,29.3841667</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>United States Military Academy (West Point) (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Maki Sanders&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-74.0182610,41.3596453</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Colorado, Boulder (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Lainey Nash&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-105.266388,40.005169</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Idaho (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Kelsey Hogue&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-117.0166012,46.7281089</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Willamette University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Samantha Benetti&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-123.0310037,44.9350720</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>The Ohio State University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Annelise Wittenberg&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-83.0307670,40.0126385</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Yale University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Mat�as Anaya&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-72.9282618,41.3133431</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Western Oregon University (2)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Kimmie Carrie&lt;br&gt;Greg McKelvey&lt;br&gt;                                                                                                              </description>
+  <Point>
+    <coordinates>-123.2398069,44.8527095</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Southern Oregon University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Sarah Lopez&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-122.8702890,42.3261140</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of California, Berkeley (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Nikta Moradi&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-122.2455364,37.8754404</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Loyola Marymount University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Isabel Gonzaga&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-118.4185009,33.9698156</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Scripps College (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Zoe Jacobs&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-117.7101414,34.1039652</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Princeton University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Elizabeth Paul&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-74.6546816,40.3445508</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Cincinnati (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Tiffanie Yun&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-84.5143540,39.1321118</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Fordham University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Jenny Park&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-73.8856373,40.8616488</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Florida (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Gabi Oliveira&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-82.3445109,29.6409939</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Creighton University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Augusta Herman&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-95.9477933,41.2659128</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Reed College (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Lindsey Baker&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-122.6335094,45.4823931</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Southern California (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Sarah Bergstrom&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-118.2862815,34.0227423</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Boston University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Tara Dagostino&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-71.1047446,42.3495657</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Grinnell College (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Hailey Speck&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-92.7197726,41.7508670</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Pittsburgh (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Trevor Leong&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-79.6643355,41.6296609</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Syracuse University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Nathan Chong&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-76.1348944,43.0381611</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Oregon Institute of Technology (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Anita Chrisdean&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-121.7850506,42.2572761</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Biola University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Monica Kim&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-118.0157510,33.9050152</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of California, Davis (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Helen Lee&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-121.7554897,38.5397667</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Rochester (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Alice Kim&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-77.6292697,43.1295933</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Colburn Conservatory (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Natalie Yu&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-118.2498391,34.0539664</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Royal Holloway, University of London (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Izabella Orzechowska&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-0.1302386,51.5207790</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Columbia Basin College (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Jake Azevedo&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-119.1234385,46.2516618</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Utah Valley University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Jordan Gomez&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-111.7122789,40.2776626</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>Lynn University (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Elyse Fleck&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-80.1275052,26.3827858</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of Hawaii, Manoa (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Ahmad Karout&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-157.8171335,21.2968637</coordinates>
+  </Point>
+</Placemark>
+<Placemark>
+  <Style>
+    <IconStyle>
+      <Icon>
+        <href>http://www.multiplottr.com/images/GoogleMapsMarkers/REDMarker.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <name>University of British Columbia (1)</name>
+  <description>&lt;/a&gt;&lt;br&gt;Patricia Billette&lt;br&gt;                                                                                                                 </description>
+  <Point>
+    <coordinates>-123.2484990,49.2634410</coordinates>
+  </Point>
+</Placemark>
+</Document>
+</kml>
