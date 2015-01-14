@@ -73,6 +73,6 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
     });
 }).filter('fromNow', function() {
     return function(date) {
-        return moment(date).fromNow();
+        return "updated " + moment(date).fromNow();
     }
 });
