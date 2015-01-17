@@ -29,7 +29,6 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
                     "data-toggle": "tooltip"
                 }));
             }
-            $('[data-toggle="tooltip"]').tooltip()
             $('#resume').click(function(e) {
                 function textWithPad(doc, size, text, indent) {
                     y += size / 2
