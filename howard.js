@@ -1,6 +1,6 @@
 angular.module('howard', []).controller('howardController', function($scope, $http) {
     $http.get("data.json").success(function(data) {
-        $http.get("https://api.github.com/users/howardc93/subscriptions").success(function(projects) {
+        $http.get("https://api.github.com/users/howardc93/starred").success(function(projects) {
             projects.sort(function(a, b) {
                 return new Date(b.created_at) - new Date(a.created_at);
             })
