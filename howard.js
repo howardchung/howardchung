@@ -57,7 +57,7 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
                 })
                 textWithPad(doc, 18, data.projects.heading)
                 data.projects.all.forEach(function(e) {
-                    textWithPad(doc, 12, [e.name, e.homepage || e.html_url].join(" - "))
+                    textWithPad(doc, 12, [e.name, e.html_url].join(" - "))
                     textWithPad(doc, 10, e.description, 10)
 
                 })
