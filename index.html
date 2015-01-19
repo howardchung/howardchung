@@ -59,11 +59,11 @@
                     <div class="panel-body">
                         <ul>
                             <li data-ng-repeat="x in data.projects.all">
-                                <a data-ng-href="{{x.html_url}}">{{x.name}}</a>
+                                <a data-ng-href="{{x.homepage || x.html_url}}">{{x.name}}</a>
                                 <small> {{x.description}}</small>
                                 <span class="label label-default">{{x.language}}</span>
                                 <span class="label label-success">{{x.pushed_at | fromNow}}</span>
-                                <span class="label label-info"><a href="{{x.homepage}}">Demo</a></span>
+                                <span class="label label-info"><a href="{{x.html_url}}">Source</a></span>
                             </li>
                         </ul>
                     </div>
