@@ -61,7 +61,7 @@
                             <li data-ng-repeat="x in data.projects.all">
                                 <a data-ng-href="{{x.homepage || x.html_url}}">{{x.name}}</a>
                                 <small> {{x.description}}</small>
-                                <span class="label label-danger"><a href="{{x.html_url}}">{{x.language}}</a></span>
+                                <span class="label label-warning"><a href="{{x.html_url}}">{{x.language}}</a></span>
                                 <span class="label label-success">{{x.pushed_at | fromNow}}</span>
                             </li>
                         </ul>
