@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Facebook Friend Statistics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//cdn.rawgit.com/twbs/bootstrap/master/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    /* Custom container */
+    
+    .container {
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+    #visualization {
+      border: 2px solid;
+      border-radius: 25px;
+    }
+    node {
+      stroke: #fff;
+      stroke-width: 1.5px;
+    }
+    .link {
+      stroke: #999;
+      stroke-opacity: .6;
+    }
+    text {
+      fill: #000;
+      font: 24px sans-serif;
+      pointer-events: none;
+    }
+    div.tooltip {
+      position: absolute;
+      text-align: center;
+      padding: 2px;
+      font: 16px sans-serif;
+      background: lightsteelblue;
+      border: 0px;
+      border-radius: 8px;
+      pointer-events: none;
+    }
+  </style>
+  <script src='//cdn.rawgit.com/mbostock/d3/master/d3.min.js'></script>
+  <script>
+    
+    window.fbAsyncInit = function() {
+      // init the FB JS SDK
+      FB.init({
+        appId: '317752955022107', // App ID from the app dashboard
+        status: true, // Check Facebook Login status
+        cookie: true,
+        xfbml: true // Look for social plugins on the page
+      });
+
+      FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+          //generateGraph();
+          generateIntroText();
+          generateStats();
+        }
+      });
+
+      FB.Event.subscribe('auth.login', function(response) {
+        window.location.reload();
+      });
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/all.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function generateGraph() {
+      document.getElementById("wait").innerHTML = "Processing...";
+
+      var graph = {};
+
+      FB.api('/me/friends', function(response) {
+        console.log(response);
+        // Construct a mapping of IDs to friends (we might want this later).
+        var friends = response.data.reduce(function(acc, x) {
+          acc[x.id] = x.name;
+          return acc;
+        }, {});
+
+        // Extract the list of friend IDs.
+        var fids = Object.keys(friends);
+
+        // Add some nodes to the graph.
+        var nodes = fids.map(function(fid) {
+          return {
+            id: fid,
+            name: friends[fid]
+          }
+        });
+
+        FB.api({
+            method: 'fql.query',
+            query: 'SELECT uid1, uid2 FROM friend WHERE uid1 IN (SELECT uid2 FROM friend WHERE uid1=me()) AND uid2 IN (SELECT uid2 FROM friend WHERE uid1=me())'
+          },
+          function(response) {
+            // Build a list of edges from the relations. D3.js needs us to store
+            // them as indexes of nodes in the nodes list.
+            var links = response.map(function(rel) {
+              return {
+                source: fids.indexOf(rel.uid1),
+                target: fids.indexOf(rel.uid2)
+              };
+            });
+
+            console.log(nodes);
+            console.log(links);
+
+            var color = d3.scale.category10();
+            var width = 900;
+            var height = 900;
+            // Create a force layout to display nodes.
+            var force = d3.layout.force()
+              .size([width, height])
+              .charge(-25)
+              .linkDistance(15);
+
+            var svg = d3.select("#visualization").append("svg")
+              .attr("width", width)
+              .attr("height", height);
+
+            //add the tooltips
+            var div = d3.select("#visualization").append("div")
+              .attr("class", "tooltip")
+              .style("opacity", 0);
+
+            force
+              .nodes(nodes)
+              .links(links);
+
+            var link = svg.selectAll(".link")
+              .data(links)
+              .enter().append("line")
+              .attr("class", "link");
+
+            // define the nodes
+            var node = svg.selectAll("node")
+              .data(nodes)
+              .enter()
+              .append("g")
+              .attr("class", "node")
+              .call(force.drag);
+
+            node
+              .append("circle")
+              .style("fill", function(d) {
+                return color(d.id % 10);
+              })
+              .attr("r", 4);
+
+            //add names
+            node.on("mouseover", function(d) {
+                div.transition()
+                  .duration(200)
+                  .style("opacity", .9);
+                div.html(d.name)
+                  .style("left", (d3.event.pageX) + "px")
+                  .style("top", (d3.event.pageY - 28) + "px");
+              })
+              .on("mouseout", function(d) {
+                div.transition()
+                  .duration(500)
+                  .style("opacity", 0);
+              });
+
+            force.on("tick", function() {
+              link.attr("x1", function(d) {
+                  return d.source.x;
+                })
+                .attr("y1", function(d) {
+                  return d.source.y;
+                })
+                .attr("x2", function(d) {
+                  return d.target.x;
+                })
+                .attr("y2", function(d) {
+                  return d.target.y;
+                });
+
+              node
+                .attr("transform", function(d) {
+                  return "translate(" + d.x + "," + d.y + ")";
+                });
+            });
+
+            force.start();
+            document.getElementById("wait").innerHTML = "";
+
+          });
+      });
+    }
+
+    function generateIntroText() {
+      //generate the intro text
+      FB.api('/me', function(response) {
+        var name = response.name;
+        var profile_pic = "http://graph.facebook.com/" + response.id + "/picture?type=large";
+        var el = document.getElementById('intro');
+        var htmlString = "";
+        htmlString += '<h3>Your name is ' + name + '.<h3>';
+        htmlString += '<img src="' + profile_pic + '"></img>';
+        el.innerHTML = htmlString;
+      });
+    }
+
+    function generateStats() {
+      FB.api('/me/friends?fields=first_name,last_name,name,gender', function(response) {
+        console.log(response)
+        var htmlString = "";
+        var el = document.getElementById('stats');
+
+        var fullNames = [];
+        var firstNames = [];
+        var lastNames = [];
+        var palindromes = [];
+        var palinIds = [];
+        var genders = {};
+        var mostMutFriends = 0;
+        var longest = 0;
+        var shortest = 0;
+        var mostVowels = 0;
+        var leastVowels = 0;
+
+        for (var i = 0; i < response.data.length; i++) {
+          var friendInfo = response.data[i];
+          if (!genders[friendInfo.gender]) {
+            genders[friendInfo.gender] = 0;
+          }
+          genders[friendInfo.gender] += 1;
+
+          var friendId = friendInfo.id;
+          var fullName = friendInfo.name;
+          fullNames.push(fullName);
+          var firstName = friendInfo.first_name;
+          firstNames.push(firstName);
+          var lastName = friendInfo.last_name;
+          lastNames.push(lastName);
+
+          //lowercase the first name for palindrome check
+          firstName = firstName.toLowerCase();
+          var revFirstName = firstName.split("").reverse().join("");
+
+          if (revFirstName === firstName) {
+            palindromes.push(fullName);
+            palinIds.push(friendId);
+          }
+
+        }
+        //TODO create maps of names to stats, return top 5 or 10 in collapsible pane
+        //figure out longest, shortest, most least vowels
+        for (var i = 0; i < fullNames.length; i++) {
+          if (fullNames[i].length > fullNames[longest].length) {
+            longest = i;
+          }
+          if (fullNames[i].length < fullNames[shortest].length) {
+            shortest = i;
+          }
+          if (countVowels(fullNames[i]) > countVowels(fullNames[mostVowels])) {
+            mostVowels = i;
+          }
+          if (countVowels(fullNames[i]) < countVowels(fullNames[leastVowels])) {
+            leastVowels = i;
+          }
+        }
+
+        htmlString += "Number of friends: " + fullNames.length + "<br>";
+        htmlString += JSON.stringify(genders) + "<br>";
+        htmlString += "Longest name: " + fullNames[longest] + " (" + fullNames[longest].length + ")<br>";
+        htmlString += "Shortest name: " + fullNames[shortest] + " (" + fullNames[shortest].length + ")<br>";
+        htmlString += "Most vowels: " + fullNames[mostVowels] + " (" + countVowels(fullNames[mostVowels]) + ")<br>";
+        htmlString += "Least vowels: " + fullNames[leastVowels] + " (" + countVowels(fullNames[leastVowels]) + ")<br>";
+        htmlString += "Most common first name: " + mode(firstNames)[0] + " (" + mode(firstNames)[1] + ")<br>";
+        htmlString += "Most common last name: " + mode(lastNames)[0] + " (" + mode(lastNames)[1] + ")<br>";
+
+        htmlString += "<br>";
+        htmlString += "<p>You've got " + palindromes.length + " friends with palindromic names.  ";
+        htmlString += "Tell these people how awesome they are:</p>";
+
+        for (var i = 0; i < palindromes.length; i++) {
+          var profile_pic = "http://graph.facebook.com/" + palinIds[i] + "/picture";
+          htmlString += '<a href="http://facebook.com/' + palinIds[i] + '">';
+          htmlString += '<img src="' + profile_pic + '"/> ';
+          htmlString += palindromes[i];
+          htmlString += "</a><br>";
+        }
+        el.innerHTML = htmlString;
+
+      });
+    }
+
+    function countVowels(str) {
+      var count = 0;
+      for (var i = 0; i < str.length; i++) {
+        if (str.charAt(i).match(/[a-zA-Z]/) != null) {
+          // findVowels
+          if (str.charAt(i).match(/[aeiouAEIOU]/)) {
+            count++;
+          }
+        }
+      }
+      return count;
+    }
+
+    function mode(array) {
+      if (array.length === 0) return null;
+      var modeMap = {};
+      var maxEl = array[0];
+      var maxCount = 1;
+      for (var i = 0; i < array.length; i++) {
+        var el = array[i];
+        if (!modeMap[el]) modeMap[el] = 1;
+        else modeMap[el] ++;
+        if (modeMap[el] > maxCount) {
+          maxEl = el;
+          maxCount = modeMap[el];
+        }
+      }
+      return [maxEl, modeMap[maxEl]];
+    }
+
+  </script>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <div class="container">
+    <div class="fb-login-button" data-show-faces="true" size="large" data-width="200" data-max-rows="1"></div>
+    <div id="intro"></div>
+    <div id="stats" class="lead"></div>
+    <div id="wait" class="lead"></div>
+    <div id="visualization"></div>
+    <footer>
+      Written by Howard Chung.
+    </footer>
+  </div>
+</body>
+
+</html>
