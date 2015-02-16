@@ -1,3 +1,4 @@
+/*
 angular.module('howard', []).controller('howardController', function($scope, $http) {
     $http.get("public/data.json").success(function(data) {
         $http.get("https://api.github.com/users/howardc93/starred").success(function(projects) {
@@ -75,3 +76,4 @@ angular.module('howard', []).controller('howardController', function($scope, $ht
         return "updated " + moment(date).fromNow();
     }
 });
+*/

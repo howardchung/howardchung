@@ -1,5 +1,5 @@
 {
-    "profilejpg":"profile.jpg is an image of me taken in 2009.  I use it a lot, including as my Gravatar and as a profile picture on social networking sites.",
+    "profilejpg":"profile.jpg is an image of me taken in 2009.  I use it a lot.",
     "facts": [
         "I like seafood, particularly fish.",
         "I can't whistle or snap my fingers.",
@@ -22,10 +22,7 @@
     "intro": {
         "heading": "Introduction",
         "content": [
-            "I'm Howard Chung, a software engineer with experience at Microsoft, Duke University, and Moda Health.",
-            "Project data comes directly from the GitHub API, so it updates in real-time.",
-            "I've designed this site to serve all its content strings from an external data file, which keeps the source lean.",
-            "The resume link will generate a PDF on-demand using JavaScript.  No static files here!"
+            "I'm Howard Chung, a software engineer with experience at Microsoft, Duke University, and Moda Health."
         ]
     },
     "json": {
