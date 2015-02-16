@@ -4,6 +4,30 @@ var HelloMessage = React.createClass({
   }
 });
 
+var header = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+
+var json = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+
+var projects = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+
+var footer = React.createClass({
+  render: function() {
+    return <div>Hello {this.props.name}</div>;
+  }
+});
+
 React.render(
   <HelloMessage name="John" />,
   document.getElementById('container')
@@ -31,18 +55,6 @@ React.render(
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">{{data.intro.heading}}</h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul>
-                            <li data-ng-repeat="x in data.intro.content">
-                                {{x}}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{data.projects.heading}}</h3>

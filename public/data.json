@@ -1,5 +1,5 @@
 {
-    "profilejpg":"profile.jpg is an image of me taken in 2009.  I use it a lot.",
+    "profilejpg": "profile.jpg is an image of me taken in 2009.  I use it a lot.",
     "facts": [
         "I like seafood, particularly fish.",
         "I can't whistle or snap my fingers.",
@@ -19,12 +19,6 @@
         "I develop software.",
         "I can wiggle my ears."
     ],
-    "intro": {
-        "heading": "Introduction",
-        "content": [
-            "I'm Howard Chung, a software engineer with experience at Microsoft, Duke University, and Moda Health."
-        ]
-    },
     "json": {
         "heading": "JSON",
         "content": {
