@@ -1,20 +1,26 @@
+var data = httpGet("public/data.json");
+var projects = httpGet("https://api.github.com/users/howardc93/starred");
+
+function httpGet(theUrl) {
+    var xmlHttp = null;
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl, false);
+    xmlHttp.send(null);
+    return JSON.parse(xmlHttp.responseText);
+}
+
 projects.sort(function(a, b) {
     return new Date(b.created_at) - new Date(a.created_at);
-})
+});
 data.projects = {
     "heading": "Projects",
     "all": projects
 };
-$scope.data = data;
-$scope.json = JSON.stringify(data.json.content, null, 4)
-var start = Math.floor(Math.random() * data.facts.length);
-(function randomFact() {
-    $("#random").fadeOut(function() {
-        $(this).html(data.facts[start])
-    }).fadeIn();
-    start = (start + 1) % data.facts.length;
-    setTimeout(randomFact, 5000);
-})();
+var json = JSON.stringify(data.json.content, null, 4);
+var fact = data.facts[Math.floor(Math.random() * data.facts.length)];
+var resume = document.getElementById("resume");
+resume.addEventListener("click", generateResume, false);
+
 for (var key in data.links) {
     var l = data.links[key]
     $("#links").append($("<a>", {
@@ -26,7 +32,12 @@ for (var key in data.links) {
         "data-toggle": "tooltip"
     }));
 }
-$('#resume').click(function(e) {
+
+function fromNow(date) {
+    return moment(date).fromNow()
+}
+
+function generateResume(e) {
     function textWithPad(doc, size, text, indent) {
         y += size / 2
         indent = 20 + (indent || 0);
@@ -35,7 +46,6 @@ $('#resume').click(function(e) {
     }
     var doc = new jsPDF();
     var y = 0;
-    var secBreak = 10;
     textWithPad(doc, 20, data.json.content.full_name);
     [data.contact.email, data.links["github"].url, data.contact.url].forEach(function(f) {
         textWithPad(doc, 10, f)
@@ -56,7 +66,6 @@ $('#resume').click(function(e) {
     data.projects.all.forEach(function(e) {
         textWithPad(doc, 12, [e.name, e.html_url].join(" - "))
         textWithPad(doc, 10, e.description, 10)
-
     })
     textWithPad(doc, 18, data.skills.heading)
     data.skills.all.forEach(function(e) {
@@ -64,8 +73,4 @@ $('#resume').click(function(e) {
     })
     doc.output('dataurlnewwindow');
     return false;
-});
-
-function fromNow(date){
-    return moment(date).fromNow()
 }

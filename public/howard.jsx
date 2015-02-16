@@ -9,18 +9,6 @@ React.render(
   document.getElementById('container')
 );
 
-console.log(httpGet("public/data.json"));
-console.log(httpGet("https://api.github.com/users/howardc93/starred"));
-
-function httpGet(theUrl)
-{
-    var xmlHttp = null;
-    xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false );
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
-}
-
 /*
         <div class="row">
             <div class="col-md-12">
