@@ -10,10 +10,12 @@ function httpGet(theUrl, cb) {
 }
 
 function fromNow(date) {
-    return moment(date).fromNow();
+    return "updated " + moment(date).fromNow();
 }
 
 function generateResume(data) {
+    console.log(data);
+
     function textWithPad(doc, size, text, indent) {
         y += size / 2
         indent = 20 + (indent || 0);
@@ -23,7 +25,7 @@ function generateResume(data) {
     var doc = new jsPDF();
     var y = 0;
     textWithPad(doc, 20, data.json.content.full_name);
-    [data.contact.email, data.links["github"].url, data.contact.url].forEach(function(f) {
+    [data.contact.email, data.links.github.url, data.contact.url].forEach(function(f) {
         textWithPad(doc, 10, f)
     })
     textWithPad(doc, 18, data.educations.heading)
@@ -51,10 +53,9 @@ function generateResume(data) {
 }
 
 var site = React.createClass({
-    getInitialState: function() {
+    componentDidMount: function() {
         httpGet("public/data.json", function(data) {
             httpGet("https://api.github.com/users/howardc93/starred", function(projects) {
-                console.log(data, projects);
                 projects.sort(function(a, b) {
                     return new Date(b.created_at) - new Date(a.created_at);
                 });
@@ -62,15 +63,38 @@ var site = React.createClass({
                     "heading": "Projects",
                     "all": projects
                 };
+                data.projectElements = data.projects.all.map(function(p) {
+                    return React.createElement('li', {}, [React.createElement('a', {
+                        href: p.homepage || p.html_url
+                    }, p.name), React.createElement('small', {}, p.description), React.createElement('span', {
+                        className: "label label-warning"
+                    }, React.createElement('a', {
+                        href: p.html_url
+                    }, p.language)), React.createElement('span', {
+                        className: "label label-success"
+                    }, fromNow(p.pushed_at))]);
+                });
+                data.linkElements = {};
+                for (var key in data.links) {
+                    var l = data.links[key];
+                    data.linkElements[key] = React.createElement('a', {
+                        href: l.url,
+                        className: "btn btn-default",
+                        title: l.name,
+                        onClick: key === "resume" ? function() {
+                            generateResume(data);
+                        } : null
+                    }, React.createElement('i', {
+                        className: l.icon
+                    }));
+                }
                 this.setState({
                     data: data,
-                    json: JSON.stringify(data.json.content, null, 4),
                     fact: data.facts[Math.floor(Math.random() * data.facts.length)]
                 });
                 document.title = data.json.content.full_name;
             }.bind(this));
         }.bind(this));
-        return null;
     },
     render: function() {
         return (
@@ -84,94 +108,57 @@ var site = React.createClass({
                         className: "col-md-12"
                     }, [
                         React.createElement('img', {
-                            className: "img-rounded profile"
+                            className: "img-rounded profile",
+                            src: "public/profile.jpg",
+                            title: this.state ? this.state.data.profilejpg : ""
                         }),
-                        React.createElement('h1', {},
-                            this.state ? this.state.data.json.content.full_name : ""
-                        ),
-                        React.createElement('small', {},
-                            this.state ? this.state.fact : ""
-                        )
-                    ])
-                ),
+                        React.createElement('h1', {}, [this.state ? this.state.data.json.content.full_name : "",
+                            React.createElement('small', {},
+                                this.state ? this.state.fact : ""
+                            )
+                        ])
+                    ])),
                 React.createElement('hr'),
                 React.createElement('div', {
                         className: "row"
                     },
                     React.createElement('div', {
-                            className: "col-md-4"
-                        } //json here
-                    ),
+                        className: "col-md-4"
+                    }, React.createElement('div', {
+                        className: "panel panel-info"
+                    }, [React.createElement('div', {
+                            className: "panel-heading"
+                        }, React.createElement('h3', {
+                            className: "panel-title"
+                        }, this.state ? this.state.data.json.heading : "")),
+                        React.createElement('div', {
+                            className: "panel-body"
+                        }, React.createElement('pre', {
+                            className: "text-left"
+                        }, this.state ? JSON.stringify(this.state.data.json.content, null, 4) : ""))
+                    ])),
                     React.createElement('div', {
-                            className: "col-md-8"
-                        } //projects here
-                    )
+                        className: "col-md-8"
+                    }, React.createElement('div', {
+                        className: "panel panel-success"
+                    }, [React.createElement('div', {
+                            className: "panel-heading"
+                        }, React.createElement('h3', {
+                            className: "panel-title"
+                        }, this.state ? this.state.data.projects.heading : "")),
+                        React.createElement('div', {
+                            className: "panel-body"
+                        }, React.createElement('ul', {}, this.state ? this.state.data.projectElements : []))
+                    ]))
                 ),
-                React.createElement('hr')
-                //footer
-            ])
-        );
+                React.createElement('hr'),
+                React.createElement('footer', {}, React.createElement("div", {
+                    className: "text-center"
+                }, this.state ? this.state.data.linkElements : {}))
+            ]));
     }
 });
-/*
-var json = React.createClass({
-  render: function() {
-    return (<div class="row">
-            <div class="col-md-4">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">{data.json.heading}</h3>
-                    </div>
-                    <div class="panel-body">
-                        <pre class="text-left">{json}</pre>
-                    </div>
-                </div>
-            </div>);
-  }
-});
 
-var projects = React.createClass({
-  render: function() {
-            <div class="col-md-8">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">{{data.projects.heading}}</h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul>
-                            <li data-ng-repeat="x in data.projects.all">
-                                <a data-ng-href="{{x.homepage || x.html_url}}">{{x.name}}</a>
-                                <small> {{x.description}}</small>
-                                <span class="label label-warning"><a href="{{x.html_url}}">{{x.language}}</a></span>
-                                <span class="label label-success">{{x.pushed_at | fromNow}}</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-  }
-});
-
-var footer = React.createClass({
-  render: function() {
-            for (var key in data.links) {
-            var l = data.links[key]
-            $("#links").append($("<a>", {
-                href: l.url,
-                class: "btn btn-default",
-                html: "<i class='" + l.icon + "'></i>",
-                id: key,
-                title: l.name,
-                "data-toggle": "tooltip"
-            }));
-        }
-    return (        <footer>
-            <div id="links" class="text-center"></div>
-        </footer>);  }
-});
-*/
-
-//todo add click handler for resume
 React.render(React.createElement(site),
     document.getElementById('container')
 );
