@@ -18,10 +18,11 @@
         "I CAN believe it's not butter.",
         "I develop software.",
         "I can wiggle my ears.",
-        "The longest I've been awake is ~33 hours."
+        "The longest I've been awake is ~33 hours.",
+        "I held my elementary school's record for rope climbing for three years."
     ],
     "json": {
-        "heading": "A JSON Nutshell",
+        "heading": "JSON",
         "content": {
             "full_name": "Howard Chung",
             "gender": "male",
