@@ -28,6 +28,10 @@ li > a,small,span{
 <script src="//cdn.jsdelivr.net/react/latest/react.min.js"></script>
 <script src="//cdn.jsdelivr.net/jspdf/latest/jspdf.min.js"></script>
 <script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
 <script>
     function httpGet(theUrl, cb) {
     var xmlHttp = new XMLHttpRequest();
@@ -194,12 +198,4 @@ React.render(React.createElement(site),
     document.getElementById('container')
 );
 </script>
-</head>
-
-<body>
-    <div id="container"></div>
-</body>
-
-
-
 </html>
