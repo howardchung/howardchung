@@ -78,14 +78,14 @@ function generateResume(data) {
         textWithPad(doc, 10, e.skill.name)
     })
     doc.output('dataurlnewwindow');
-}
-
+    
     function textWithPad(doc, size, text, indent) {
         y += size / 2
         indent = 20 + (indent || 0);
         doc.setFontSize(size)
         doc.text(indent, y, text)
     }
+}
 
 var site = React.createClass({
     componentDidMount: function() {
