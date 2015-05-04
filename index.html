@@ -92,7 +92,8 @@ var site = React.createClass({
         httpGet("public/data.json", function(data) {
             httpGet("https://api.github.com/users/howardc93/starred", function(projects) {
                 projects.sort(function(a, b) {
-                    return new Date(b.created_at) - new Date(a.created_at);
+                    var key = "updated_at";
+                    return new Date(b[key]) - new Date(a[key]);
                 });
                 data.projects = {
                     "heading": "Projects",
