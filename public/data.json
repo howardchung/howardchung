@@ -30,7 +30,8 @@
         "My peak Google activity occurs between 2 and 4 AM.",
         "My favorite style of eggs is scrambled.",
         "I am very frugal.",
-        "I studied at Duke University."
+        "I studied at Duke University.",
+        "This site has previously been built with plain HTML, Rails, Node.js, and React."
     ],
     "json": {
         "heading": "JSON",
