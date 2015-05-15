@@ -31,7 +31,8 @@
         "My favorite style of eggs is scrambled.",
         "I am very frugal.",
         "I studied at Duke University.",
-        "This site has previously been built with plain HTML, Rails, Node.js, and React."
+        "This site has previously been built with plain HTML, Rails, Node.js, and React.",
+        "I'm a minimalist."
     ],
     "json": {
         "heading": "JSON",
