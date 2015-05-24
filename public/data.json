@@ -33,7 +33,8 @@
         "I studied at Duke University.",
         "This site has previously been built with plain HTML, Rails, Node.js, and React.",
         "I'm a minimalist.",
-        "I can use chopsticks."
+        "I can use chopsticks.",
+        "I have a mild obsession with bread."
     ],
     "json": {
         "heading": "JSON",
