@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container text-center" style="width:50%;">
         <h1>That's What Yvonne Said</h1>
         <div id="react"></div>
     </div>
@@ -31,22 +31,31 @@
         componentDidMount: function() {
             httpGet("https://spreadsheets.google.com/feeds/list/19ibKMYftvJ33Rr45FL_4QrHVbMIjRdmZW2eT1bBHLnA/od6/public/values?alt=json", function(data) {
                 console.log(data);
-                //TODO set this.state.data
-                //bind this?
-            });
+                this.setState({
+                    data: data,
+                });
+            }.bind(this));
         },
         render: function() {
+            var content = [
+React.createElement('img', {
+                    className: "img-rounded profile",
+                    src: "https://graph.facebook.com/yvonnechung95/picture?type=large"
+                })
+                ];
+            console.log(this.state);
+            if (this.state) {
+                this.state.data.feed.entry.forEach(function(e) {
+                    //quote, context, date
+                    content.push(React.createElement('blockquote', {}, [React.createElement('p', {}, e.gsx$quote), React.createElement('footer', {}, e.gsx$context.$t+" - "+moment(e.gsx$date.$t).format("MMMM DD, YYYY"))]))
+                    console.log(e);
+                })
+            }
             return (React.createElement('div', {
                 className: "row"
             }, React.createElement('div', {
                 className: "col-md-12"
-            }, [
-React.createElement('img', {
-                    className: "img-rounded profile",
-                    src: "https://graph.facebook.com/yvonnechung95/picture"
-                })
-                //TODO tack on all the quotes here
-                ])));
+            }, content)));
         }
     });
     React.render(React.createElement(site), document.getElementById('react'));
