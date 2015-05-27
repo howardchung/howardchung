@@ -125,8 +125,7 @@
                         }));
                     }
                     this.setState({
-                        data: data,
-                        fact: data.facts[Math.floor(Math.random() * data.facts.length)]
+                        data: data
                     });
                     document.title = data.json.content.full_name;
                 }.bind(this));
@@ -147,7 +146,7 @@
                         title: this.state ? this.state.data.profilejpg : ""
                     }),
                         React.createElement('h1', {}, [this.state ? this.state.data.json.content.full_name : "",
-                            React.createElement('small', {}, this.state ? this.state.fact : "")
+                            React.createElement('small', {}, this.state ? "Did you know? " + this.state.data.facts[Math.floor(Math.random() * this.state.data.facts.length)] : "")
                         ])
                     ])),
                 React.createElement('hr'),
@@ -169,22 +168,31 @@
                     }, this.state ? JSON.stringify(this.state.data.json.content, null, 4) : ""))
                     ])), React.createElement('div', {
                     className: "col-md-8"
-                }, React.createElement('div', {
-                    className: "panel panel-success"
-                }, [React.createElement('div', {
-                        className: "panel-heading"
-                    }, React.createElement('h3', {
-                        className: "panel-title"
-                    }, this.state ? this.state.data.projects.heading : "")),
+                }, [
+                React.createElement('div', {
+                        className: "panel panel-default"
+                    }, [React.createElement('div', {
+                            className: "panel-heading"
+                        }, React.createElement('h3', {
+                            className: "panel-title"
+                        }, this.state ? this.state.data.intro.heading : "")),
                         React.createElement('div', {
-                        className: "panel-body"
-                    }, React.createElement('ul', {}, this.state ? this.state.data.projectElements : []))
-                    ]))),
-                React.createElement('hr'),
-                React.createElement('footer', {}, React.createElement("div", {
+                            className: "panel-body"
+                        }, this.state ? this.state.data.intro.content : "")]),
+                React.createElement('div', {
+                        className: "panel panel-success"
+                    }, [React.createElement('div', {
+                            className: "panel-heading"
+                        }, React.createElement('h3', {
+                            className: "panel-title"
+                        }, this.state ? this.state.data.projects.heading : "")),
+                        React.createElement('div', {
+                            className: "panel-body"
+                        }, React.createElement('ul', {}, this.state ? this.state.data.projectElements : []))
+                    ])
+                    ])), React.createElement('hr'), React.createElement('footer', {}, React.createElement("div", {
                     className: "text-center btn-group"
-                }, this.state ? this.state.data.linkElements : {}))
-            ]));
+                }, this.state ? this.state.data.linkElements : {}))]));
         }
     });
     React.render(React.createElement(site), document.getElementById('react'));

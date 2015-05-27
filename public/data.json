@@ -51,6 +51,10 @@
             "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "card/board games", "planespotting"]
         }
     },
+    "intro":{
+      "heading": "Intro",
+      "content": "My name is Howard.  I'm currently a software engineer at Microsoft.  This is my personal web page."
+    },
     "contact": {
         "phone": 5035679740,
         "email": "howardc93@gmail.com",
