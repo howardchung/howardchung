@@ -1,7 +1,7 @@
 #update packages
 sudo apt-get update && sudo apt-get upgrade -y
 #node required for c9
-sudo apt-get install nodejs-legacy
+sudo apt-get install nodejs-legacy npm
 #c9
 wget -O - https://raw.githubusercontent.com/c9/install/master/install.sh | bash
 #devtools
