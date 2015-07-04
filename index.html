@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.jsdelivr.net/fontawesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <style>
@@ -15,7 +16,7 @@
         }
         
         .container {
-            width: 50%;
+            max-width: 700px;
         }
     </style>
     <script src="//bpampuch.github.io/pdfmake/build/pdfmake.min.js"></script>
@@ -35,8 +36,8 @@
         componentDidMount: function() {
             httpGet("public/data.json", function(data) {
                 httpGet("https://api.github.com/users/howardc93/starred", function(projects) {
-                    projects.sort(function(a, b) {
-                        var key = "updated_at";
+                    projects = projects.sort(function(a, b) {
+                        var key = "pushed_at";
                         return new Date(b[key]) - new Date(a[key]);
                     });
                     data.projects = {
@@ -114,6 +115,7 @@
                             data: data
                         });
                     }
+                    console.log(data);
                 }.bind(this));
             }.bind(this));
         },
@@ -187,15 +189,22 @@
     function generateProjectElements(data) {
         return data.projects.content.map(function(p) {
             return React.createElement('li', {}, [React.createElement('a', {
-                className: "lead",
+                className: "",
                 href: p.homepage || p.html_url
-            }, p.name), React.createElement('span', {
-                className: "label label-warning"
-            }, React.createElement('a', {
-                href: p.html_url
-            }, p.language)), React.createElement('span', {
-                className: "label label-success"
-            }, fromNow(p.pushed_at)), React.createElement('span', {}, p.description)]);
+            }, p.name), React.createElement('ul', null, [React.createElement('li', null, [
+                React.createElement('span', {
+                        className: "label label-warning"
+                    }, React.createElement('a', {
+                        href: p.html_url
+                    }, p.language)),
+                React.createElement('span', {
+                        className: "label label-info"
+                    }, p.stargazers_count + " starred"),
+                React.createElement('span', {
+                        className: "label label-success"
+                    }, fromNow(p.pushed_at)), ]),
+            React.createElement('li', {}, p.description)
+            ])]);
         });
     }
 
