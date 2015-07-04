@@ -2,18 +2,25 @@
 <html lang="en">
 
 <head>
-    <title></title>
     <meta charset="UTF-8">
     <link href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.jsdelivr.net/fontawesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        a {
+        span {
             margin: 1px;
         }
+        
+        i {
+            margin-right: 5px;
+        }
+        
+        .container {
+            width: 50%;
+        }
     </style>
-    <script src="//cdn.jsdelivr.net/react/latest/react.min.js"></script>
     <script src="//bpampuch.github.io/pdfmake/build/pdfmake.min.js"></script>
     <script src="//bpampuch.github.io/pdfmake/build/vfs_fonts.js"></script>
+    <script src="//cdn.jsdelivr.net/react/latest/react.min.js"></script>
     <script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 </head>
 
@@ -41,25 +48,72 @@
                     data.resume.styles = {
                         "heading": {
                             "bold": true,
-                            "fontSize": 15
+                            "fontSize": 18
+                        },
+                        "subheading": {
+                            "bold": true,
+                            "fontSize": 14
+                        },
+                        "small": {
+                            "fontSize": 10
                         }
                     };
-                    data.resume.content = [{
-                        text: data.json.full_name,
-                        style: "heading"
-                    }, data.email, data.phone, data.links.github.url, data.url];
+                    data.resume.content = [
+                        {
+                            text: data.json.content.full_name,
+                            style: "heading"
+                    },
+                    data.email,
+                    data.phone.toString(),
+                    data.links.github.url,
+                    data.url,
+                    "\n"];
                     sections.forEach(function(s) {
+                        s = data[s];
                         data.resume.content.push({
                             text: s.heading,
-                            style: "heading"
+                            style: "subheading"
                         });
-                        //TODO format section
-                        data.resume.content.push(JSON.stringify(s.content));
-                    });
-                    this.setState({
-                        data: data
+                        data.resume.content.push({
+                            "ul": s.content.map(function(c) {
+                                if (typeof c.description !== "object") {
+                                    c.description = [c.description || ""];
+                                }
+                                var first_line = [c.name];
+                                if (c.end_date) {
+                                    first_line.push(c.end_date.year);
+                                }
+                                else if (c.start_date) {
+                                    first_line.push(c.start_date.year);
+                                }
+                                else if (c.html_url) {
+                                    first_line.push(c.html_url);
+                                }
+                                return {
+                                    ul: [first_line.join(" - "),
+                                        {
+                                            ul: c.description.map(function(d) {
+                                                return {
+                                                    text: d,
+                                                    style: "small"
+                                                };
+                                            })
+                                        }
+                                    ]
+                                };
+                            })
+                        });
+                        data.resume.content.push("\n");
                     });
                     document.title = data.json.content.full_name;
+                    selectRandomFact.bind(this)();
+                    //setInterval(selectRandomFact.bind(this), 5000);
+                    function selectRandomFact() {
+                        data.random_fact = "Random Fact: " + data.facts[Math.floor(Math.random() * data.facts.length)];
+                        this.setState({
+                            data: data
+                        });
+                    }
                 }.bind(this));
             }.bind(this));
         },
@@ -68,13 +122,18 @@
                 className: "container text-center"
             }, [
                 React.createElement('h1', {}, this.state ? this.state.data.json.content.full_name : ""),
-                React.createElement('img', {
+                React.createElement('div', {}, React.createElement('img', {
                     className: "img-rounded profile",
                     src: "public/profile.jpg",
                     height: 250,
                     title: this.state ? this.state.data.profilejpg : ""
-                }),
-                React.createElement('small', {}, this.state ? "Did you know? " + this.state.data.facts[Math.floor(Math.random() * this.state.data.facts.length)] : ""),
+                })),
+                React.createElement('p', {
+                    className: "lead"
+                }, this.state ? this.state.data.random_fact : ""),
+                React.createElement("div", {
+                    className: "text-center btn-group"
+                }, this.state ? generateLinkElements(this.state.data) : {}),
                 React.createElement('hr'),
                 React.createElement('div', {
                     className: "panel panel-info text-left"
@@ -88,16 +147,6 @@
                     }, React.createElement('pre', {}, this.state ? JSON.stringify(this.state.data.json.content, null, 2) : ""))
                     ]),
                 React.createElement('div', {
-                    className: "panel panel-default text-left"
-                }, [React.createElement('div', {
-                        className: "panel-heading"
-                    }, React.createElement('h3', {
-                        className: "panel-title"
-                    }, this.state ? this.state.data.intro.heading : "")),
-                        React.createElement('div', {
-                        className: "panel-body"
-                    }, this.state ? this.state.data.intro.content : "")]),
-                React.createElement('div', {
                     className: "panel panel-success text-left"
                 }, [React.createElement('div', {
                         className: "panel-heading"
@@ -108,10 +157,7 @@
                         className: "panel-body"
                     }, React.createElement('ul', {}, this.state ? generateProjectElements(this.state.data) : []))
                     ]),
-                    React.createElement('hr'),
-                    React.createElement('footer', {}, React.createElement("div", {
-                    className: "text-center btn-group"
-                }, this.state ? generateLinkElements(this.state.data) : {}))
+                React.createElement('hr')
             ]));
         }
     });
@@ -119,13 +165,19 @@
 
     function httpGet(theUrl, cb) {
         var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", theUrl, true);
-        xmlHttp.send(null);
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                cb(JSON.parse(xmlHttp.responseText));
+                try {
+                    var resp = JSON.parse(xmlHttp.responseText);
+                    cb(resp);
+                }
+                catch (err) {
+                    throw err;
+                }
             }
         };
+        xmlHttp.open("GET", theUrl, true);
+        xmlHttp.send();
     }
 
     function fromNow(date) {
@@ -135,14 +187,15 @@
     function generateProjectElements(data) {
         return data.projects.content.map(function(p) {
             return React.createElement('li', {}, [React.createElement('a', {
+                className: "lead",
                 href: p.homepage || p.html_url
-            }, p.name), React.createElement('small', {}, p.description), React.createElement('span', {
+            }, p.name), React.createElement('span', {
                 className: "label label-warning"
             }, React.createElement('a', {
                 href: p.html_url
             }, p.language)), React.createElement('span', {
                 className: "label label-success"
-            }, fromNow(p.pushed_at))]);
+            }, fromNow(p.pushed_at)), React.createElement('span', {}, p.description)]);
         });
     }
 
@@ -155,6 +208,7 @@
                 href: l.url,
                 className: "btn btn-default",
                 onClick: key === "resume" ? function() {
+                    console.log(data.resume);
                     pdfMake.createPdf(data.resume).open();
                 } : null
             }, [React.createElement('i', {
