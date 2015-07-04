@@ -1,5 +1,8 @@
 {
     "profilejpg": "profile.jpg is an image of me taken in 2009.  I use it a lot.",
+    "phone": 5035679740,
+    "email": "howardc93@gmail.com",
+    "url": "http://howardchung.net"
     "facts": [
         "I like seafood, particularly fish.",
         "I can't whistle or snap my fingers.",
@@ -36,30 +39,6 @@
         "I have a mild obsession with bread.",
         "I don't like carbonated drinks."
     ],
-    "json": {
-        "heading": "JSON",
-        "content": {
-            "full_name": "Howard Chung",
-            "gender": "male",
-            "height_cm": 177,
-            "right_handed": true,
-            "shoe_size": 11,
-            "blood_type": "",
-            "birth_time": 726126840,
-            "birth_city": "Hong Kong",
-            "languages": ["en", "es", "zh"],
-            "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "card/board games", "planespotting"]
-        }
-    },
-    "intro":{
-      "heading": "Intro",
-      "content": "My name is Howard.  I'm currently a software engineer at Microsoft.  This is my personal web page."
-    },
-    "contact": {
-        "phone": 5035679740,
-        "email": "howardc93@gmail.com",
-        "url": "http://howardchung.net"
-    },
     "links": {
         "bitcoin": {
             "name": "Bitcoin",
@@ -92,25 +71,37 @@
             "url": "javascript:;"
         }
     },
-    "educations": {
+    "json": {
+        "heading": "JSON",
+        "content": {
+            "full_name": "Howard Chung",
+            "gender": "male",
+            "height_cm": 177,
+            "right_handed": true,
+            "shoe_size": 11,
+            "blood_type": "",
+            "birth_time": 726126840,
+            "birth_city": "Hong Kong",
+            "languages": ["en", "es", "zh"],
+            "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "card/board games", "planespotting"]
+        }
+    },
+    "intro": {
+        "heading": "Intro",
+        "content": "My name is Howard.  I'm currently a software engineer at Microsoft.  This is my personal web page."
+    },
+    "education": {
         "heading": "Education",
-        "all": [{
+        "content": {
             "degree": "Bachelor of Science (BS)",
-            "end_date": {
-                "year": 2015
-            },
+            "year": 2015,
             "field_of_study": "Computer Science",
-            "id": 161388668,
-            "notes": "GPA: 3.7",
-            "school_name": "Duke University",
-            "start_date": {
-                "year": 2011
-            }
-        }]
+            "school_name": "Duke University"
+        }
     },
     "positions": {
         "heading": "Positions",
-        "all": [{
+        "content": [{
             "company": {
                 "id": 1035,
                 "industry": "Computer Software",
@@ -187,34 +178,19 @@
     },
     "skills": {
         "heading": "Skills",
-        "all": [{
-            "skill": {
-                "name": "Java"
-            }
-        }, {
-            "skill": {
-                "name": "Python"
-            }
-        }, {
-            "skill": {
-                "name": "Ruby on Rails"
-            }
-        }, {
-            "skill": {
-                "name": "C#"
-            }
-        }, {
-            "skill": {
-                "name": "Node.js"
-            }
-        }, {
-            "skill": {
+        "content": [
+            {
                 "name": "JavaScript"
-            }
+        },
+            {
+                "name": "Node.js"
+        },
+            {
+                "name": "Java"
         }, {
-            "skill": {
-                "name": "HTML/CSS"
-            }
+                "name": "Python"
+        }, {
+                "name": "C#"
         }]
     }
 }
