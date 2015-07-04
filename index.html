@@ -2,31 +2,25 @@
 <html lang="en">
 
 <head>
-    <title></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <link href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.jsdelivr.net/fontawesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        .profile {
-            margin: 5px;
-            height: 120px;
-            float: left;
-        }
-        #links a {
+        span {
             margin: 1px;
         }
-        h1 span {
-            margin: 5px;
+        
+        i {
+            margin-right: 5px;
         }
-        li > a,
-        small,
-        span {
-            margin: 2px;
+        
+        .container {
+            width: 50%;
         }
     </style>
+    <script src="//bpampuch.github.io/pdfmake/build/pdfmake.min.js"></script>
+    <script src="//bpampuch.github.io/pdfmake/build/vfs_fonts.js"></script>
     <script src="//cdn.jsdelivr.net/react/latest/react.min.js"></script>
-    <script src="//cdn.jsdelivr.net/jspdf/latest/jspdf.min.js"></script>
     <script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 </head>
 
@@ -34,59 +28,9 @@
     <div id="react"></div>
 </body>
 <script>
-    function httpGet(theUrl, cb) {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", theUrl, true);
-        xmlHttp.send(null);
-        xmlHttp.onreadystatechange = function() {
-            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                cb(JSON.parse(xmlHttp.responseText));
-            }
-        };
-    }
-
-    function fromNow(date) {
-        return "updated " + moment(date).fromNow();
-    }
-
-    function generateResume(data) {
-        console.log(data);
-        var doc = new jsPDF();
-        var y = 0;
-        textWithPad(doc, 20, data.json.content.full_name);
-    [data.contact.email, data.links.github.url, data.contact.url].forEach(function(f) {
-            textWithPad(doc, 10, f)
-        })
-        textWithPad(doc, 18, data.educations.heading)
-        data.educations.all.forEach(function(e) {
-            textWithPad(doc, 12, [e.school_name, e.end_date.year].join())
-            textWithPad(doc, 10, [e.degree, e.field_of_study].join(), 10)
-        })
-        textWithPad(doc, 18, data.positions.heading)
-        data.positions.all.forEach(function(e) {
-            textWithPad(doc, 12, [e.title, e.company.name, e.start_date.year].join())
-            e.summary.forEach(function(f) {
-                textWithPad(doc, 10, f, 10)
-            })
-        })
-        textWithPad(doc, 18, data.projects.heading)
-        data.projects.all.forEach(function(e) {
-            textWithPad(doc, 12, [e.name, e.html_url].join(" - "))
-            textWithPad(doc, 10, e.description, 10)
-        })
-        textWithPad(doc, 18, data.skills.heading)
-        data.skills.all.forEach(function(e) {
-            textWithPad(doc, 10, e.skill.name)
-        })
-        doc.output('dataurlnewwindow');
-
-        function textWithPad(doc, size, text, indent) {
-            y += size / 2
-            indent = 20 + (indent || 0);
-            doc.setFontSize(size)
-            doc.text(indent, y, text)
-        }
-    }
+    var React = React;
+    var moment = moment;
+    var pdfMake = pdfMake;
     var site = React.createClass({
         componentDidMount: function() {
             httpGet("public/data.json", function(data) {
@@ -97,65 +41,102 @@
                     });
                     data.projects = {
                         "heading": "Projects",
-                        "all": projects
+                        "content": projects
                     };
-                    data.projectElements = data.projects.all.map(function(p) {
-                        return React.createElement('li', {}, [React.createElement('a', {
-                            href: p.homepage || p.html_url
-                        }, p.name), React.createElement('small', {}, p.description), React.createElement('span', {
-                            className: "label label-warning"
-                        }, React.createElement('a', {
-                            href: p.html_url
-                        }, p.language)), React.createElement('span', {
-                            className: "label label-success"
-                        }, fromNow(p.pushed_at))]);
-                    });
-                    data.linkElements = {};
-                    for (var key in data.links) {
-                        var l = data.links[key];
-                        data.linkElements[key] = React.createElement('a', {
-                            href: l.url,
-                            className: "btn btn-default",
-                            title: l.name,
-                            onClick: key === "resume" ? function() {
-                                generateResume(data);
-                            } : null
-                        }, React.createElement('i', {
-                            className: l.icon
-                        }));
-                    }
-                    this.setState({
-                        data: data
+                    var sections = ["education", "positions", "projects", "skills"];
+                    data.resume = {};
+                    data.resume.styles = {
+                        "heading": {
+                            "bold": true,
+                            "fontSize": 18
+                        },
+                        "subheading": {
+                            "bold": true,
+                            "fontSize": 14
+                        },
+                        "small": {
+                            "fontSize": 10
+                        }
+                    };
+                    data.resume.content = [
+                        {
+                            text: data.json.content.full_name,
+                            style: "heading"
+                    },
+                    data.email,
+                    data.phone.toString(),
+                    data.links.github.url,
+                    data.url,
+                    "\n"];
+                    sections.forEach(function(s) {
+                        s = data[s];
+                        data.resume.content.push({
+                            text: s.heading,
+                            style: "subheading"
+                        });
+                        data.resume.content.push({
+                            "ul": s.content.map(function(c) {
+                                if (typeof c.description !== "object") {
+                                    c.description = [c.description || ""];
+                                }
+                                var first_line = [c.name];
+                                if (c.end_date) {
+                                    first_line.push(c.end_date.year);
+                                }
+                                else if (c.start_date) {
+                                    first_line.push(c.start_date.year);
+                                }
+                                else if (c.html_url) {
+                                    first_line.push(c.html_url);
+                                }
+                                return {
+                                    ul: [first_line.join(" - "),
+                                        {
+                                            ul: c.description.map(function(d) {
+                                                return {
+                                                    text: d,
+                                                    style: "small"
+                                                };
+                                            })
+                                        }
+                                    ]
+                                };
+                            })
+                        });
+                        data.resume.content.push("\n");
                     });
                     document.title = data.json.content.full_name;
+                    selectRandomFact.bind(this)();
+                    //setInterval(selectRandomFact.bind(this), 5000);
+                    function selectRandomFact() {
+                        data.random_fact = "Random Fact: " + data.facts[Math.floor(Math.random() * data.facts.length)];
+                        this.setState({
+                            data: data
+                        });
+                    }
                 }.bind(this));
             }.bind(this));
         },
         render: function() {
             return (React.createElement('div', {
-                className: "container"
+                className: "container text-center"
             }, [
-                React.createElement('div', {
-                    className: "row"
-                }, React.createElement('div', {
-                    className: "col-md-12"
-                }, [
-                        React.createElement('img', {
-                        className: "img-rounded profile",
-                        src: "public/profile.jpg",
-                        title: this.state ? this.state.data.profilejpg : ""
-                    }),
-                        React.createElement('h1', {}, [this.state ? this.state.data.json.content.full_name : "",
-                            React.createElement('small', {}, this.state ? "Did you know? " + this.state.data.facts[Math.floor(Math.random() * this.state.data.facts.length)] : "")
-                        ])
-                    ])),
+                React.createElement('h1', {}, this.state ? this.state.data.json.content.full_name : ""),
+                React.createElement('div', {}, React.createElement('img', {
+                    className: "img-rounded profile",
+                    src: "public/profile.jpg",
+                    height: 250,
+                    title: this.state ? this.state.data.profilejpg : ""
+                })),
+                React.createElement('p', {
+                    className: "lead"
+                }, this.state ? this.state.data.random_fact : ""),
+                React.createElement("div", {
+                    className: "text-center btn-group"
+                }, this.state ? generateLinkElements(this.state.data) : {}),
                 React.createElement('hr'),
                 React.createElement('div', {
-                    className: "row"
-                }, React.createElement('div', {
-                    className: "col-md-4"
-                }, React.createElement('div', {
-                    className: "panel panel-info"
+                    className: "panel panel-info text-left"
                 }, [React.createElement('div', {
                         className: "panel-heading"
                     }, React.createElement('h3', {
@@ -163,39 +144,79 @@
                     }, this.state ? this.state.data.json.heading : "")),
                         React.createElement('div', {
                         className: "panel-body"
-                    }, React.createElement('pre', {
-                        className: "text-left"
-                    }, this.state ? JSON.stringify(this.state.data.json.content, null, 4) : ""))
-                    ])), React.createElement('div', {
-                    className: "col-md-8"
-                }, [
+                    }, React.createElement('pre', {}, this.state ? JSON.stringify(this.state.data.json.content, null, 2) : ""))
+                    ]),
                 React.createElement('div', {
-                        className: "panel panel-default"
-                    }, [React.createElement('div', {
-                            className: "panel-heading"
-                        }, React.createElement('h3', {
-                            className: "panel-title"
-                        }, this.state ? this.state.data.intro.heading : "")),
+                    className: "panel panel-success text-left"
+                }, [React.createElement('div', {
+                        className: "panel-heading"
+                    }, React.createElement('h3', {
+                        className: "panel-title"
+                    }, this.state ? this.state.data.projects.heading : "")),
                         React.createElement('div', {
-                            className: "panel-body"
-                        }, this.state ? this.state.data.intro.content : "")]),
-                React.createElement('div', {
-                        className: "panel panel-success"
-                    }, [React.createElement('div', {
-                            className: "panel-heading"
-                        }, React.createElement('h3', {
-                            className: "panel-title"
-                        }, this.state ? this.state.data.projects.heading : "")),
-                        React.createElement('div', {
-                            className: "panel-body"
-                        }, React.createElement('ul', {}, this.state ? this.state.data.projectElements : []))
-                    ])
-                    ])), React.createElement('hr'), React.createElement('footer', {}, React.createElement("div", {
-                    className: "text-center btn-group"
-                }, this.state ? this.state.data.linkElements : {}))]));
+                        className: "panel-body"
+                    }, React.createElement('ul', {}, this.state ? generateProjectElements(this.state.data) : []))
+                    ]),
+                React.createElement('hr')
+            ]));
         }
     });
     React.render(React.createElement(site), document.getElementById('react'));
+
+    function httpGet(theUrl, cb) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                try {
+                    var resp = JSON.parse(xmlHttp.responseText);
+                    cb(resp);
+                }
+                catch (err) {
+                    throw err;
+                }
+            }
+        };
+        xmlHttp.open("GET", theUrl, true);
+        xmlHttp.send();
+    }
+
+    function fromNow(date) {
+        return "updated " + moment(date).fromNow();
+    }
+
+    function generateProjectElements(data) {
+        return data.projects.content.map(function(p) {
+            return React.createElement('li', {}, [React.createElement('a', {
+                className: "lead",
+                href: p.homepage || p.html_url
+            }, p.name), React.createElement('span', {
+                className: "label label-warning"
+            }, React.createElement('a', {
+                href: p.html_url
+            }, p.language)), React.createElement('span', {
+                className: "label label-success"
+            }, fromNow(p.pushed_at)), React.createElement('span', {}, p.description)]);
+        });
+    }
+
+    function generateLinkElements(data) {
+        var linkElements = {};
+        var input = data.links;
+        for (var key in input) {
+            var l = input[key];
+            linkElements[key] = React.createElement('a', {
+                href: l.url,
+                className: "btn btn-default",
+                onClick: key === "resume" ? function() {
+                    console.log(data.resume);
+                    pdfMake.createPdf(data.resume).open();
+                } : null
+            }, [React.createElement('i', {
+                className: l.icon
+            }), l.name]);
+        }
+        return linkElements;
+    }
 </script>
 
 </html>
