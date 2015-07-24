@@ -48,7 +48,7 @@ React.createElement('img', {
             if (this.state) {
                 this.state.data.feed.entry.forEach(function(e) {
                     //quote, context, date
-                    content.push(React.createElement('blockquote', {}, [React.createElement('p', {}, e.gsx$quote), React.createElement('footer', {}, e.gsx$context.$t+" - "+moment(e.gsx$date.$t).format("DD MMMM YYYY"))]))
+                    content.push(React.createElement('blockquote', {}, [React.createElement('p', {}, e.gsx$quote), React.createElement('footer', {}, e.gsx$context.$t+" - "+moment(e.gsx$date.$t).format("D MMMM YYYY"))]))
                     console.log(e);
                 })
             }
