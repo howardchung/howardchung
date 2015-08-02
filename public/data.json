@@ -76,12 +76,10 @@
             "height_cm": 177,
             "right_handed": true,
             "shoe_size": 11,
-            "blood_type": "",
             "birth_time": 726126840,
             "birth_city": "Hong Kong",
-            "languages": ["en", "es", "zh"],
-            "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "board games", "planespotting"],
-            "occupation": "Software Engineer, Microsoft"
+            "languages": ["en", "es"],
+            "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "board games", "planespotting"]
         }
     },
     "education": {
