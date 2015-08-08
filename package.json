@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/howardc93/howardc93.github.io",
   "dependencies": {
-    "express": "^4.11.2",
-    "seaport": "^2.0.9"
+    "express": "^4.11.2"
   }
 }
