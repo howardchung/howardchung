@@ -35,7 +35,7 @@
     var site = React.createClass({
         componentDidMount: function() {
             httpGet("public/data.json", function(data) {
-                httpGet("https://api.github.com/users/howardc93/starred", function(projects) {
+                httpGet("https://api.github.com/users/howardchung/starred", function(projects) {
                     projects = projects.sort(function(a, b) {
                         var key = "pushed_at";
                         return new Date(b[key]) - new Date(a[key]);
