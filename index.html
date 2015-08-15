@@ -110,7 +110,7 @@
                     selectRandomFact.bind(this)();
                     //setInterval(selectRandomFact.bind(this), 5000);
                     function selectRandomFact() {
-                        data.random_fact = "Random Fact: " + data.facts[Math.floor(Math.random() * data.facts.length)];
+                        data.random_fact = data.facts[Math.floor(Math.random() * data.facts.length)];
                         this.setState({
                             data: data
                         });
@@ -130,9 +130,7 @@
                     height: 250,
                     title: this.state ? this.state.data.profilejpg : ""
                 })),
-                React.createElement('p', {
-                    className: "lead"
-                }, this.state ? this.state.data.random_fact : ""),
+                React.createElement('blockquote', {}, [React.createElement('p', {}, this.state ? this.state.data.random_fact : ""), React.createElement('footer',{}, "a random fact")]),
                 React.createElement("div", {
                     className: "text-center btn-group"
                 }, this.state ? generateLinkElements(this.state.data) : {}),
