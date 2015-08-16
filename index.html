@@ -81,13 +81,16 @@
                                     c.description = [c.description || ""];
                                 }
                                 var first_line = [c.name];
+                                if (c.title) {
+                                    first_line.push(c.title);
+                                }
                                 if (c.end_date) {
                                     first_line.push(c.end_date.year);
                                 }
                                 else if (c.start_date) {
                                     first_line.push(c.start_date.year);
                                 }
-                                else if (c.html_url) {
+                                if (c.html_url) {
                                     first_line.push(c.html_url);
                                 }
                                 return {
