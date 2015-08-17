@@ -127,7 +127,7 @@
                 className: "container text-center"
             }, [
                 React.createElement('h1', {}, this.state ? this.state.data.json.content.full_name : ""),
-                React.createElement('h2', {}, this.state ? this.state.data.positions.content[0].title+"@"+this.state.data.positions.content[0].name),
+                React.createElement('h2', {}, this.state ? this.state.data.positions.content[0].title+"@"+this.state.data.positions.content[0].name : ""),
                 React.createElement('div', {}, React.createElement('img', {
                     className: "img-rounded profile",
                     src: "public/profile.jpg",
