@@ -110,7 +110,7 @@
                 "month": 8,
                 "year": 2014
             },
-            "description": ["Software engineer on SQL Azure team.", "Improved build system to provide up to 15x speed.", "Improved runner security with dynamic certificates and randomly generated passwords."],
+            "description": ["Software engineer on SQL Azure team.", "Implemented incremental build system to provide up to 15x reduction in build time.", "Improved runner security with dynamically created certificates and randomly generated passwords."],
             "title": "Software Development Engineer in Test"
         }, {
             "name": "Duke University",
