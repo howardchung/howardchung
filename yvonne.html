@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//cdn.jsdelivr.net/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet">
-    <script src="//cdn.jsdelivr.net/react/latest/react.min.js"></script>
+    <script src="//fb.me/react-0.14.0-rc1.js"></script>
+    <script src="//fb.me/react-dom-0.14.0-rc1.js"></script>
     <script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 </head>
 
@@ -38,7 +39,7 @@
         },
         render: function() {
             var content = [
-React.createElement('img', {
+    React.createElement('img', {
                     className: "img-rounded profile",
                     height: 275,
                     src: "https://scontent-sjc2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/1001897_10203750507149313_805584848_n.jpg?oh=351ec01031c567071f91c176db045069&oe=562BCDBF"
@@ -48,7 +49,7 @@ React.createElement('img', {
             if (this.state) {
                 this.state.data.feed.entry.forEach(function(e) {
                     //quote, context, date
-                    content.push(React.createElement('blockquote', {}, [React.createElement('p', {}, e.gsx$quote), React.createElement('footer', {}, e.gsx$context.$t+" - "+moment(e.gsx$date.$t).format("D MMMM YYYY"))]))
+                    content.push(React.createElement('blockquote', {}, [React.createElement('p', {}, e.gsx$quote.$t), React.createElement('footer', {}, e.gsx$context.$t + " - " + moment(e.gsx$date.$t).format("D MMMM YYYY"))]))
                     console.log(e);
                 })
             }
@@ -59,7 +60,7 @@ React.createElement('img', {
             }, content)));
         }
     });
-    React.render(React.createElement(site), document.getElementById('react'));
+    ReactDOM.render(React.createElement(site), document.getElementById('react'));
 </script>
 
 </html>

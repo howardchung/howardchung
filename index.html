@@ -21,7 +21,8 @@
     </style>
     <script src="//bpampuch.github.io/pdfmake/build/pdfmake.min.js"></script>
     <script src="//bpampuch.github.io/pdfmake/build/vfs_fonts.js"></script>
-    <script src="//cdn.jsdelivr.net/react/latest/react.min.js"></script>
+    <script src="//fb.me/react-0.14.0-rc1.js"></script>
+    <script src="//fb.me/react-dom-0.14.0-rc1.js"></script>
     <script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 </head>
 
@@ -127,17 +128,17 @@
                 className: "container text-center"
             }, [
                 React.createElement('h1', {}, this.state ? this.state.data.json.content.full_name : ""),
-                React.createElement('h3', {}, this.state ? this.state.data.positions.content[0].title+"@"+this.state.data.positions.content[0].name : ""),
+                React.createElement('h3', {}, this.state ? this.state.data.positions.content[0].title + "@" + this.state.data.positions.content[0].name : ""),
                 React.createElement('div', {}, React.createElement('img', {
                     className: "img-rounded profile",
                     src: "public/profile.jpg",
                     height: 250,
                     title: this.state ? this.state.data.profilejpg : ""
                 })),
-                React.createElement('blockquote', {}, [React.createElement('p', {}, this.state ? this.state.data.random_fact : ""), React.createElement('footer',{}, "a random fact")]),
+                React.createElement('blockquote', {}, [React.createElement('p', {}, this.state ? this.state.data.random_fact : ""), React.createElement('footer', {}, "a random fact")]),
                 React.createElement("div", {
                     className: "text-center btn-group"
-                }, this.state ? generateLinkElements(this.state.data) : {}),
+                }, this.state ? generateLinkElements(this.state.data) : []),
                 React.createElement('hr'),
                 React.createElement('div', {
                     className: "panel panel-info text-left"
@@ -165,7 +166,7 @@
             ]));
         }
     });
-    React.render(React.createElement(site), document.getElementById('react'));
+    ReactDOM.render(React.createElement(site), document.getElementById('react'));
 
     function httpGet(theUrl, cb) {
         var xmlHttp = new XMLHttpRequest();
@@ -211,11 +212,11 @@
     }
 
     function generateLinkElements(data) {
-        var linkElements = {};
+        var linkElements = [];
         var input = data.links;
         for (var key in input) {
             var l = input[key];
-            linkElements[key] = React.createElement('a', {
+            linkElements.push(React.createElement('a', {
                 href: l.url,
                 className: "btn btn-default",
                 onClick: key === "resume" ? function() {
@@ -224,7 +225,7 @@
                 } : null
             }, [React.createElement('i', {
                 className: l.icon
-            }), l.name]);
+            }), l.name]));
         }
         return linkElements;
     }
