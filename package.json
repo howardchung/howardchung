@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/howardc93/howardc93.github.io"
+    "url": "https://github.com/howardchung/howardchung.github.io"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/howardc93/howardc93.github.io/issues"
+    "url": "https://github.com/howardchung/howardchung.github.io/issues"
   },
-  "homepage": "https://github.com/howardc93/howardc93.github.io",
+  "homepage": "https://github.com/howardchung/howardchung.github.io",
   "dependencies": {
     "express": "^4.11.2"
   }
