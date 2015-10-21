@@ -5,7 +5,7 @@ sudo apt-get install nodejs-legacy npm
 #c9
 wget -O - https://raw.githubusercontent.com/c9/install/master/install.sh | bash
 #devtools
-sudo apt-get install -y git vim curl multitail silversearcher-ag
+sudo apt-get install -y git vim curl silversearcher-ag
 #heroku toolbelt
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 #upgrade to node 0.12
