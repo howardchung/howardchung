@@ -161,25 +161,28 @@
         "heading": "Skills",
         "content": [
         {
-                "name": "JavaScript"
+            "name": "JavaScript"
         },
         {
-                "name": "Node.js"
+            "name": "Node.js"
         },
         {
-                "name": "Java"
+            "name": "Java"
         }, 
         {
-                "name": "Python"
+            "name": "Python"
         }, 
         {
-                "name": "C#"
+            "name": "C#"
         },
         {
-                "name": "MongoDB"
+            "name": "PostgreSQL"
         },
         {
-                "name": "Redis"
+            "name": "MongoDB",
+        }
+        {
+            "name": "Redis"
         }]
     }
 }
