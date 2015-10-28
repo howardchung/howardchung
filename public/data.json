@@ -180,7 +180,7 @@
         },
         {
             "name": "MongoDB",
-        }
+        },
         {
             "name": "Redis"
         }]
