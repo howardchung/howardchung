@@ -42,7 +42,7 @@
         "I enjoy watching speedruns.",
         "I can make fried rice."
     ],
-    "stories":[
+    "stories": [
         "Wrong birthday",
         "Overtone",
         "A cold night"
@@ -71,7 +71,7 @@
         "resume": {
             "name": "Resume",
             "icon": "fa fa-file",
-            "url": "javascript:;"
+            "url": "#"
         }
     },
     "json": {
@@ -161,29 +161,29 @@
     "skills": {
         "heading": "Skills",
         "content": [
-        {
-            "name": "JavaScript"
+            {
+                "name": "JavaScript"
         },
-        {
-            "name": "Node.js"
+            {
+                "name": "Node.js"
         },
-        {
-            "name": "Java"
-        }, 
-        {
-            "name": "Python"
-        }, 
-        {
-            "name": "C#"
+            {
+                "name": "Java"
         },
-        {
-            "name": "PostgreSQL"
+            {
+                "name": "Python"
         },
-        {
-            "name": "MongoDB",
+            {
+                "name": "C#"
         },
-        {
-            "name": "Redis"
+            {
+                "name": "PostgreSQL"
+        },
+            {
+                "name": "MongoDB"
+        },
+            {
+                "name": "Redis"
         }]
     }
 }
