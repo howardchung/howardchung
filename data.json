@@ -107,7 +107,7 @@
                 "month": 8,
                 "year": 2015
             },
-            "description": ["Software engineer on Azure SQL DB Managed Backup team."],
+            "description": ["Software engineer on Azure SQL DB Managed Backup team.", "Implemented optimizations to backup service to skip unnecessary differential backups"],
             "title": "Software Engineer"
         }, {
             "name": "Microsoft",
