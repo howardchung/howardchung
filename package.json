@@ -19,6 +19,7 @@
   "homepage": "https://github.com/howardchung/howardchung.github.io",
   "dependencies": {
     "express": "^4.11.2",
+    "http-proxy": "^1.12.0",
     "jshint": "^2.8.0"
   }
 }
