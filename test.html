@@ -1,0 +1,13 @@
+<textarea id="query"></textarea>
+<button id="go">Go</button>
+<script>
+document.getElementById("go").onclick=go;
+function go(){
+    var str = document.getElementById("query").value;
+    var arr = str.split('\n');
+    console.log(arr);
+    arr.forEach(function(line){
+        window.open("https://google.com?q="+line);
+    });
+}
+</script>
