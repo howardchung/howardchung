@@ -8,9 +8,9 @@ wget -O - https://raw.githubusercontent.com/c9/install/master/install.sh | bash
 sudo apt-get install -y git vim curl silversearcher-ag
 #heroku toolbelt
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-#upgrade to node 0.12
+#upgrade to latest node
 sudo npm install -g n && sudo n stable
-#install npm, mocha, npm-check-updates
-sudo npm install -g npm && sudo npm install -g mocha && sudo npm install -g npm-check-updates
+#install npm
+sudo npm install -g npm
 #make a new ssh key
 ssh-keygen -t rsa -C "howardc93@gmail.com"
