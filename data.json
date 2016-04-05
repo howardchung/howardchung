@@ -84,7 +84,7 @@
             "shoe_size": 11,
             "birth_time": 726126840,
             "birth_city": "Hong Kong",
-            "languages": ["en", "es"],
+            "languages": ["en"],
             "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "board games", "planespotting"]
         }
     },
@@ -106,7 +106,7 @@
                 "month": 8,
                 "year": 2015
             },
-            "description": ["Software engineer on Azure SQL DB Managed Backup team.", "Implemented optimizations to backup service to skip unnecessary differential backups"],
+            "description": ["Software engineer on Azure SQL DB Managed Backup team.", "Implemented Powershell cmdlets for Backup/Restore functionality", "Implemented optimizations to backup service to skip unnecessary differential backups"],
             "title": "Software Engineer"
         }, {
             "name": "Microsoft",
