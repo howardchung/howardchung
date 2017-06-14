@@ -41,31 +41,16 @@
         "I like organizing things.",
         "I know how to make fried rice."
     ],
-    "stories": [
-        "Off-by-one birthday",
-        "Overtone",
-        "Sleeping outside"
-        ],
     "links": {
         "facebook": {
             "name": "Facebook",
             "icon": "fa fa-facebook",
-            "url": "http://facebook.com/howardc93"
-        },
-        "twitter": {
-            "name": "Twitter",
-            "icon": "fa fa-twitter",
-            "url": "http://twitter.com/howardc93"
+            "url": "https://facebook.com/howardc93"
         },
         "github": {
             "name": "GitHub",
             "icon": "fa fa-github",
-            "url": "http://github.com/howardchung"
-        },
-        "bitcoin": {
-            "name": "Bitcoin",
-            "icon": "fa fa-bitcoin",
-            "url": "https://blockchain.info/address/13XHeLLVeFtqef7WD4BDL3fQRqpVTUdG3i"
+            "url": "https://github.com/howardchung"
         },
         "resume": {
             "name": "Resume",
@@ -160,11 +145,8 @@
     "skills": {
         "heading": "Skills",
         "content": [
-            {
+        {
                 "name": "JavaScript"
-        },
-            {
-                "name": "Node.js"
         },
             {
                 "name": "Java"
@@ -183,6 +165,8 @@
         },
             {
                 "name": "Redis"
+        }, {
+                "name": "Cassandra"
         }]
     }
 }
