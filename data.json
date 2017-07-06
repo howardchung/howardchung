@@ -91,20 +91,12 @@
                 "month": 8,
                 "year": 2015
             },
-            "description": ["Software engineer on Azure SQL DB Managed Backup team.", "Implemented Powershell cmdlets for Backup/Restore functionality", "Implemented optimizations to backup service to skip unnecessary differential backups"],
+            "description": [
+                "Software engineer on Bing/Azure SQL DB",
+                "Developed full-stack esports answers for League of Legends and Dota 2 events, players, teams, and heroes on Bing",
+                "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
+            ],
             "title": "Software Engineer"
-        }, {
-            "name": "Microsoft",
-            "start_date": {
-                "month": 5,
-                "year": 2014
-            },
-            "end_date": {
-                "month": 8,
-                "year": 2014
-            },
-            "description": ["Software engineer on Azure SQL DB Management Service team.", "Implemented incremental build system to provide up to 15x reduction in build times.", "Improved runner security with dynamically created certificates and randomly generated passwords."],
-            "title": "Software Development Engineer in Test"
         }, {
             "name": "Duke University",
             "start_date": {
@@ -114,7 +106,11 @@
             "end_date": {
                 "year": 2014
             },
-            "description": ["Graded student assignments.", "Staffed office hours for student help.", "Led lab sections of 15-30 students."],
+            "description": [
+                "Graded student assignments.", 
+                "Staffed office hours for student help.", 
+                "Led lab sections of 15-30 students."
+            ],
             "title": "Undergraduate Teaching Assistant"
         }, {
             "name": "Duke University",
@@ -126,7 +122,10 @@
                 "month": 5,
                 "year": 2013
             },
-            "description": ["Developed Rails web interface for Cyclops, a tuning tool for distributed systems.", "Improved Cyclops algorithm by adding timing metrics for each stage."],
+            "description": [
+                "Developed Rails web interface for Cyclops, a tuning tool for distributed systems.", 
+                "Improved Cyclops algorithm by adding timing metrics for each stage."
+            ],
             "title": "Research Assistant"
         }, {
             "name": "Moda Health",
@@ -138,7 +137,10 @@
                 "month": 5,
                 "year": 2012
             },
-            "description": ["Developed graphical Java utilities for sending jobs to printers.", "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."],
+            "description": [
+                "Developed graphical Java utilities for sending jobs to printers.", 
+                "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."
+            ],
             "title": "Document Services Intern"
         }]
     },
