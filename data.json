@@ -94,6 +94,7 @@
             "description": [
                 "Software engineer on Bing/Azure SQL DB",
                 "Developed full-stack esports answers for League of Legends and Dota 2 events, players, teams, and heroes on Bing",
+                "Optimized data ingestion microservices to improve service reliability and development velocity",
                 "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
             ],
             "title": "Software Engineer"
@@ -107,9 +108,7 @@
                 "year": 2014
             },
             "description": [
-                "Graded student assignments.", 
-                "Staffed office hours for student help.", 
-                "Led lab sections of 15-30 students."
+                "Graded student assignments, staffed office hours, and led lab sections"
             ],
             "title": "Undergraduate Teaching Assistant"
         }, {
@@ -123,8 +122,8 @@
                 "year": 2013
             },
             "description": [
-                "Developed Rails web interface for Cyclops, a tuning tool for distributed systems.", 
-                "Improved Cyclops algorithm by adding timing metrics for each stage."
+                "Developed Rails web interface for Cyclops, a tuning tool for distributed systems", 
+                "Improved Cyclops algorithm by adding timing metrics for each stage"
             ],
             "title": "Research Assistant"
         }, {
@@ -139,7 +138,7 @@
             },
             "description": [
                 "Developed graphical Java utilities for sending jobs to printers.", 
-                "Automated data retrieval and analysis from Xerox printers with Excel macros and batch files."
+                "Automated data retrieval and analysis from Xerox printers with VBA Excel macros and batch files."
             ],
             "title": "Document Services Intern"
         }]
@@ -148,27 +147,26 @@
         "heading": "Skills",
         "content": [
         {
-                "name": "JavaScript"
+                "name": "JavaScript / ES6 / React / Redux / Webpack / Babel"
         },
-            {
+        {
                 "name": "Java"
         },
-            {
+        {
                 "name": "Python"
         },
-            {
+        {
                 "name": "C#"
         },
-            {
+        {
                 "name": "PostgreSQL"
         },
-            {
-                "name": "MongoDB"
-        },
-            {
+        {
                 "name": "Redis"
-        }, {
+        },
+        {
                 "name": "Cassandra"
-        }]
+        }
+        ]
     }
 }
