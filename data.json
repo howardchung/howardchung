@@ -147,26 +147,32 @@
         "heading": "Skills",
         "content": [
         {
-                "name": "JavaScript / ES6 / React / Redux / Webpack / Babel"
+                "name": "JavaScript (ES6 / Node.js / React / Redux / Webpack / Babel)"
         },
         {
-                "name": "Java"
+                "name": "Java (Maven / Swing)"
         },
         {
                 "name": "Python"
         },
         {
-                "name": "C#"
+                "name": "C# (.NET / Powershell)"
+        },
+            {
+                "name": "Go"
+            },
+        {
+                "name": "SQL (PostgreSQL / Microsoft SQL Server)"
         },
         {
-                "name": "PostgreSQL"
+                "name": "NoSQL (Cassandra / MongoDB / Redis)"
         },
-        {
-                "name": "Redis"
-        },
-        {
-                "name": "Cassandra"
-        }
+            {
+                "name": "Git / Travis CI / Docker"
+            },
+            {
+                "name": "Google Cloud Platform / Microsoft Azure / Amazon Web Services"
+            }
         ]
     }
 }
