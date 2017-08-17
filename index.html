@@ -221,7 +221,7 @@
                 className: "btn btn-default",
                 onClick: key === "resume" ? function() {
                     console.log(data.resume);
-                    pdfMake.createPdf(data.resume).open();
+                    pdfMake.createPdf(data.resume).download();
                 } : null
             }, [React.createElement('i', {
                 className: l.icon
