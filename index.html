@@ -19,7 +19,6 @@
 <script>
     /* global React ReactDOM pdfMake fetch */
     function createResume(data) {
-      var sections = ["education", "positions", "projects", "skills"];
       return {
         styles: {
           "heading": {
@@ -36,66 +35,71 @@
         },
         content: [
           {
-              text: data.json.content.full_name,
-              style: "heading"
+            text: data.json.content.full_name,
+            style: "heading"
           },
           data.email,
           data.phone.toString(),
           data.links.github.url,
           data.url,
           "\n",
-          ...sections.map(s => {
-             var sectionData = data[s];
-             return [{
-                text: sectionData.heading,
-                style: "subheading"
-              }, 
-              {
-              ul: sectionData.content.map(function(c) {
-                  if (typeof c.description !== "object") {
-                      c.description = [c.description || ""];
-                  }
-                  var first_line = [c.name];
-                  if (c.title) {
-                      first_line.push(c.title);
-                  }
-                  if (c.end_date) {
-                      first_line.push(c.end_date.year);
-                  }
-                  else if (c.start_date) {
-                      first_line.push(c.start_date.year);
-                  }
-                  if (c.html_url) {
-                      first_line.push(c.html_url);
-                  }
+          [
+            {
+              text: "Projects",
+              style: "subheading"
+            }, 
+            {
+                ul: data.projects.content.map(function(c) {
+                    var first_line = [c.name];
+                    if (c.title) {
+                        first_line.push(c.title);
+                    }
+                    if (c.end_date) {
+                        first_line.push(c.end_date.year);
+                    }
+                    else if (c.start_date) {
+                        first_line.push(c.start_date.year);
+                    }
+                    if (c.html_url) {
+                        first_line.push(c.html_url);
+                    }
+                    return {
+                        ul: [first_line.join(" - "),
+                            {
+                                ul: [].concat(c.description).map(function(d) {
+                                    return {
+                                        text: d,
+                                        style: "small"
+                                    };
+                                })
+                            }
+                        ]
+                    };
+                })
+            }
+          ],
+          "\n",
+          [
+            {
+              text: "Skills",
+              style: "subheading"
+            },
+            {
+              ul: data.skills.map(function(d) {
                   return {
-                      ul: [first_line.join(" - "),
-                          {
-                              ul: c.description.map(function(d) {
-                                  return {
-                                      text: d,
-                                      style: "small"
-                                  };
-                              })
-                          }
-                      ]
+                      text: d,
                   };
               })
-          }];
-          }),
+            }
+          ],
           "\n",
           ]
-      }
+      };
     }
     
     fetch('./data.json').then(resp => resp.json()).then(data => {
-      fetch('https://api.github.com/users/howardchung/starred').then(resp => resp.json()).then(projects => {
         document.title = data.json.content.full_name;
-        data.random_fact = data.facts[Math.floor(Math.random() * data.facts.length)];
-        data.projects = {
-            "heading": "Projects",
-            "content": projects
-        };
+        var fact = data.facts[Math.floor(Math.random() * data.facts.length)];
         var links = React.createElement("div", {
           className: '',
         }, React.createElement('div', { className: 'field is-grouped' }, 
@@ -120,7 +124,7 @@
           React.createElement('pre', {}, JSON.stringify(data.json.content, null, 2))
         );
         var bio = `
-I am a software engineer working at Microsoft.
+I am a software engineer at Microsoft.
 
 On the Bing team, I maintained the data ingestion systems and APIs for esports-related user experiences.
 
@@ -140,12 +144,12 @@ It now serves over 520,000 registered users and serves over 90 million API reque
               React.createElement('div', { className: 'tile is-parent is-vertical'}, [
                 React.createElement('article', { className: 'tile is-child notification is-primary'}, [
                   React.createElement('p', { className: 'title' }, data.json.content.full_name),
-                  React.createElement('p', { className: 'subtitle' }, data.positions.content[0].title + ", " + data.positions.content[0].name),
+                  React.createElement('p', { className: 'subtitle' }, data.projects.content[0].title + ", " + data.projects.content[0].name),
                   links,
                   React.createElement('figure', { className: 'image' }, img),
                 ]),
                 React.createElement('article', { className: 'tile is-child notification is-warning'}, [
-                  React.createElement('p', { className: 'title' }, data.random_fact),
+                  React.createElement('p', { className: 'title' }, fact),
                   React.createElement('p', { className: 'subtitle' }, 'A random fact'),
                 ])
               ]),
@@ -182,7 +186,6 @@ It now serves over 520,000 registered users and serves over 90 million API reque
         ]);
         ReactDOM.render(App, document.getElementById('react'));
       });
-    });
 </script>
 
 </html>

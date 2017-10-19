@@ -2,7 +2,7 @@
     "profilejpg": "A photograph from 2009.  I use it a lot.",
     "phone": 5035679740,
     "email": "howardzchung@gmail.com",
-    "url": "https://howardchung.net",
+    "url": "https://www.howardchung.net",
     "facts": [
         "I like seafood, particularly fish.",
         "I can't whistle.",
@@ -44,22 +44,18 @@
     "links": {
         "facebook": {
             "name": "Facebook",
-            "icon": "fa fa-facebook",
             "url": "https://facebook.com/howardzchung"
         },
         "github": {
             "name": "GitHub",
-            "icon": "fa fa-github",
             "url": "https://github.com/howardchung"
         },
         "resume": {
             "name": "Resume",
-            "icon": "fa fa-file",
             "url": "#"
         }
     },
     "json": {
-        "heading": "JSON",
         "content": {
             "full_name": "Howard Chung",
             "gender": "male",
@@ -73,18 +69,7 @@
             "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "board games", "planespotting"]
         }
     },
-    "education": {
-        "heading": "Education",
-        "content": [{
-            "description": "B.S. Computer Science",
-            "end_date": {
-                "year": 2015
-            },
-            "name": "Duke University"
-        }]
-    },
-    "positions": {
-        "heading": "Positions",
+    "projects": {
         "content": [{
             "name": "Microsoft",
             "start_date": {
@@ -92,87 +77,47 @@
                 "year": 2015
             },
             "description": [
-                "Software engineer on Bing/Azure SQL DB",
-                "Developed full-stack esports answers for League of Legends and Dota 2 events, players, teams, and heroes on Bing",
-                "Optimized data ingestion microservices to improve service reliability and development velocity",
+                "Software engineer - Bing, Azure SQL DB",
+                "Developed esports answers for League of Legends and Dota 2 events, players, teams, and heroes on Bing",
+                "Pioneered development of React applications on Bing",
                 "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
             ],
             "title": "Software Engineer"
         }, {
-            "name": "Duke University",
+            "name": "The OpenDota Project",
             "start_date": {
-                "month": 1,
-                "year": 2012
-            },
-            "end_date": {
+                "month": 8,
                 "year": 2014
             },
             "description": [
-                "Graded student assignments, staffed office hours, and led lab sections"
+                "https://www.opendota.com",
+                "Co-founder of open source project providing detailed data from Dota 2 replay files",
+                "Over 100 contributors, 520,000 registered users, 90 million API requests per month"
             ],
-            "title": "Undergraduate Teaching Assistant"
+            "title": "Co-Founder / Maintainer"
         }, {
             "name": "Duke University",
-            "end_date": {
-                "month": 12,
-                "year": 2013
-            },
+            "description": [ "B.S. Computer Science" ],
             "start_date": {
-                "month": 5,
-                "year": 2013
-            },
-            "description": [
-                "Developed Rails web interface for Cyclops, a tuning tool for distributed systems", 
-                "Improved Cyclops algorithm by adding timing metrics for each stage"
-            ],
-            "title": "Research Assistant"
-        }, {
-            "name": "Moda Health",
-            "end_date": {
                 "month": 8,
-                "year": 2012
+                "year": 2011
             },
-            "start_date": {
+            "end_date": {
                 "month": 5,
-                "year": 2012
-            },
-            "description": [
-                "Developed graphical Java utilities for sending jobs to printers.", 
-                "Automated data retrieval and analysis from Xerox printers with VBA Excel macros and batch files."
-            ],
-            "title": "Document Services Intern"
+                "year": 2015
+            }
         }]
     },
-    "skills": {
-        "heading": "Skills",
-        "content": [
-        {
-                "name": "JavaScript (ES6 / Node.js / React / Redux / Webpack / Babel)"
-        },
-        {
-                "name": "Java (Maven / Swing)"
-        },
-        {
-                "name": "Python"
-        },
-        {
-                "name": "C# (.NET / Powershell)"
-        },
-            {
-                "name": "Go"
-            },
-        {
-                "name": "SQL (PostgreSQL / Microsoft SQL Server)"
-        },
-        {
-                "name": "NoSQL (Cassandra / MongoDB / Redis)"
-        },
-            {
-                "name": "Git / Travis CI / Docker"
-            },
-            {
-                "name": "Google Cloud Platform / Microsoft Azure / Amazon Web Services"
-            }
-        ]
-    }
+    "skills": [
+        "JavaScript (ES6 / Node.js / React / Redux / Webpack / Babel)",
+        "Java (Maven / Swing)",
+        "Python",
+        "C# (.NET / PowerShell)",
+        "Go",
+        "SQL (PostgreSQL / Microsoft SQL Server)",
+        "NoSQL (Cassandra / MongoDB / Redis)",
+        "Containers (Docker / Kubernetes)",
+        "Continuous Integration (Travis CI / Jenkins)",
+        "Cloud (Google Cloud Platform / Microsoft Azure / Amazon Web Services)"
+    ]
 }
