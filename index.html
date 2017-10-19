@@ -3,232 +3,211 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.5">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        span {
-            margin: 1px;
-        }
-        
-        i {
-            margin-right: 5px;
-        }
-        
-        .container {
-            max-width: 700px;
-        }
-    </style>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/16.0.0/umd/react.production.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.20/pdfmake.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.20/vfs_fonts.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 </head>
 
 <body>
     <div id="react"></div>
 </body>
+
 <script>
-    var React = React;
-    var moment = moment;
-    var pdfMake = pdfMake;
-    var site = React.createClass({
-        componentDidMount: function() {
-            httpGet("./data.json", function(data) {
-                httpGet("https://api.github.com/users/howardchung/starred", function(projects) {
-                    projects = projects.sort(function(a, b) {
-                        var key = "pushed_at";
-                        return new Date(b[key]) - new Date(a[key]);
-                    });
-                    data.projects = {
-                        "heading": "Projects",
-                        "content": projects
-                    };
-                    var sections = ["education", "positions", "projects", "skills"];
-                    data.resume = {};
-                    data.resume.styles = {
-                        "heading": {
-                            "bold": true,
-                            "fontSize": 18
-                        },
-                        "subheading": {
-                            "bold": true,
-                            "fontSize": 14
-                        },
-                        "small": {
-                            "fontSize": 10
-                        }
-                    };
-                    data.resume.content = [
-                        {
-                            text: data.json.content.full_name,
-                            style: "heading"
-                    },
-                    data.email,
-                    data.phone.toString(),
-                    data.links.github.url,
-                    data.url,
-                    "\n"];
-                    sections.forEach(function(s) {
-                        s = data[s];
-                        data.resume.content.push({
-                            text: s.heading,
-                            style: "subheading"
-                        });
-                        data.resume.content.push({
-                            "ul": s.content.map(function(c) {
-                                if (typeof c.description !== "object") {
-                                    c.description = [c.description || ""];
-                                }
-                                var first_line = [c.name];
-                                if (c.title) {
-                                    first_line.push(c.title);
-                                }
-                                if (c.end_date) {
-                                    first_line.push(c.end_date.year);
-                                }
-                                else if (c.start_date) {
-                                    first_line.push(c.start_date.year);
-                                }
-                                if (c.html_url) {
-                                    first_line.push(c.html_url);
-                                }
-                                return {
-                                    ul: [first_line.join(" - "),
-                                        {
-                                            ul: c.description.map(function(d) {
-                                                return {
-                                                    text: d,
-                                                    style: "small"
-                                                };
-                                            })
-                                        }
-                                    ]
-                                };
-                            })
-                        });
-                        data.resume.content.push("\n");
-                    });
-                    document.title = data.json.content.full_name;
-                    selectRandomFact.bind(this)();
-                    //setInterval(selectRandomFact.bind(this), 5000);
-                    function selectRandomFact() {
-                        data.random_fact = data.facts[Math.floor(Math.random() * data.facts.length)];
-                        this.setState({
-                            data: data
-                        });
-                    }
-                    console.log(data);
-                }.bind(this));
-            }.bind(this));
-        },
-        render: function() {
-            return (React.createElement('div', {
-                className: "container text-center"
-            }, [
-                React.createElement('h1', {}, this.state ? this.state.data.json.content.full_name : ""),
-                React.createElement('h3', {}, this.state ? this.state.data.positions.content[0].title + "@" + this.state.data.positions.content[0].name : ""),
-                React.createElement('div', {}, React.createElement('img', {
-                    className: "img-rounded profile",
-                    src: "./profile.jpg",
-                    height: 250,
-                    title: this.state ? this.state.data.profilejpg : ""
-                })),
-                React.createElement('blockquote', {}, [React.createElement('p', {}, this.state ? this.state.data.random_fact : ""), React.createElement('footer', {}, "a random fact")]),
-                React.createElement("div", {
-                    className: "text-center btn-group"
-                }, this.state ? generateLinkElements(this.state.data) : []),
-                React.createElement('hr'),
-                React.createElement('div', {
-                    className: "panel panel-info text-left"
-                }, [React.createElement('div', {
-                        className: "panel-heading"
-                    }, React.createElement('h3', {
-                        className: "panel-title"
-                    }, this.state ? this.state.data.json.heading : "")),
-                        React.createElement('div', {
-                        className: "panel-body"
-                    }, React.createElement('pre', {}, this.state ? JSON.stringify(this.state.data.json.content, null, 2) : ""))
-                    ]),
-                React.createElement('div', {
-                    className: "panel panel-success text-left"
-                }, [React.createElement('div', {
-                        className: "panel-heading"
-                    }, React.createElement('h3', {
-                        className: "panel-title"
-                    }, this.state ? this.state.data.projects.heading : "")),
-                        React.createElement('div', {
-                        className: "panel-body"
-                    }, React.createElement('ul', {}, this.state ? generateProjectElements(this.state.data) : []))
-                    ]),
-                React.createElement('hr')
-            ]));
-        }
-    });
-    ReactDOM.render(React.createElement(site), document.getElementById('react'));
-
-    function httpGet(theUrl, cb) {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.onreadystatechange = function() {
-            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                try {
-                    var resp = JSON.parse(xmlHttp.responseText);
-                    cb(resp);
-                }
-                catch (err) {
-                    throw err;
-                }
+    /* global React ReactDOM pdfMake */
+    var sections = ["education", "positions", "projects", "skills"];
+    function createResume(data) {
+        return {
+          styles: {
+            "heading": {
+                "bold": true,
+                "fontSize": 18
+            },
+            "subheading": {
+                "bold": true,
+                "fontSize": 14
+            },
+            "small": {
+                "fontSize": 10
             }
-        };
-        xmlHttp.open("GET", theUrl, true);
-        xmlHttp.send();
+          },
+          content: [
+            {
+                text: data.json.content.full_name,
+                style: "heading"
+            },
+            data.email,
+            data.phone.toString(),
+            data.links.github.url,
+            data.url,
+            "\n",
+            ...sections.map(s => {
+               var sectionData = data[s];
+               return [{
+                  text: sectionData.heading,
+                  style: "subheading"
+                }, 
+                {
+                ul: sectionData.content.map(function(c) {
+                    if (typeof c.description !== "object") {
+                        c.description = [c.description || ""];
+                    }
+                    var first_line = [c.name];
+                    if (c.title) {
+                        first_line.push(c.title);
+                    }
+                    if (c.end_date) {
+                        first_line.push(c.end_date.year);
+                    }
+                    else if (c.start_date) {
+                        first_line.push(c.start_date.year);
+                    }
+                    if (c.html_url) {
+                        first_line.push(c.html_url);
+                    }
+                    return {
+                        ul: [first_line.join(" - "),
+                            {
+                                ul: c.description.map(function(d) {
+                                    return {
+                                        text: d,
+                                        style: "small"
+                                    };
+                                })
+                            }
+                        ]
+                    };
+                })
+            }];
+            }),
+            "\n",
+            ]
+        }
     }
-
-    function fromNow(date) {
-        return "updated " + moment(date).fromNow();
-    }
-
+    
     function generateProjectElements(data) {
-        return data.projects.content.map(function(p) {
-            return React.createElement('li', {}, [React.createElement('a', {
-                className: "",
-                href: p.homepage || p.html_url
-            }, p.full_name), React.createElement('ul', null, [React.createElement('li', null, [
-                React.createElement('span', {
-                        className: "label label-warning"
-                    }, React.createElement('a', {
-                        href: p.html_url
-                    }, p.language)),
-                React.createElement('span', {
-                        className: "label label-info"
-                    }, p.stargazers_count + " starred"),
-                React.createElement('span', {
-                        className: "label label-success"
-                    }, fromNow(p.pushed_at)), ]),
-            React.createElement('li', {}, p.description)
-            ])]);
-        });
+        return React.createElement('div', {}, 
+          data.projects.content.map(function(p) {
+            return React.createElement('li', {}, [
+              React.createElement('a', { className: "", href: p.homepage || p.html_url }, 
+                p.description
+              ), 
+              React.createElement('ul', null, [
+                React.createElement('li', null, [
+                  React.createElement('span', { className: "label label-warning" }, 
+                    React.createElement('a', { href: p.html_url }, p.language)
+                  ),
+                  React.createElement('span', { className: "label label-info" }, p.stargazers_count + " starred"),
+                ]),
+              ]
+             )
+            ]);
+          })
+        );
     }
 
     function generateLinkElements(data) {
-        var linkElements = [];
-        var input = data.links;
-        for (var key in input) {
-            var l = input[key];
-            linkElements.push(React.createElement('a', {
+        return React.createElement('div', { className: 'field is-grouped' }, 
+          Object.keys(data.links).map(key => {
+            var l = data.links[key];
+            return React.createElement('p', { className: 'control' }, React.createElement('a', {
                 href: l.url,
-                className: "btn btn-default",
+                className: 'button is-link',
                 onClick: key === "resume" ? function() {
-                    console.log(data.resume);
-                    pdfMake.createPdf(data.resume).download();
-                } : null
-            }, [React.createElement('i', {
-                className: l.icon
-            }), l.name]));
-        }
-        return linkElements;
+                    pdfMake.createPdf(createResume(data)).download();
+                } : null,
+              }, [l.name]
+            ));
+          })
+        );
     }
+    
+    fetch('./data.json').then(resp => resp.json()).then(data => {
+       fetch('https://api.github.com/users/howardchung/starred').then(resp => resp.json()).then(projects => {
+            document.title = data.json.content.full_name;
+            data.random_fact = data.facts[Math.floor(Math.random() * data.facts.length)];
+            data.projects = {
+                "heading": "Projects",
+                "content": projects
+            };
+            var links = React.createElement("div", {
+              className: '',
+            }, generateLinkElements(data));
+            var img = React.createElement('img', {
+                className: '',
+                src: "./profile.jpg",
+                style: { height: '250px', width: 'initial', padding: '10px' },
+            });
+            var json = React.createElement('div', {}, 
+              React.createElement('pre', {}, JSON.stringify(data.json.content, null, 2))
+            );
+            var App = React.createElement('div', { className: 'tile is-ancestor'}, [
+                React.createElement('div', { className: 'tile is-vertical is-8' }, [
+                  React.createElement('div', { className: 'tile'}, [
+                    React.createElement('div', { className: 'tile is-parent is-vertical'}, [
+                      React.createElement('article', { className: 'tile is-child notification is-primary'}, [
+                        React.createElement('p', { className: 'title' }, data.json.content.full_name),
+                        React.createElement('p', { className: 'subtitle' }, data.positions.content[0].title + ", " + data.positions.content[0].name),
+                        links,
+                        React.createElement('figure', { className: 'image' }, img),
+                      ]),
+                      React.createElement('article', { className: 'tile is-child notification is-warning'}, [
+                        React.createElement('p', { className: 'title' }, data.random_fact),
+                        React.createElement('p', { className: 'subtitle' }, 'A random fact'),
+                      ])
+                    ]),
+                    React.createElement('div', { className: 'tile is-parent'}, [
+                      React.createElement('article', { className: 'tile is-child notification is-info'}, [
+                        React.createElement('p', { className: 'title' }, 'Bio'),
+                        React.createElement('p', { className: 'subtitle' }, 'A verbal summary'),
+                        React.createElement('div', {}, 
+                          React.createElement('pre', { style: { whiteSpace: 'pre-wrap' }}, `
+I am a software engineer working at Microsoft.
+
+On the Bing team, I maintained the data ingestion systems and APIs for esports-related user experiences.
+
+I also helped pioneer the development of the first React applications on Bing, including a new tablet-optimized experience.
+
+Previously, I worked on Azure SQL Database, where I built PowerShell commandlets for the managed backup service.
+
+I graduated from Duke University in 2015 with a B.S. in Computer Science.
+
+In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the ARTS game Dota 2.
+
+It now serves over 520,000 registered users and serves over 90 million API requests each month.
+                        `)
+                        ),
+                      ]),
+                    ]),
+                  ]),
+                  React.createElement('div', { className: 'tile is-parent'}, [
+                    React.createElement('article', { className: 'tile is-child notification is-danger'}, [
+                      React.createElement('p', { className: 'title' }, 'Timeline'),
+                      React.createElement('p', { className: 'subtitle' }, 'Things I\'ve done'),
+                      React.createElement('ul', { className: '' }, [
+                        React.createElement('li', {}, '2015 - Microsoft (Software Engineer - Bing, Azure SQL Database)'),
+                        React.createElement('li', {}, '2015 - Duke University (B.S. Computer Science)'),
+                        React.createElement('li', {}, '2014 - The OpenDota Project (Co-Founder, Maintainer)'),
+                        React.createElement('li', {}, '2014 - Microsoft (Software Engineer Intern - Azure SQL Database)'),
+                      ]),
+                    ]),
+                  ]),
+                ]),
+                React.createElement('div', { className: 'tile is-parent'}, [
+                  React.createElement('article', { className: 'tile is-child notification is-success'}, [
+                    React.createElement('p', { className: 'title' }, 'JSON'),
+                    React.createElement('p', { className: 'subtitle' }, 'A parseable summary'),
+                    React.createElement('div', { }, json),
+                  ]),
+                ]), 
+            ]);
+            ReactDOM.render(App, document.getElementById('react'));
+        });
+    });
+
 </script>
 
 </html>
