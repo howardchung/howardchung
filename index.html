@@ -17,100 +17,88 @@
 </body>
 
 <script>
-    /* global React ReactDOM pdfMake */
-    var sections = ["education", "positions", "projects", "skills"];
+    /* global React ReactDOM pdfMake fetch */
     function createResume(data) {
-        return {
-          styles: {
-            "heading": {
-                "bold": true,
-                "fontSize": 18
-            },
-            "subheading": {
-                "bold": true,
-                "fontSize": 14
-            },
-            "small": {
-                "fontSize": 10
-            }
+      var sections = ["education", "positions", "projects", "skills"];
+      return {
+        styles: {
+          "heading": {
+              "bold": true,
+              "fontSize": 18
           },
-          content: [
-            {
-                text: data.json.content.full_name,
-                style: "heading"
-            },
-            data.email,
-            data.phone.toString(),
-            data.links.github.url,
-            data.url,
-            "\n",
-            ...sections.map(s => {
-               var sectionData = data[s];
-               return [{
-                  text: sectionData.heading,
-                  style: "subheading"
-                }, 
-                {
-                ul: sectionData.content.map(function(c) {
-                    if (typeof c.description !== "object") {
-                        c.description = [c.description || ""];
-                    }
-                    var first_line = [c.name];
-                    if (c.title) {
-                        first_line.push(c.title);
-                    }
-                    if (c.end_date) {
-                        first_line.push(c.end_date.year);
-                    }
-                    else if (c.start_date) {
-                        first_line.push(c.start_date.year);
-                    }
-                    if (c.html_url) {
-                        first_line.push(c.html_url);
-                    }
-                    return {
-                        ul: [first_line.join(" - "),
-                            {
-                                ul: c.description.map(function(d) {
-                                    return {
-                                        text: d,
-                                        style: "small"
-                                    };
-                                })
-                            }
-                        ]
-                    };
-                })
-            }];
-            }),
-            "\n",
-            ]
-        }
+          "subheading": {
+              "bold": true,
+              "fontSize": 14
+          },
+          "small": {
+              "fontSize": 10
+          }
+        },
+        content: [
+          {
+              text: data.json.content.full_name,
+              style: "heading"
+          },
+          data.email,
+          data.phone.toString(),
+          data.links.github.url,
+          data.url,
+          "\n",
+          ...sections.map(s => {
+             var sectionData = data[s];
+             return [{
+                text: sectionData.heading,
+                style: "subheading"
+              }, 
+              {
+              ul: sectionData.content.map(function(c) {
+                  if (typeof c.description !== "object") {
+                      c.description = [c.description || ""];
+                  }
+                  var first_line = [c.name];
+                  if (c.title) {
+                      first_line.push(c.title);
+                  }
+                  if (c.end_date) {
+                      first_line.push(c.end_date.year);
+                  }
+                  else if (c.start_date) {
+                      first_line.push(c.start_date.year);
+                  }
+                  if (c.html_url) {
+                      first_line.push(c.html_url);
+                  }
+                  return {
+                      ul: [first_line.join(" - "),
+                          {
+                              ul: c.description.map(function(d) {
+                                  return {
+                                      text: d,
+                                      style: "small"
+                                  };
+                              })
+                          }
+                      ]
+                  };
+              })
+          }];
+          }),
+          "\n",
+          ]
+      }
     }
     
-    function generateProjectElements(data) {
-        return React.createElement('div', {}, 
-          data.projects.content.map(function(p) {
-            return React.createElement('li', {}, [
-              React.createElement('a', { className: "", href: p.homepage || p.html_url }, 
-                p.description
-              ), 
-              React.createElement('ul', null, [
-                React.createElement('li', null, [
-                  React.createElement('span', { className: "label label-warning" }, 
-                    React.createElement('a', { href: p.html_url }, p.language)
-                  ),
-                  React.createElement('span', { className: "label label-info" }, p.stargazers_count + " starred"),
-                ]),
-              ]
-             )
-            ]);
-          })
-        );
-    }
-
-    function generateLinkElements(data) {
-        return React.createElement('div', { className: 'field is-grouped' }, 
+    fetch('./data.json').then(resp => resp.json()).then(data => {
+      fetch('https://api.github.com/users/howardchung/starred').then(resp => resp.json()).then(projects => {
+        document.title = data.json.content.full_name;
+        data.random_fact = data.facts[Math.floor(Math.random() * data.facts.length)];
+        data.projects = {
+            "heading": "Projects",
+            "content": projects
+        };
+        var links = React.createElement("div", {
+          className: '',
+        }, React.createElement('div', { className: 'field is-grouped' }, 
           Object.keys(data.links).map(key => {
             var l = data.links[key];
             return React.createElement('p', { className: 'control' }, React.createElement('a', {
@@ -122,49 +110,16 @@
               }, [l.name]
             ));
           })
+        ));
+        var img = React.createElement('img', {
+            className: '',
+            src: './profile.jpg',
+            style: { height: '250px', width: 'initial', padding: '10px' },
+        });
+        var json = React.createElement('div', {}, 
+          React.createElement('pre', {}, JSON.stringify(data.json.content, null, 2))
         );
-    }
-    
-    fetch('./data.json').then(resp => resp.json()).then(data => {
-       fetch('https://api.github.com/users/howardchung/starred').then(resp => resp.json()).then(projects => {
-            document.title = data.json.content.full_name;
-            data.random_fact = data.facts[Math.floor(Math.random() * data.facts.length)];
-            data.projects = {
-                "heading": "Projects",
-                "content": projects
-            };
-            var links = React.createElement("div", {
-              className: '',
-            }, generateLinkElements(data));
-            var img = React.createElement('img', {
-                className: '',
-                src: "./profile.jpg",
-                style: { height: '250px', width: 'initial', padding: '10px' },
-            });
-            var json = React.createElement('div', {}, 
-              React.createElement('pre', {}, JSON.stringify(data.json.content, null, 2))
-            );
-            var App = React.createElement('div', { className: 'tile is-ancestor'}, [
-                React.createElement('div', { className: 'tile is-vertical is-8' }, [
-                  React.createElement('div', { className: 'tile'}, [
-                    React.createElement('div', { className: 'tile is-parent is-vertical'}, [
-                      React.createElement('article', { className: 'tile is-child notification is-primary'}, [
-                        React.createElement('p', { className: 'title' }, data.json.content.full_name),
-                        React.createElement('p', { className: 'subtitle' }, data.positions.content[0].title + ", " + data.positions.content[0].name),
-                        links,
-                        React.createElement('figure', { className: 'image' }, img),
-                      ]),
-                      React.createElement('article', { className: 'tile is-child notification is-warning'}, [
-                        React.createElement('p', { className: 'title' }, data.random_fact),
-                        React.createElement('p', { className: 'subtitle' }, 'A random fact'),
-                      ])
-                    ]),
-                    React.createElement('div', { className: 'tile is-parent'}, [
-                      React.createElement('article', { className: 'tile is-child notification is-info'}, [
-                        React.createElement('p', { className: 'title' }, 'Bio'),
-                        React.createElement('p', { className: 'subtitle' }, 'A verbal summary'),
-                        React.createElement('div', {}, 
-                          React.createElement('pre', { style: { whiteSpace: 'pre-wrap' }}, `
+        var bio = `
 I am a software engineer working at Microsoft.
 
 On the Bing team, I maintained the data ingestion systems and APIs for esports-related user experiences.
@@ -178,36 +133,56 @@ I graduated from Duke University in 2015 with a B.S. in Computer Science.
 In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the ARTS game Dota 2.
 
 It now serves over 520,000 registered users and serves over 90 million API requests each month.
-                        `)
-                        ),
-                      ]),
-                    ]),
-                  ]),
-                  React.createElement('div', { className: 'tile is-parent'}, [
-                    React.createElement('article', { className: 'tile is-child notification is-danger'}, [
-                      React.createElement('p', { className: 'title' }, 'Timeline'),
-                      React.createElement('p', { className: 'subtitle' }, 'Things I\'ve done'),
-                      React.createElement('ul', { className: '' }, [
-                        React.createElement('li', {}, '2015 - Microsoft (Software Engineer - Bing, Azure SQL Database)'),
-                        React.createElement('li', {}, '2015 - Duke University (B.S. Computer Science)'),
-                        React.createElement('li', {}, '2014 - The OpenDota Project (Co-Founder, Maintainer)'),
-                        React.createElement('li', {}, '2014 - Microsoft (Software Engineer Intern - Azure SQL Database)'),
-                      ]),
-                    ]),
-                  ]),
+        `;
+        var App = React.createElement('div', { className: 'tile is-ancestor'}, [
+          React.createElement('div', { className: 'tile is-vertical is-8' }, [
+            React.createElement('div', { className: 'tile'}, [
+              React.createElement('div', { className: 'tile is-parent is-vertical'}, [
+                React.createElement('article', { className: 'tile is-child notification is-primary'}, [
+                  React.createElement('p', { className: 'title' }, data.json.content.full_name),
+                  React.createElement('p', { className: 'subtitle' }, data.positions.content[0].title + ", " + data.positions.content[0].name),
+                  links,
+                  React.createElement('figure', { className: 'image' }, img),
                 ]),
-                React.createElement('div', { className: 'tile is-parent'}, [
-                  React.createElement('article', { className: 'tile is-child notification is-success'}, [
-                    React.createElement('p', { className: 'title' }, 'JSON'),
-                    React.createElement('p', { className: 'subtitle' }, 'A parseable summary'),
-                    React.createElement('div', { }, json),
-                  ]),
-                ]), 
-            ]);
-            ReactDOM.render(App, document.getElementById('react'));
-        });
+                React.createElement('article', { className: 'tile is-child notification is-warning'}, [
+                  React.createElement('p', { className: 'title' }, data.random_fact),
+                  React.createElement('p', { className: 'subtitle' }, 'A random fact'),
+                ])
+              ]),
+              React.createElement('div', { className: 'tile is-parent'}, [
+                React.createElement('article', { className: 'tile is-child notification is-info'}, [
+                  React.createElement('p', { className: 'title' }, 'Bio'),
+                  React.createElement('p', { className: 'subtitle' }, 'A verbal summary'),
+                  React.createElement('div', {}, 
+                    React.createElement('pre', { style: { whiteSpace: 'pre-wrap' }}, bio)
+                  ),
+                ]),
+              ]),
+            ]),
+            React.createElement('div', { className: 'tile is-parent'}, [
+              React.createElement('article', { className: 'tile is-child notification is-danger'}, [
+                React.createElement('p', { className: 'title' }, 'Timeline'),
+                React.createElement('p', { className: 'subtitle' }, 'Things I\'ve done'),
+                React.createElement('ul', { className: '' }, [
+                  React.createElement('li', {}, '2015 - Microsoft (Software Engineer - Bing, Azure SQL Database)'),
+                  React.createElement('li', {}, '2015 - Duke University (B.S. Computer Science)'),
+                  React.createElement('li', {}, '2014 - The OpenDota Project (Co-Founder, Maintainer)'),
+                  React.createElement('li', {}, '2014 - Microsoft (Software Engineer Intern - Azure SQL Database)'),
+                ]),
+              ]),
+            ]),
+          ]),
+          React.createElement('div', { className: 'tile is-parent'}, [
+            React.createElement('article', { className: 'tile is-child notification is-success'}, [
+              React.createElement('p', { className: 'title' }, 'JSON'),
+              React.createElement('p', { className: 'subtitle' }, 'A parseable summary'),
+              React.createElement('div', { }, json),
+            ]),
+          ]), 
+        ]);
+        ReactDOM.render(App, document.getElementById('react'));
+      });
     });
-
 </script>
 
 </html>
