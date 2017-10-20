@@ -72,6 +72,7 @@
     "projects": {
         "content": [{
             "name": "Microsoft",
+            "title": "Software Engineer",
             "start_date": {
                 "month": 8,
                 "year": 2015
@@ -81,10 +82,10 @@
                 "Developed esports answers for League of Legends and Dota 2 events, players, teams, and heroes on Bing",
                 "Pioneered development of React applications on Bing",
                 "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
-            ],
-            "title": "Software Engineer"
+            ]
         }, {
             "name": "The OpenDota Project",
+            "title": "Co-Founder / Maintainer",
             "start_date": {
                 "month": 8,
                 "year": 2014
@@ -93,11 +94,10 @@
                 "https://www.opendota.com",
                 "Co-founder of open source project providing detailed data from Dota 2 replay files",
                 "Over 100 contributors, 520,000 registered users, 90 million API requests per month"
-            ],
-            "title": "Co-Founder / Maintainer"
+            ]
         }, {
             "name": "Duke University",
-            "description": [ "B.S. Computer Science" ],
+            "title": "Undergraduate",
             "start_date": {
                 "month": 8,
                 "year": 2011
@@ -105,7 +105,8 @@
             "end_date": {
                 "month": 5,
                 "year": 2015
-            }
+            },
+            "description": [ "B.S. Computer Science" ]
         }]
     },
     "skills": [
