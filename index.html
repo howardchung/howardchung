@@ -8,8 +8,8 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/react/16.0.0/umd/react.production.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.20/pdfmake.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.20/vfs_fonts.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.33/pdfmake.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.33/vfs_fonts.js"></script>
 </head>
 
 <body>
@@ -109,7 +109,7 @@
                 href: l.url,
                 className: 'button is-link',
                 onClick: key === "resume" ? function() {
-                    pdfMake.createPdf(createResume(data)).download();
+                    pdfMake.createPdf(createResume(data)).open();
                 } : null,
               }, [l.name]
             ));
