@@ -66,7 +66,7 @@
         "languages": ["en"],
         "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "board games", "planespotting"],
         "skills": [
-            "JavaScript (ES6 / Node.js / React / Redux / Webpack / Babel)",
+            "JavaScript (Node.js / React)",
             "Python",
             "C# (.NET / PowerShell)",
             "Java (Maven / Swing)",
@@ -81,12 +81,13 @@
     "projects": {
         "content": [{
             "name": "Microsoft",
-            "title": "Software Engineer (Bing, Azure SQL DB)",
+            "title": "Software Engineer",
             "start_date": {
                 "month": 8,
                 "year": 2015
             },
             "description": [
+                "Bing, Azure SQL DB",
                 "Developed esports answers for League of Legends and Dota 2 events, players, teams, and heroes on Bing",
                 "Pioneered development of React applications on Bing",
                 "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
@@ -117,7 +118,7 @@
             "description": []
         }, {
             "name": "Microsoft",
-            "title": "Software Engineer Intern (Azure SQL DB)",
+            "title": "Software Engineer Intern",
             "start_date": {
                 "month": 5,
                 "year": 2014
@@ -127,6 +128,7 @@
                 "year": 2014
             },
             "description": [
+                "Azure SQL DB",
                 "Improved build times for test configuration tool by 10x using incremental build",
                 "Implemented automated certificate rotation for database test runners"
             ]
