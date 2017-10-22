@@ -1,8 +1,4 @@
 {
-    "profilejpg": "A photograph from 2009.  I use it a lot.",
-    "phone": 5035679740,
-    "email": "howardzchung@gmail.com",
-    "url": "https://www.howardchung.net",
     "facts": [
         "I like seafood, particularly fish.",
         "I can't whistle.",
@@ -41,44 +37,56 @@
         "I like organizing things.",
         "I know how to make fried rice."
     ],
-    "links": {
-        "facebook": {
+    "links": [
+        {
             "name": "Facebook",
             "url": "https://facebook.com/howardzchung"
         },
-        "github": {
+        {
             "name": "GitHub",
             "url": "https://github.com/howardchung"
         },
-        "resume": {
+        {
             "name": "Resume",
-            "url": "#"
+            "url": "#resume"
         }
-    },
+    ],
     "json": {
-        "content": {
-            "full_name": "Howard Chung",
-            "gender": "male",
-            "height_cm": 177,
-            "right_handed": true,
-            "hand_span_cm": 23,
-            "shoe_size": 11,
-            "birth_time": 726126840,
-            "birth_city": "Hong Kong",
-            "languages": ["en"],
-            "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "board games", "planespotting"]
-        }
+        "full_name": "Howard Chung",
+        "phone": 5035679740,
+        "email": "howardzchung@gmail.com",
+        "url": "https://www.howardchung.net",
+        "gender": "male",
+        "height_cm": 177,
+        "right_handed": true,
+        "hand_span_cm": 23,
+        "shoe_size": 11,
+        "birth_time": 726126840,
+        "birth_city": "Hong Kong",
+        "languages": ["en"],
+        "activities": ["programming", "ultimate", "hiking", "rock climbing", "Dota 2", "board games", "planespotting"],
+        "skills": [
+            "JavaScript (ES6 / Node.js / React / Redux / Webpack / Babel)",
+            "Python",
+            "C# (.NET / PowerShell)",
+            "Java (Maven / Swing)",
+            "Go",
+            "SQL (PostgreSQL / Microsoft SQL Server)",
+            "NoSQL (Cassandra / MongoDB / Redis)",
+            "Containers (Docker / Kubernetes)",
+            "Continuous Integration (Travis CI / Jenkins)",
+            "Cloud (GCP / Azure / AWS)"
+        ]
     },
     "projects": {
         "content": [{
             "name": "Microsoft",
-            "title": "Software Engineer",
+            "title": "Software Engineer (Bing, Azure SQL DB)",
             "start_date": {
                 "month": 8,
                 "year": 2015
             },
             "description": [
-                "Software engineer - Bing, Azure SQL DB",
                 "Developed esports answers for League of Legends and Dota 2 events, players, teams, and heroes on Bing",
                 "Pioneered development of React applications on Bing",
                 "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
@@ -91,13 +99,13 @@
                 "year": 2014
             },
             "description": [
-                "https://www.opendota.com",
-                "Co-founder of open source project providing detailed data from Dota 2 replay files",
-                "Over 100 contributors, 520,000 registered users, 90 million API requests per month"
+                "Open source project providing detailed data from Dota 2 replay files",
+                "Over 100 contributors, 520,000 registered users, 90 million API requests per month",
+                "https://www.opendota.com"
             ]
         }, {
             "name": "Duke University",
-            "title": "Undergraduate",
+            "title": "B.S. Computer Science",
             "start_date": {
                 "month": 8,
                 "year": 2011
@@ -106,19 +114,22 @@
                 "month": 5,
                 "year": 2015
             },
-            "description": [ "B.S. Computer Science" ]
+            "description": []
+        }, {
+            "name": "Microsoft",
+            "title": "Software Engineer Intern (Azure SQL DB)",
+            "start_date": {
+                "month": 5,
+                "year": 2014
+            },
+            "end_date": {
+                "month": 8,
+                "year": 2014
+            },
+            "description": [
+                "Improved build times for test configuration tool by 10x using incremental build",
+                "Implemented automated certificate rotation for database test runners"
+            ]
         }]
-    },
-    "skills": [
-        "JavaScript (ES6 / Node.js / React / Redux / Webpack / Babel)",
-        "Java (Maven / Swing)",
-        "Python",
-        "C# (.NET / PowerShell)",
-        "Go",
-        "SQL (PostgreSQL / Microsoft SQL Server)",
-        "NoSQL (Cassandra / MongoDB / Redis)",
-        "Containers (Docker / Kubernetes)",
-        "Continuous Integration (Travis CI / Jenkins)",
-        "Cloud (Google Cloud Platform / Microsoft Azure / Amazon Web Services)"
-    ]
+    }
 }

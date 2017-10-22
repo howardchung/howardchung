@@ -35,13 +35,13 @@
         },
         content: [
           {
-            text: data.json.content.full_name,
+            text: data.json.full_name,
             style: "heading"
           },
-          data.email,
-          data.phone.toString(),
-          data.links.github.url,
-          data.url,
+          data.json.email,
+          data.json.phone.toString(),
+          data.json.url,
+          (data.links.find(link => link.name === 'GitHub') || {}).url,
           "\n",
           [
             {
@@ -85,7 +85,7 @@
               style: "subheading"
             },
             {
-              ul: data.skills.map(function(d) {
+              ul: data.json.skills.map(function(d) {
                   return {
                       text: d,
                   };
@@ -98,17 +98,16 @@
     }
     
     fetch('./data.json').then(resp => resp.json()).then(data => {
-        document.title = data.json.content.full_name;
+        document.title = data.json.full_name;
         var fact = data.facts[Math.floor(Math.random() * data.facts.length)];
         var links = React.createElement("div", {
           className: '',
         }, React.createElement('div', { className: 'field is-grouped' }, 
-          Object.keys(data.links).map(key => {
-            var l = data.links[key];
+          data.links.map(l => {
             return React.createElement('p', { className: 'control' }, React.createElement('a', {
                 href: l.url,
                 className: 'button is-link',
-                onClick: key === "resume" ? function() {
+                onClick: l.url === "#resume" ? function() {
                     pdfMake.createPdf(createResume(data)).open();
                 } : null,
               }, [l.name]
@@ -121,7 +120,7 @@
             style: { height: '250px', width: 'initial', padding: '10px' },
         });
         var json = React.createElement('div', {}, 
-          React.createElement('pre', {}, JSON.stringify(data.json.content, null, 2))
+          React.createElement('pre', {}, JSON.stringify(data.json, null, 2))
         );
         var bio = `
 I am a software engineer who enjoys building maintainable, reliable, and scalable systems with an emphasis on agility.
@@ -143,7 +142,7 @@ It now has over 520,000 registered users and serves over 90 million API requests
             React.createElement('div', { className: 'tile'}, [
               React.createElement('div', { className: 'tile is-parent is-vertical'}, [
                 React.createElement('article', { className: 'tile is-child notification is-primary'}, [
-                  React.createElement('p', { className: 'title' }, data.json.content.full_name),
+                  React.createElement('p', { className: 'title' }, data.json.full_name),
                   React.createElement('p', { className: 'subtitle' }, data.projects.content[0].title + ", " + data.projects.content[0].name),
                   links,
                   React.createElement('figure', { className: 'image' }, img),
@@ -167,12 +166,9 @@ It now has over 520,000 registered users and serves over 90 million API requests
               React.createElement('article', { className: 'tile is-child notification is-danger'}, [
                 React.createElement('p', { className: 'title' }, 'Timeline'),
                 React.createElement('p', { className: 'subtitle' }, 'Things I\'ve done'),
-                React.createElement('ul', { className: '' }, [
-                  React.createElement('li', {}, '2015 - Microsoft (Software Engineer - Bing, Azure SQL Database)'),
-                  React.createElement('li', {}, '2015 - Duke University (B.S. Computer Science)'),
-                  React.createElement('li', {}, '2014 - The OpenDota Project (Co-Founder, Maintainer)'),
-                  React.createElement('li', {}, '2014 - Microsoft (Software Engineer Intern - Azure SQL Database)'),
-                ]),
+                React.createElement('ul', { className: '' }, data.projects.content.map(project => 
+                  React.createElement('li', {}, `${(project.start_date && project.start_date.year)} - ${(project.end_date && project.end_date.year) || 'Present'} - ${project.name} - ${project.title}`) )
+                ),
               ]),
             ]),
           ]),
