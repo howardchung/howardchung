@@ -40,6 +40,7 @@ It now has over 520,000 registered users and serves over 90 million API requests
           data.links.map(function(l) {
             return React.createElement('p', { className: 'control' }, React.createElement('a', {
                 href: l.url,
+                target: '_blank',
                 className: 'button is-link',
               }, [l.name]
             ));
