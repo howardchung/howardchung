@@ -11,115 +11,12 @@
 <body>
     <div id="react"></div>
 </body>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/react/16.0.0/umd/react.production.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
 <script>
-    /* global React ReactDOM pdfMake fetch */
-    function createResume(data) {
-      return {
-        styles: {
-          "heading": {
-              "bold": true,
-              "fontSize": 18
-          },
-          "subheading": {
-              "bold": true,
-              "fontSize": 14
-          },
-          "small": {
-              "fontSize": 10
-          }
-        },
-        content: [
-          {
-            text: data.json.full_name,
-            style: "heading"
-          },
-          data.json.email,
-          data.json.phone.toString(),
-          data.json.url,
-          (data.links.find(link => link.name === 'GitHub') || {}).url,
-          "\n",
-          [
-            {
-              text: "Projects",
-              style: "subheading"
-            }, 
-            {
-                ul: data.projects.content.map(function(c) {
-                    var first_line = [c.name];
-                    if (c.title) {
-                        first_line.push(c.title);
-                    }
-                    if (c.end_date) {
-                        first_line.push(c.end_date.year);
-                    }
-                    else if (c.start_date) {
-                        first_line.push(c.start_date.year);
-                    }
-                    if (c.html_url) {
-                        first_line.push(c.html_url);
-                    }
-                    return {
-                        ul: [first_line.join(" - "),
-                            {
-                                ul: [].concat(c.description).map(function(d) {
-                                    return {
-                                        text: d,
-                                        style: "small"
-                                    };
-                                })
-                            }
-                        ]
-                    };
-                })
-            }
-          ],
-          "\n",
-          [
-            {
-              text: "Skills",
-              style: "subheading"
-            },
-            {
-              ul: data.json.skills.map(function(d) {
-                  return {
-                      text: d,
-                  };
-              })
-            }
-          ],
-          "\n",
-          ]
-      };
-    }
-    
-    fetch('./data.json').then(resp => resp.json()).then(data => {
-        document.title = data.json.full_name;
-        var fact = data.facts[Math.floor(Math.random() * data.facts.length)];
-        var links = React.createElement("div", {
-          className: '',
-        }, React.createElement('div', { className: 'field is-grouped' }, 
-          data.links.map(l => {
-            return React.createElement('p', { className: 'control' }, React.createElement('a', {
-                href: l.url,
-                className: 'button is-link',
-                onClick: l.url === "#resume" ? function() {
-                    pdfMake.createPdf(createResume(data)).open();
-                } : null,
-              }, [l.name]
-            ));
-          })
-        ));
-        var img = React.createElement('img', {
-            className: '',
-            src: './profile.jpg',
-            style: { height: '250px', width: 'initial', padding: '10px' },
-        });
-        var json = React.createElement('div', {}, 
-          React.createElement('pre', {}, JSON.stringify(data.json, null, 2))
-        );
-        var bio = `
+    var React = window.React;
+    var bio = `
 I am a software engineer who enjoys building maintainable, reliable, and scalable systems with an emphasis on agility.
 
 On the Bing team at Microsoft, I maintained the data ingestion services and APIs for esports-related user experiences.
@@ -133,7 +30,31 @@ I graduated from Duke University in 2015 with a B.S. in Computer Science.
 In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the ARTS game Dota 2.
 
 It now has over 520,000 registered users and serves over 90 million API requests per month.
-        `;
+`;
+    window.fetch('./data.json').then(function(resp) { return resp.json(); }).then(function(data) {
+        document.title = data.json.full_name;
+        var fact = data.facts[Math.floor(Math.random() * data.facts.length)];
+        var links = React.createElement("div", {
+          className: '',
+        }, React.createElement('div', { className: 'field is-grouped' }, 
+          data.links.map(function(l) {
+            return React.createElement('p', { className: 'control' }, React.createElement('a', {
+                href: l.url,
+                className: 'button is-link',
+              }, [l.name]
+            ));
+          })
+        ));
+        var projects = React.createElement('ul', { className: '' }, 
+          data.projects.content.map(function(project) { 
+            return React.createElement('li', {}, `${(project.start_date && project.start_date.year)} - ${(project.end_date && project.end_date.year) || 'Present'} - ${project.name} - ${project.title}`);
+          })
+        );
+        var img = React.createElement('img', {
+            className: '',
+            src: './profile.jpg',
+            style: { height: '250px', width: 'initial', padding: '10px' },
+        });
         var App = React.createElement('div', { className: 'tile is-ancestor'}, [
           React.createElement('div', { className: 'tile is-vertical is-8' }, [
             React.createElement('div', { className: 'tile'}, [
@@ -163,9 +84,7 @@ It now has over 520,000 registered users and serves over 90 million API requests
               React.createElement('article', { className: 'tile is-child notification is-danger'}, [
                 React.createElement('p', { className: 'title' }, 'Timeline'),
                 React.createElement('p', { className: 'subtitle' }, 'Things I\'ve done'),
-                React.createElement('ul', { className: '' }, data.projects.content.map(project => 
-                  React.createElement('li', {}, `${(project.start_date && project.start_date.year)} - ${(project.end_date && project.end_date.year) || 'Present'} - ${project.name} - ${project.title}`) )
-                ),
+                projects,
               ]),
             ]),
           ]),
@@ -173,13 +92,13 @@ It now has over 520,000 registered users and serves over 90 million API requests
             React.createElement('article', { className: 'tile is-child notification is-success'}, [
               React.createElement('p', { className: 'title' }, 'JSON'),
               React.createElement('p', { className: 'subtitle' }, 'A parseable summary'),
-              React.createElement('div', { }, json),
+              React.createElement('div', { }, 
+                React.createElement('pre', {}, JSON.stringify(data.json, null, 2))
+              ),
             ]),
           ]), 
         ]);
-        ReactDOM.render(App, document.getElementById('react'));
+        window.ReactDOM.render(App, document.getElementById('react'));
       });
 </script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.33/pdfmake.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.33/vfs_fonts.js"></script>
 </html>

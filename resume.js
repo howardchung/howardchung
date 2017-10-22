@@ -1,0 +1,119 @@
+// const React = require('react');
+// const { ReactPDF, Page, Text, View, Document, StyleSheet } = require('@react-pdf/core');
+const data = require('./data.json');
+const fs = require('fs');
+const fonts = {
+	Roboto: {
+		normal: './fonts/Roboto-Regular.ttf',
+		bold: './fonts/Roboto-Medium.ttf',
+		// italics: './fonts/Roboto-Italic.ttf',
+		// bolditalics: './fonts/Roboto-MediumItalic.ttf',
+	}
+};
+const PdfPrinter = require('pdfmake');
+const printer = new PdfPrinter(fonts);
+
+/*
+// Create styles
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#E4E4E4'
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1
+  }
+});
+
+// Create Document Component
+const MyDocument = () => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text>Section #1</Text>
+      </View>
+      <View style={styles.section}>
+        <Text>Section #2</Text>
+      </View>
+    </Page>
+  </Document>
+);
+
+ReactPDF.render(<MyDocument />, `${__dirname}/resume.pdf`);
+*/
+const docDefinition = {
+  styles: {
+    "heading": {
+      "bold": true,
+      "fontSize": 18
+    },
+    "subheading": {
+      "bold": true,
+      "fontSize": 14
+    },
+    "small": {
+      "fontSize": 10
+    }
+  },
+  content: [{
+      text: data.json.full_name,
+      style: "heading"
+    },
+    data.json.email,
+    data.json.phone.toString(),
+    data.json.url,
+    (data.links.find(link => link.name === 'GitHub') || {}).url,
+    "\n", [{
+        text: "Projects",
+        style: "subheading"
+      },
+      {
+        ul: data.projects.content.map(function(c) {
+          var first_line = [c.name];
+          if (c.title) {
+            first_line.push(c.title);
+          }
+          if (c.end_date) {
+            first_line.push(c.end_date.year);
+          }
+          else if (c.start_date) {
+            first_line.push(c.start_date.year);
+          }
+          if (c.html_url) {
+            first_line.push(c.html_url);
+          }
+          return {
+            ul: [first_line.join(" - "),
+              {
+                ul: [].concat(c.description).map(function(d) {
+                  return {
+                    text: d,
+                    style: "small"
+                  };
+                })
+              }
+            ]
+          };
+        })
+      }
+    ],
+    "\n", [{
+        text: "Skills",
+        style: "subheading"
+      },
+      {
+        ul: data.json.skills.map(function(d) {
+          return {
+            text: d,
+          };
+        })
+      }
+    ],
+    "\n",
+  ]
+};
+var pdfDoc = printer.createPdfKitDocument(docDefinition);
+pdfDoc.pipe(fs.createWriteStream('./resume.pdf'));
+pdfDoc.end();
