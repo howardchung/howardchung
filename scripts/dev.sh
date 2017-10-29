@@ -13,4 +13,4 @@ sudo npm install -g n && sudo n stable
 #install npm
 sudo npm install -g npm
 #make a new ssh key
-ssh-keygen -t rsa -C "howardc93@gmail.com"
+ssh-keygen -t rsa -C "howardzchung@gmail.com"
