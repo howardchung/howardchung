@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#000000">
+    <meta name="description" content="A personal website."/>
     <link href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" rel="stylesheet">
 </head>
 
@@ -29,7 +30,7 @@ I graduated from Duke University in 2015 with a B.S. in Computer Science.
 
 In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the ARTS game Dota 2.
 
-It now has over 520,000 registered users and serves over 90 million API requests per month.
+It now has over 540,000 registered users and serves over 90 million API requests per month.
 `;
     window.fetch('./data.json').then(function(resp) { return resp.json(); }).then(function(data) {
         document.title = data.json.full_name;
@@ -48,7 +49,20 @@ It now has over 520,000 registered users and serves over 90 million API requests
         ));
         var projects = React.createElement('ul', { className: '' }, 
           data.projects.content.map(function(project) { 
-            return React.createElement('li', {}, `${(project.start_date && project.start_date.year)} - ${(project.end_date && project.end_date.year) || 'Present'} - ${project.name} - ${project.title}`);
+            return React.createElement('li', {}, [
+              React.createElement('span', { className: 'tag' + ((project.end_date && project.end_date.year) ? ' is-info' : ' is-success'), style: { minWidth: '100px' }}, `${(project.start_date && project.start_date.year)} - ${(project.end_date && project.end_date.year) || 'Present'}`),
+              React.createElement('span', {}, ' '),
+              React.createElement('a', { href: project.url, target: '_blank' }, `${project.name}`),
+              React.createElement('span', {}, ' - '),
+              React.createElement('span', {}, `${project.title}`)
+            ]);
+          })
+        );
+        var sides = React.createElement('ul', {}, 
+          data.sides.content.map(function(side) {
+            return React.createElement('li', {}, 
+              React.createElement('a', { href: side.url }, side.name)
+            );
           })
         );
         var img = React.createElement('img', {
@@ -56,6 +70,20 @@ It now has over 520,000 registered users and serves over 90 million API requests
             src: './profile.jpg',
             style: { height: '250px', width: 'initial', padding: '10px' },
         });
+        var fact = [
+          React.createElement('p', { className: 'title' }, fact),
+          React.createElement('p', { className: 'subtitle' }, 'A random fact'),
+        ];
+        var sideContent = [
+          React.createElement('p', { className: 'title' }, 'Projects'),
+          React.createElement('p', { className: 'subtitle' }, 'Small asides'),
+          sides,
+        ];
+        var projectContent = [
+          React.createElement('p', { className: 'title' }, 'Timeline'),
+          React.createElement('p', { className: 'subtitle' }, 'Things I\'ve done'),
+          projects,
+        ];
         var App = React.createElement('div', { className: 'tile is-ancestor'}, [
           React.createElement('div', { className: 'tile is-vertical is-8' }, [
             React.createElement('div', { className: 'tile'}, [
@@ -66,27 +94,20 @@ It now has over 520,000 registered users and serves over 90 million API requests
                   links,
                   React.createElement('figure', { className: 'image' }, img),
                 ]),
-                React.createElement('article', { className: 'tile is-child notification is-warning'}, [
-                  React.createElement('p', { className: 'title' }, fact),
-                  React.createElement('p', { className: 'subtitle' }, 'A random fact'),
-                ])
+                React.createElement('article', { className: 'tile is-child notification is-warning'}, projectContent)
               ]),
               React.createElement('div', { className: 'tile is-parent'}, [
                 React.createElement('article', { className: 'tile is-child notification is-info'}, [
                   React.createElement('p', { className: 'title' }, 'Bio'),
                   React.createElement('p', { className: 'subtitle' }, 'A verbal summary'),
                   React.createElement('div', {}, 
-                    React.createElement('pre', { style: { whiteSpace: 'pre-wrap' }}, bio)
+                    React.createElement('p', { className: 'is-size-6 box', style: { whiteSpace: 'pre-wrap' }}, bio)
                   ),
                 ]),
               ]),
             ]),
             React.createElement('div', { className: 'tile is-parent'}, [
-              React.createElement('article', { className: 'tile is-child notification is-danger'}, [
-                React.createElement('p', { className: 'title' }, 'Timeline'),
-                React.createElement('p', { className: 'subtitle' }, 'Things I\'ve done'),
-                projects,
-              ]),
+              React.createElement('article', { className: 'tile is-child notification is-danger'}, sideContent),
             ]),
           ]),
           React.createElement('div', { className: 'tile is-parent'}, [
@@ -94,7 +115,7 @@ It now has over 520,000 registered users and serves over 90 million API requests
               React.createElement('p', { className: 'title' }, 'JSON'),
               React.createElement('p', { className: 'subtitle' }, 'A parseable summary'),
               React.createElement('div', { }, 
-                React.createElement('pre', {}, JSON.stringify(data.json, null, 2))
+                React.createElement('pre', { style: { background: 'black', color: 'white' } }, JSON.stringify(data.json, null, 2))
               ),
             ]),
           ]), 

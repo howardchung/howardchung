@@ -39,12 +39,12 @@
     ],
     "links": [
         {
-            "name": "Facebook",
-            "url": "https://facebook.com/howardzchung"
-        },
-        {
             "name": "GitHub",
             "url": "https://github.com/howardchung"
+        },
+        {
+            "name": "Facebook",
+            "url": "https://facebook.com/howardzchung"
         },
         {
             "name": "Resume",
@@ -78,9 +78,23 @@
             "Cloud (GCP / Azure / AWS)"
         ]
     },
+    "sides": {
+      "content": [
+        {
+            "name": "Clock",
+            "url": "https://theoneclock.com"
+        }, 
+        {
+            "name": "OpenStreamR",
+            "url": "https://openstreamr.com"
+        }
+      ]  
+    },
     "projects": {
-        "content": [{
+        "content": [
+        {
             "name": "Microsoft",
+            "url": "https://www.microsoft.com",
             "title": "Software Engineer",
             "start_date": {
                 "month": 8,
@@ -94,6 +108,7 @@
             ]
         }, {
             "name": "The OpenDota Project",
+            "url": "https://www.opendota.com",
             "title": "Co-Founder / Maintainer",
             "start_date": {
                 "month": 8,
@@ -106,6 +121,7 @@
             ]
         }, {
             "name": "Duke University",
+            "url": "https://www.duke.edu",
             "title": "B.S. Computer Science",
             "start_date": {
                 "month": 8,
@@ -118,6 +134,7 @@
             "description": []
         }, {
             "name": "Microsoft",
+            "url": "https://www.microsoft.com",
             "title": "Software Engineer Intern",
             "start_date": {
                 "month": 5,
