@@ -37,9 +37,9 @@
             return React.createElement('li', {}, [
               React.createElement('span', { className: 'tag' + ((project.end_date && project.end_date.year) ? ' is-info' : ' is-success'), style: { minWidth: '100px' }}, (project.start_date && project.start_date.year) + ' - ' + (project.end_date && project.end_date.year) || ''),
               React.createElement('span', {}, ' '),
-              React.createElement('a', { href: project.url, target: '_blank' }, `${project.name}`),
+              React.createElement('a', { href: project.url, target: '_blank' }, project.name),
               React.createElement('span', {}, ' - '),
-              React.createElement('span', {}, `${project.title}`)
+              React.createElement('span', {}, project.title)
             ]);
           })
         );
@@ -51,6 +51,7 @@
           })
         );
         var img = React.createElement('img', {
+            
             className: '',
             src: './profile.jpg',
             style: { height: '250px', width: 'initial', padding: '10px' },
