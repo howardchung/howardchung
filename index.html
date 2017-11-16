@@ -35,7 +35,7 @@
         var projects = React.createElement('ul', { className: '' }, 
           data.projects.content.map(function(project) { 
             return React.createElement('li', {}, [
-              React.createElement('span', { className: 'tag' + ((project.end_date && project.end_date.year) ? ' is-info' : ' is-success'), style: { minWidth: '100px' }}, `${(project.start_date && project.start_date.year)} - ${(project.end_date && project.end_date.year) || ''}`),
+              React.createElement('span', { className: 'tag' + ((project.end_date && project.end_date.year) ? ' is-info' : ' is-success'), style: { minWidth: '100px' }}, (project.start_date && project.start_date.year) + ' - ' + (project.end_date && project.end_date.year) || '')),
               React.createElement('span', {}, ' '),
               React.createElement('a', { href: project.url, target: '_blank' }, `${project.name}`),
               React.createElement('span', {}, ' - '),
