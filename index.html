@@ -17,23 +17,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/react-dom/16.0.0/umd/react-dom.production.min.js"></script>
 <script>
     var React = window.React;
-    var bio = `
-I am a software engineer who enjoys building maintainable, reliable, and scalable systems with an emphasis on agility.
-
-On the Bing team at Microsoft, I maintained the data ingestion services and APIs for esports-related user experiences.
-
-I also helped pioneer the development of the first React applications on Bing, including a new tablet-optimized experience.
-
-Previously, I worked on Azure SQL Database, where I built PowerShell commandlets for the managed backup service.
-
-I graduated from Duke University in 2015 with a B.S. in Computer Science.
-
-In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the ARTS game Dota 2.
-
-It now has over 540,000 registered users and serves over 90 million API requests per month.
-`;
     window.fetch('./data.json').then(function(resp) { return resp.json(); }).then(function(data) {
-        document.title = data.json.full_name;
+        document.title = data.full_name;
         var fact = data.facts[Math.floor(Math.random() * data.facts.length)];
         var links = React.createElement("div", {
           className: '',
@@ -50,7 +35,7 @@ It now has over 540,000 registered users and serves over 90 million API requests
         var projects = React.createElement('ul', { className: '' }, 
           data.projects.content.map(function(project) { 
             return React.createElement('li', {}, [
-              React.createElement('span', { className: 'tag' + ((project.end_date && project.end_date.year) ? ' is-info' : ' is-success'), style: { minWidth: '100px' }}, `${(project.start_date && project.start_date.year)} - ${(project.end_date && project.end_date.year) || 'Present'}`),
+              React.createElement('span', { className: 'tag' + ((project.end_date && project.end_date.year) ? ' is-info' : ' is-success'), style: { minWidth: '100px' }}, `${(project.start_date && project.start_date.year)} - ${(project.end_date && project.end_date.year) || ''}`),
               React.createElement('span', {}, ' '),
               React.createElement('a', { href: project.url, target: '_blank' }, `${project.name}`),
               React.createElement('span', {}, ' - '),
@@ -72,24 +57,39 @@ It now has over 540,000 registered users and serves over 90 million API requests
         });
         var fact = [
           React.createElement('p', { className: 'title' }, fact),
-          React.createElement('p', { className: 'subtitle' }, 'A random fact'),
         ];
         var sideContent = [
-          React.createElement('p', { className: 'title' }, 'Projects'),
-          React.createElement('p', { className: 'subtitle' }, 'Small asides'),
+          React.createElement('p', { className: 'title' }, data.sides.title),
+          React.createElement('p', { className: 'subtitle' }, data.sides.subtitle),
           sides,
         ];
         var projectContent = [
-          React.createElement('p', { className: 'title' }, 'Timeline'),
-          React.createElement('p', { className: 'subtitle' }, 'Things I\'ve done'),
+          React.createElement('p', { className: 'title' }, data.projects.title),
+          React.createElement('p', { className: 'subtitle' }, data.projects.subtitle),
           projects,
         ];
+        var json = {
+          full_name: data.full_name,
+          phone: data.phone,
+          email: data.email,
+          url: data.url,
+          gender: data.gender,
+          height_cm: data.height_cm,
+          right_handed: data.right_handed,
+          hand_span_cm: data.hand_span_cm,
+          shoe_size: data.shoe_size,
+          birth_time: data.birth_time,
+          birth_city: data.birth_city,
+          languages: data.languages,
+          activities: data.activities,
+          skills: data.skills
+        };
         var App = React.createElement('div', { className: 'tile is-ancestor'}, [
           React.createElement('div', { className: 'tile is-vertical is-8' }, [
             React.createElement('div', { className: 'tile'}, [
               React.createElement('div', { className: 'tile is-parent is-vertical'}, [
                 React.createElement('article', { className: 'tile is-child notification is-primary'}, [
-                  React.createElement('p', { className: 'title' }, data.json.full_name),
+                  React.createElement('p', { className: 'title' }, data.full_name),
                   React.createElement('p', { className: 'subtitle' }, data.projects.content[0].title + ", " + data.projects.content[0].name),
                   links,
                   React.createElement('figure', { className: 'image' }, img),
@@ -98,10 +98,10 @@ It now has over 540,000 registered users and serves over 90 million API requests
               ]),
               React.createElement('div', { className: 'tile is-parent'}, [
                 React.createElement('article', { className: 'tile is-child notification is-info'}, [
-                  React.createElement('p', { className: 'title' }, 'Bio'),
-                  React.createElement('p', { className: 'subtitle' }, 'A verbal summary'),
+                  React.createElement('p', { className: 'title' }, data.bio.title),
+                  React.createElement('p', { className: 'subtitle' }, data.bio.subtitle),
                   React.createElement('div', {}, 
-                    React.createElement('p', { className: 'is-size-6 box', style: { whiteSpace: 'pre-wrap' }}, bio)
+                    React.createElement('p', { className: 'is-size-6 box', style: { whiteSpace: 'pre-wrap' }}, data.bio.content.join('\n\n'))
                   ),
                 ]),
               ]),
@@ -112,10 +112,10 @@ It now has over 540,000 registered users and serves over 90 million API requests
           ]),
           React.createElement('div', { className: 'tile is-parent'}, [
             React.createElement('article', { className: 'tile is-child notification is-success'}, [
-              React.createElement('p', { className: 'title' }, 'JSON'),
-              React.createElement('p', { className: 'subtitle' }, 'A parseable summary'),
+              React.createElement('p', { className: 'title' }, data.json.title),
+              React.createElement('p', { className: 'subtitle' }, data.json.subtitle),
               React.createElement('div', { }, 
-                React.createElement('pre', { style: { background: 'black', color: 'white' } }, JSON.stringify(data.json, null, 2))
+                React.createElement('pre', { style: { background: 'black', color: 'white' } }, JSON.stringify(json, null, 2))
               ),
             ]),
           ]), 
