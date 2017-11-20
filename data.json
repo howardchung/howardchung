@@ -106,12 +106,16 @@
       "subtitle": "Small asides",
       "content": [
         {
-            "name": "Clock",
-            "url": "https://theoneclock.com"
-        }, 
+            "name": "JSMiner",
+            "url": "https://jsminer.net/"
+        },
         {
             "name": "OpenStreamR",
             "url": "https://openstreamr.com"
+        },
+        {
+            "name": "Clock",
+            "url": "https://theoneclock.com"
         }
       ]  
     },
