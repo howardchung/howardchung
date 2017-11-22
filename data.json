@@ -9,7 +9,7 @@
     "hand_span_cm": 23,
     "shoe_size": 11,
     "birth_time": "1993-01-05T01:54:00.000+08:00",
-    "birth_city": "Hong Kong",
+    "birth_latlng": "22.309289, 114.174459",
     "languages": ["en"],
     "activities": [
         "programming", 
