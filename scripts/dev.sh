@@ -12,5 +12,7 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 sudo npm install -g n && sudo n stable
 #install npm
 sudo npm install -g npm
+#install tools
+sudo npm install -g pm2 c9
 #make a new ssh key
 ssh-keygen -t rsa -C "howardzchung@gmail.com"
