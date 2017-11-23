@@ -18,8 +18,8 @@ sudo npm install -g pm2 c9 npm-check-updates
 sudo curl -O https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz
 sudo tar -xvf go1.9.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo mv go /usr/local
-echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
-echo "export GOPATH=$HOME" >> ~/.bashrc
+echo "export GOPATH=\$HOME" >> ~/.bashrc
+echo "export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin" >> ~/.bashrc
 source ~/.bashrc
 #docker
 curl -sSL https://get.docker.com/ | sh
