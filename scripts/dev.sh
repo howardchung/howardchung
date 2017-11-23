@@ -21,5 +21,8 @@ sudo rm -rf /usr/local/go && sudo mv go /usr/local
 echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
 echo "export GOPATH=$HOME" >> ~/.bashrc
 source ~/.bashrc
+#docker
+curl -sSL https://get.docker.com/ | sh
+curl -L "https://github.com/docker/compose/releases/download/1.17.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 #make a new ssh key
 ssh-keygen -t rsa -C "howardzchung@gmail.com"
