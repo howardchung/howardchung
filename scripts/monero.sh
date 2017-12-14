@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt-get update
-sudo apt-get install -y git build-essential cmake libuv1-dev libmicrohttpd-dev
+sudo apt-get install -y git build-essential cmake libuv1-dev libmicrohttpd-dev tmux
 git clone https://github.com/xmrig/xmrig.git
 cd xmrig
 mkdir build
