@@ -42,7 +42,7 @@
             "Previously, I worked on Azure SQL Database, where I built PowerShell commandlets for the managed backup service.",
             "I graduated from Duke University in 2015 with a B.S. in Computer Science.",
             "In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the ARTS game Dota 2.",
-            "It now has over 540,000 registered users and serves over 90 million API requests per month."
+            "It now has over 610,000 registered users and serves over 90 million API requests per month."
         ]
     },
     "json": {
@@ -91,6 +91,14 @@
         {
             "name": "GitHub",
             "url": "https://github.com/howardchung"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://www.linkedin.com/in/howardzchung"
+        },
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/howardzchung"
         },
         {
             "name": "Facebook",
