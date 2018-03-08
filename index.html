@@ -30,12 +30,14 @@
         var fact = data.facts[Math.floor(Math.random() * data.facts.length)];
         var links = React.createElement("div", {
           className: '',
+          style: { flexWrap: 'wrap' }
         }, React.createElement('div', { className: 'field is-grouped' }, 
           data.links.map(function(l) {
             return React.createElement('p', { className: 'control' }, React.createElement('a', {
                 href: l.url,
                 target: '_blank',
                 className: 'button is-link',
+                style: { marginBottom: '.75em'
               }, [l.name]
             ));
           })
