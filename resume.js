@@ -1,6 +1,6 @@
 // const React = require('react');
 // const { ReactPDF, Page, Text, View, Document, StyleSheet } = require('@react-pdf/core');
-const data = require('./data.json');
+const data = require('./public/data.json');
 const fs = require('fs');
 const fonts = {
 	Roboto: {
@@ -12,7 +12,6 @@ const fonts = {
 };
 const PdfPrinter = require('pdfmake');
 const printer = new PdfPrinter(fonts);
-
 /*
 // Create styles
 const styles = StyleSheet.create({
@@ -58,12 +57,12 @@ const docDefinition = {
     }
   },
   content: [{
-      text: data.json.full_name,
+      text: data.full_name,
       style: "heading"
     },
-    data.json.email,
-    data.json.phone.toString(),
-    data.json.url,
+    data.email,
+    data.phone.toString(),
+    data.url,
     (data.links.find(link => link.name === 'GitHub') || {}).url,
     "\n", [{
         text: "Projects",
@@ -104,7 +103,7 @@ const docDefinition = {
         style: "subheading"
       },
       {
-        ul: data.json.skills.map(function(d) {
+        ul: data.skills.map(function(d) {
           return {
             text: d,
           };

@@ -4,8 +4,13 @@
   "description": "A personal website.",
   "main": "index.js",
   "scripts": {
-    "start": "node resume.js > resume.pdf",
-    "test": "exit 0"
+    "start": "react-scripts start",
+    "build": "npm run resume && npm run rsbuild",
+    "rsbuild": "react-scripts build",
+    "test": "exit 0",
+    "eject": "react-scripts eject",
+    "resume": "node resume.js > public/resume.pdf",
+    "snapshot": "react-snap"
   },
   "repository": {
     "type": "git",
@@ -22,6 +27,9 @@
     "express": "^4.13.3",
     "http-proxy": "^1.12.0",
     "pdfmake": "^0.1.33",
-    "react": "^16.0.0"
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.1",
+    "react-snap": "^1.13.0"
   }
 }
