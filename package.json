@@ -21,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/howardchung/howardchung.github.io/issues"
   },
-  "homepage": "https://github.com/howardchung/howardchung.github.io",
   "dependencies": {
     "@react-pdf/core": "^0.4.6",
     "express": "^4.13.3",
