@@ -114,5 +114,5 @@ const docDefinition = {
   ]
 };
 var pdfDoc = printer.createPdfKitDocument(docDefinition);
-pdfDoc.pipe(fs.createWriteStream('./resume.pdf'));
+pdfDoc.pipe(fs.createWriteStream('./public/resume.pdf'));
 pdfDoc.end();

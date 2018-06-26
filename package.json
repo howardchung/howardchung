@@ -9,7 +9,7 @@
     "rsbuild": "react-scripts build",
     "test": "exit 0",
     "eject": "react-scripts eject",
-    "resume": "node resume.js > public/resume.pdf",
+    "resume": "node resume.js",
     "snapshot": "react-snap"
   },
   "repository": {
