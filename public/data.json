@@ -30,7 +30,8 @@
         "NoSQL (Cassandra / MongoDB / Redis)",
         "Containers (Docker / Kubernetes)",
         "Continuous Integration (Travis CI / Jenkins)",
-        "Cloud (GCP / Azure / AWS)"
+        "Cloud (GCP / Azure / AWS)",
+        "Git"
     ],
     "bio": { 
         "title": "Bio",
