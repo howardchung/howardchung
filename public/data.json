@@ -37,13 +37,13 @@
         "title": "Bio",
         "subtitle": "A verbal summary",
         "content": [
-            "I am a software engineer who enjoys building maintainable, reliable, and scalable systems with an emphasis on agility.",
+            "I am a software engineer who enjoys building maintainable, reliable, and scalable systems.",
             "On the Bing team at Microsoft, I maintained the data ingestion services and APIs for esports-related user experiences.",
-            "I also helped pioneer the development of the first React applications on Bing, including a new tablet-optimized experience.",
+            "I also helped pioneer the development of the first React applications on Bing, including a new homepage for tablets.",
             "Previously, I worked on Azure SQL Database, where I built PowerShell commandlets for the managed backup service.",
             "I graduated from Duke University in 2015 with a B.S. in Computer Science.",
             "In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the ARTS game Dota 2.",
-            "It now has over 660,000 registered users and serves over 100 million API requests per month."
+            "It now has over 680,000 registered users and serves over 100 million API requests per month."
         ]
     },
     "json": {
@@ -58,35 +58,29 @@
         "I sometimes wear glasses.",
         "I dropped out of high school.",
         "My favorite film is Finding Nemo (2003).",
-        "I know the first hundred digits of pi.",
-        "I can say I don't speak a language in many languages.",
+        "I know the first 120 digits of pi.",
+        "I can say I don't speak a language in numerous languages.",
         "I prefer vim over emacs.",
-        "I often wear a black Nike hoodie.",
+        "I own five interchangeable sets of black clothes.",
         "My favorite data structure is the hash table.",
         "I like pho.",
         "I don't like cheese.",
         "I can wiggle my ears.",
-        "The longest I've been awake is ~33 hours.",
         "I held a school record in rope climbing for three years.",
         "I once ate Chipotle for two straight weeks.",
-        "My favorite brand of instant noodles is Nong Shim.",
         "I once solved a Rubik's Cube in 42 seconds.",
-        "I can throw a flying disc 50 meters.",
-        "I drink a lot of Gatorade.",
-        "My favorite style of eggs is scrambled.",
-        "I am very frugal.",
+        "I can throw a disc 50 meters.",
+        "I prefer my eggs scrambled.",
         "I studied at Duke University.",
         "I'm a minimalist.",
         "I can use chopsticks.",
         "I have a mild obsession with bread.",
         "I don't like carbonated drinks.",
-        "I use spaces instead of tabs.",
-        "I have ten fingers.",
+        "I prefer spaces to tabs.",
         "I like reading.",
         "Inconsistency annoys me.",
         "I enjoy watching speedruns.",
-        "I like organizing things.",
-        "I know how to make fried rice."
+        "I like organizing things."
     ],
     "links": [
         {
@@ -114,21 +108,20 @@
       "title": "Projects",
       "subtitle": "Small asides",
       "content": [
-      {
-          "name": "Pixels Versus Society",
-          "url": "https://pixelsversussociety.com"
-      },
         {
-            "name": "JSMiner",
-            "url": "https://jsminer.net/"
+            "name": "Pixels Versus Society",
+            "url": "https://pixelsversussociety.com",
+            "description": "A Node.js implementation of Cards Against Humanity"
         },
         {
             "name": "wscache",
-            "url": "https://github.com/howardchung/wscache"
+            "url": "https://github.com/howardchung/wscache",
+            "description": "A general purpose cache for web applications"
         },
         {
             "name": "TransTracker",
-            "url": "https://transtracker.netlify.com"
+            "url": "https://transtracker.netlify.com",
+            "description": "An improved bus tracking interface for the RapidRide B Line"
         }
       ]  
     },
@@ -160,7 +153,7 @@
             },
             "description": [
                 "Open source project providing detailed data from Dota 2 replay files",
-                "Over 100 contributors, 520,000 registered users, 90 million API requests per month",
+                "Over 100 contributors, 680,000 registered users, 100 million API requests per month",
                 "https://www.opendota.com"
             ]
         }, {
