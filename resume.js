@@ -98,7 +98,7 @@ const docDefinition = {
                     style: "small"
                   };
                 })
-              }
+              },
             ]
           };
         })
