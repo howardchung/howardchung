@@ -79,8 +79,8 @@ const docDefinition = {
           }
 
           var date = c.start_date.year;
+          date += "-";
           if (c.end_date) {
-            date += "-";
             date += c.end_date.year;
           }
           first_line.push(date);
@@ -98,7 +98,7 @@ const docDefinition = {
                     style: "small"
                   };
                 })
-              },
+              }
             ]
           };
         })
