@@ -77,11 +77,14 @@ const docDefinition = {
           if (c.title) {
             first_line.push(c.title);
           }
+
+          var date = c.start_date.year;
           if (c.end_date) {
-            first_line.push(c.end_date.year);
-          } else if (c.start_date) {
-            first_line.push(c.start_date.year);
+            date += "-";
+            date += c.end_date.year;
           }
+          first_line.push(date);
+
           if (c.html_url) {
             first_line.push(c.html_url);
           }
@@ -96,7 +99,6 @@ const docDefinition = {
                   };
                 })
               },
-              "\n"
             ]
           };
         })
