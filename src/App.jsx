@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class App extends Component {
   state = {};
 
   componentDidMount() {
     window
-      .fetch("./data.json")
+      .fetch('./data.json')
       .then(resp => resp.json())
       .then(data => {
         this.setState(data);
@@ -32,7 +32,7 @@ class App extends Component {
       birth_latlng: data.birth_latlng,
       languages: data.languages,
       activities: data.activities,
-      skills: data.skills
+      skills: data.skills,
     };
     return (
       <div className="tile is-ancestor">
@@ -43,12 +43,12 @@ class App extends Component {
                 <p className="title">{data.full_name}</p>
                 <p className="subtitle">
                   {data.projects.content[0].title +
-                    ", " +
+                    ', ' +
                     data.projects.content[0].name}
                 </p>
                 <div className="field is-grouped">
                   {data.links.map(l => (
-                    <p className="control" style={{ marginBottom: ".75em" }}>
+                    <p className="control" style={{ marginBottom: '.75em' }}>
                       <a
                         href={l.url}
                         target="_blank"
@@ -63,9 +63,9 @@ class App extends Component {
                   <img
                     src="./profile.jpg"
                     style={{
-                      height: "250px",
-                      width: "initial",
-                      paddingTop: "10px"
+                      height: '250px',
+                      width: 'initial',
+                      paddingTop: '10px',
                     }}
                   />
                 </figure>
@@ -78,16 +78,16 @@ class App extends Component {
                     <li>
                       <span
                         className={
-                          "tag" +
+                          'tag' +
                           (p.end_date && p.end_date.year
-                            ? " is-info"
-                            : " is-success")
+                            ? ' is-info'
+                            : ' is-success')
                         }
-                        style={{ minWidth: "100px", marginRight: "5px" }}
+                        style={{ minWidth: '100px', marginRight: '5px' }}
                       >
                         {(p.start_date && p.start_date.year) +
-                          " - " +
-                          ((p.end_date && p.end_date.year) || "")}
+                          ' - ' +
+                          ((p.end_date && p.end_date.year) || '')}
                       </span>
                       <a href={p.url} target="_blank">
                         {p.name}
@@ -106,9 +106,9 @@ class App extends Component {
                 <div>
                   <p
                     className="is-size-6 box"
-                    style={{ whiteSpace: "pre-wrap" }}
+                    style={{ whiteSpace: 'pre-wrap' }}
                   >
-                    {data.bio.content.join("\n\n")}
+                    {data.bio.content.join('\n\n')}
                   </p>
                 </div>
               </article>
@@ -135,7 +135,7 @@ class App extends Component {
             <p className="title">{data.json.title}</p>
             <p className="subtitle">{data.json.subtitle}</p>
             <div>
-              <pre style={{ background: "black", color: "white" }}>
+              <pre style={{ background: 'black', color: 'white' }}>
                 {JSON.stringify(json, null, 2)}
               </pre>
             </div>
