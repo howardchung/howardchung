@@ -35,15 +35,14 @@
     ],
     "bio": { 
         "title": "Bio",
-        "subtitle": "A verbal summary",
+        "subtitle": "A readable summary",
         "content": [
             "I am a software engineer who enjoys building maintainable, reliable, and scalable systems.",
+            "I graduated from Duke University in 2015 with a B.S. in Computer Science.",
             "On the Bing team at Microsoft, I maintained the data ingestion services and APIs for esports-related user experiences.",
             "I also helped pioneer the development of the first React applications on Bing, including a new homepage for tablets.",
-            "Previously, I worked on Azure SQL Database, where I built PowerShell commandlets for the managed backup service.",
-            "I graduated from Duke University in 2015 with a B.S. in Computer Science.",
-            "In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the ARTS game Dota 2.",
-            "It now has over 680,000 registered users and serves over 100 million API requests per month."
+            "Previously, I worked on Azure SQL Database, where I built PowerShell commandlets for the managed backup service and helped develop the LTR (Long Term Retention) feature.",
+            "In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the ARTS game Dota 2."
         ]
     },
     "json": {
@@ -55,22 +54,17 @@
         "I can't whistle.",
         "I can't snap my fingers.",
         "My favorite brand of soy sauce is Kikkoman.",
-        "I sometimes wear glasses.",
         "I dropped out of high school.",
         "My favorite film is Finding Nemo (2003).",
         "I know the first 120 digits of pi.",
         "I can say I don't speak a language in numerous languages.",
         "I prefer vim over emacs.",
-        "I own five interchangeable sets of black clothes.",
         "My favorite data structure is the hash table.",
-        "I like pho.",
         "I don't like cheese.",
         "I can wiggle my ears.",
         "I held a school record in rope climbing for three years.",
         "I once ate Chipotle for two straight weeks.",
         "I once solved a Rubik's Cube in 42 seconds.",
-        "I can throw a disc 50 meters.",
-        "I prefer my eggs scrambled.",
         "I studied at Duke University.",
         "I'm a minimalist.",
         "I can use chopsticks.",
@@ -85,29 +79,39 @@
     "links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/howardchung"
+            "url": "https://github.com/howardchung",
+            "fa": "fab fa-github-square"
         },
         {
             "name": "LinkedIn",
-            "url": "https://www.linkedin.com/in/howardzchung"
+            "url": "https://www.linkedin.com/in/howardzchung",
+            "fa": "fab fa-linkedin"
         },
         {
             "name": "Twitter",
-            "url": "https://twitter.com/howardzchung"
+            "url": "https://twitter.com/howardzchung",
+            "fa": "fab fa-twitter-square"
         },
         {
             "name": "Facebook",
-            "url": "https://facebook.com/howardzchung"
+            "url": "https://facebook.com/howardzchung",
+            "fa": "fab fa-facebook-square"
         },
         {
             "name": "Resume",
-            "url": "./resume.pdf"
+            "url": "./resume.pdf",
+            "fa": "fas fa-file"
         }
     ],
     "sides": {
       "title": "Projects",
       "subtitle": "Small asides",
       "content": [
+        {
+          "name": "tradebot",
+          "url": "https://github.com/howardchung/tradebot",
+          "description": "A bot for automated stock trading on Robinhood"
+        },
         {
             "name": "Pixels Versus Society",
             "url": "https://pixelsversussociety.com",
@@ -126,7 +130,7 @@
       ]  
     },
     "projects": {
-        "title": "Timeline",
+        "title": "Experience",
         "subtitle": "Things I've done",
         "content": [
         {
@@ -139,8 +143,9 @@
             },
             "description": [
                 "Bing, Azure SQL DB",
-                "Developed esports answers for League of Legends and Dota 2 events, players, teams, and heroes on Bing",
-                "Pioneered development of React applications on Bing",
+                "Developed esports answers on Bing for multiple titles, including League of Legends, Dota 2, and Overwatch",
+                "Designed and implemented a multithreaded data ingestion service covering more than 10 esports titles",
+                "Pioneered development of React applications on Bing, including a new homepage for tablet devices with personalized feed",
                 "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
             ]
         }, {
@@ -153,7 +158,7 @@
             },
             "description": [
                 "Open source project providing detailed data from Dota 2 replay files",
-                "Over 100 contributors, 680,000 registered users, 100 million API requests per month",
+                "Over 100 contributors, 700,000 registered users, 150 million API requests per month",
                 "https://www.opendota.com"
             ]
         }, {

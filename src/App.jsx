@@ -17,8 +17,8 @@ class App extends Component {
     if (Object.keys(data).length === 0) {
       return null;
     }
-    // var fact = data.facts[Math.floor(Math.random() * data.facts.length)];
-    var json = {
+    const fact = data.facts[Math.floor(Math.random() * data.facts.length)];
+    const json = {
       full_name: data.full_name,
       phone: data.phone,
       email: data.email,
@@ -46,17 +46,14 @@ class App extends Component {
                     ', ' +
                     data.projects.content[0].name}
                 </p>
-                <div className="field is-grouped">
+                <div>
                   {data.links.map(l => (
-                    <p className="control" style={{ marginBottom: '.75em' }}>
-                      <a
-                        href={l.url}
-                        target="_blank"
-                        className="button is-link"
-                      >
-                        {l.name}
-                      </a>
-                    </p>
+                    <a href={l.url} target="_blank" title={l.name}>
+                      <i
+                        style={{ fontSize: '40px', marginRight: '16px' }}
+                        className={l.fa}
+                      />
+                    </a>
                   ))}
                 </div>
                 <figure className="image">
@@ -69,6 +66,10 @@ class App extends Component {
                     }}
                   />
                 </figure>
+                {/*
+                <h2>Did you know?</h2>
+                <blockquote>{fact}</blockquote>
+                */}
               </article>
               <article className="tile is-child notification is-warning">
                 <p className="title">{data.projects.title}</p>
