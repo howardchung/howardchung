@@ -39,6 +39,7 @@
         "content": [
             "I am a software engineer who enjoys building maintainable, reliable, and scalable systems.",
             "I graduated from Duke University in 2015 with a B.S. in Computer Science.",
+            "I currently work at Valve on Steam chat and Steam.tv.",
             "On the Bing team at Microsoft, I maintained the data ingestion services and APIs for esports-related user experiences.",
             "I also helped pioneer the development of the first React applications on Bing, including a new homepage for tablets.",
             "Previously, I worked on Azure SQL Database, where I built PowerShell commandlets for the managed backup service and helped develop the LTR (Long Term Retention) feature.",
@@ -134,12 +135,29 @@
         "subtitle": "Things I've done",
         "content": [
         {
+          "name": "Valve",
+          "url": "https://www.valvesoftware.com",
+          "title": "Software Engineer",
+          "start_date": {
+            "month": 9,
+            "year": 2018
+          },
+          "description": [
+            "Steam chat",
+            "Steam.tv"
+          ]
+        },
+        {
             "name": "Microsoft",
             "url": "https://www.microsoft.com",
             "title": "Software Engineer",
             "start_date": {
                 "month": 8,
                 "year": 2015
+            },
+            "end_date": {
+              "month": 9,
+              "year": 2018
             },
             "description": [
                 "Bing, Azure SQL DB",
