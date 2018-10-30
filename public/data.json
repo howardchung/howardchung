@@ -21,17 +21,22 @@
         "planespotting"
     ],
     "skills": [
-        "JavaScript (Node.js / React)",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "React",
         "C#",
+        "C++",
         "Python",
         "Java",
         "Go",
-        "SQL (PostgreSQL / Microsoft SQL Server)",
+        "SQL (PostgreSQL / MSSQL)",
         "NoSQL (Cassandra / MongoDB / Redis)",
         "Containers (Docker / Kubernetes)",
         "Continuous Integration (Travis CI / Jenkins)",
         "Cloud (GCP / Azure / AWS)",
-        "Git"
+        "Git",
+        "Perforce"
     ],
     "bio": { 
         "title": "Bio",
