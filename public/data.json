@@ -1,5 +1,6 @@
 {
     "full_name": "Howard Chung",
+    "occupation": "Software Engineer",
     "phone": 5035679740,
     "email": "howardzchung@gmail.com",
     "url": "https://www.howardchung.net",
@@ -14,7 +15,9 @@
     "activities": [
         "programming", 
         "ultimate", 
-        "hiking", 
+        "hiking",
+        "chess",
+        "piano",
         "cooking", 
         "board games"
     ],
@@ -40,12 +43,11 @@
         "title": "Bio",
         "subtitle": "A readable summary",
         "content": [
-            "I'm a software engineer who enjoys building maintainable, reliable, and scalable systems.",
-            "I graduated from Duke University in 2015 with a B.S. in Computer Science.",
             "I've worked at Valve on projects including Steam Chat, Steam Events and SteamTV, and at Microsoft on the data ingestion services and APIs for esports-related user experiences on Bing.",
             "I also helped pioneer the development of the first React applications on Bing, including a new homepage for tablets.",
             "Before that, I worked on Azure SQL Database, where I built PowerShell commandlets for the managed backup service and helped develop long-term database backups.",
-            "In my free time I work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the game Dota 2."
+            "I graduated from Duke University in 2015 with a B.S. in Computer Science.",
+            "I also work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the game Dota 2."
         ]
     },
     "json": {
@@ -137,6 +139,34 @@
         "subtitle": "Things I've done",
         "content": [
         {
+            "name": "The OpenDota Project",
+            "url": "https://www.opendota.com",
+            "title": "Co-Founder / Maintainer",
+            "start_date": {
+                "month": 8,
+                "year": 2014
+            },
+            "description": [
+                "Open source project providing detailed data from Dota 2 replay files",
+                "React UI combined with a Node.js backend deployed on Google Cloud and Netlify",
+                "Over 120 contributors, 800,000 registered users, 150 million API requests per month",
+                "https://www.opendota.com"
+            ]
+        },
+        {
+            "name": "CakeWalk",
+            "url": "",
+            "title": "Developer",
+            "start_date": {
+                "month": 12,
+                "year": 2019
+            },
+            "description": [
+                "Restaurant waitlist application currently in use by Kizuki Ramen and Izakaya in Seattle",
+                "React/React Native/JavaScript development on application running on iOS and AWS"
+            ]
+        },
+        {
           "name": "Valve",
           "url": "https://www.valvesoftware.com",
           "title": "Software Engineer",
@@ -149,13 +179,16 @@
             "year": 2019
           },
           "description": [
-            "React/PHP/C++ development on projects including Steam Chat, Steam Events, and SteamTV"
+            "React/React Native/PHP/C++ development on projects including Steam Chat, Steam Events, and SteamTV",
+            "Added cross-platform (iOS/Android) support to SteamTV video player, and image preview to timeline seeking",
+            "Developed chat features (animated stickers/effects/flairs) for Steam sales and other events",
+            "Built partner-facing event editor for Steam partners to create custom sale pages and upload event assets"
           ]
         },
         {
             "name": "Microsoft",
             "url": "https://www.microsoft.com",
-            "title": "Software Engineer",
+            "title": "Software Engineer II",
             "start_date": {
                 "month": 8,
                 "year": 2015
@@ -165,27 +198,14 @@
               "year": 2018
             },
             "description": [
-                "Bing, Azure SQL DB",
+                "C#/React development on Bing, Azure SQL DB",
                 "Developed esports answers on Bing for multiple titles, including League of Legends, Dota 2, and Overwatch",
                 "Designed and implemented a multithreaded C# data ingestion service covering more than 10 esports titles",
                 "Pioneered development of React/TypeScript applications on Bing, including a new homepage for tablet devices with personalized feed",
                 "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
             ]
-        }, {
-            "name": "The OpenDota Project",
-            "url": "https://www.opendota.com",
-            "title": "Co-Founder / Maintainer",
-            "start_date": {
-                "month": 8,
-                "year": 2014
-            },
-            "description": [
-                "Open source project providing detailed data from Dota 2 replay files",
-                "React UI combined with a Node.js backend deployed on Google Cloud and Netlify",
-                "Over 100 contributors, 800,000 registered users, 150 million API requests per month",
-                "https://www.opendota.com"
-            ]
-        }, {
+        },
+        {
             "name": "Duke University",
             "url": "https://www.duke.edu",
             "title": "B.S. Computer Science",
@@ -198,7 +218,8 @@
                 "year": 2015
             },
             "description": []
-        }, {
+        },
+        {
             "name": "Microsoft",
             "url": "https://www.microsoft.com",
             "title": "Software Engineer Intern",

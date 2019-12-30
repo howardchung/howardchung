@@ -42,9 +42,7 @@ class App extends Component {
               <article className="tile is-child notification is-primary">
                 <p className="title">{data.full_name}</p>
                 <p className="subtitle">
-                  {data.projects.content[0].title +
-                    ', ' +
-                    data.projects.content[0].name}
+                  {data.occupation}
                 </p>
                 <div>
                   {data.links.map(l => (
@@ -90,7 +88,7 @@ class App extends Component {
                           ' - ' +
                           ((p.end_date && p.end_date.year) || '')}
                       </span>
-                      <a href={p.url} target="_blank">
+                      <a href={p.url || '#'} target="_blank">
                         {p.name}
                       </a>
                       <span> - </span>
