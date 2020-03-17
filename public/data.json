@@ -119,8 +119,8 @@
           "description": "A bot for automated stock trading on Robinhood"
         },
         {
-            "name": "Pixels Versus Society",
-            "url": "https://pixelsversussociety.com",
+            "name": "Pixels Versus Humanity",
+            "url": "https://pixelsversushumanity.com",
             "description": "A Node.js implementation of Cards Against Humanity"
         },
         {

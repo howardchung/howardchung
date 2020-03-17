@@ -1,5 +1,5 @@
 server {
-  server_name pixelsversussociety.com www.pixelsversussociety.com;
+  server_name pixelsversushumanity.com www.pixelsversushumanity.com;
   listen 80;
 
   location / {
