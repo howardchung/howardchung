@@ -114,13 +114,18 @@
       "subtitle": "Small asides",
       "content": [
         {
+            "name": "WatchParty",
+            "url": "https://watchpartyapp.herokuapp.com",
+            "description": "A React/Node.js application for watching videos with your friends"
+        },
+        {
           "name": "tradebot",
           "url": "https://github.com/howardchung/tradebot",
           "description": "A bot for automated stock trading on Robinhood"
         },
         {
             "name": "Pixels Against Humanity",
-            "url": "https://pixelsagainsthumanity.com",
+            "url": "https://pixelsagainsthumanity.herokuapp.com",
             "description": "A Node.js implementation of Cards Against Humanity"
         },
         {
