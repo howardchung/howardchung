@@ -1,28 +1,18 @@
-#update packages
-sudo apt-get update && sudo apt-get upgrade -y
-#node required for c9
-sudo apt-get install nodejs-legacy npm
-#c9
-wget -O - https://raw.githubusercontent.com/c9/install/master/install.sh | bash
+#!/bin/bash
+#copy over ssh keys from secrets
+#bootstrap editors with aws c9: theia, c9-core, code-server
 #devtools
-sudo apt-get install -y git vim curl silversearcher-ag
-#heroku toolbelt
+sudo apt-get install -y git curl silversearcher-ag
+#heroku toolbelt, replace with snap?
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+#snap install dotnet, go
 #upgrade to latest node
 sudo npm install -g n && sudo n stable
 #install npm
 sudo npm install -g npm
 #install tools
-sudo npm install -g pm2 c9 npm-check-updates
-#install golang
-sudo curl -O https://storage.googleapis.com/golang/go1.9.linux-amd64.tar.gz
-sudo tar -xvf go1.9.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go && sudo mv go /usr/local
-echo "export GOPATH=\$HOME" >> ~/.bashrc
-echo "export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin" >> ~/.bashrc
-source ~/.bashrc
+sudo npm install -g npm-check-updates
 #docker
 curl -sSL https://get.docker.com/ | sh
 curl -L "https://github.com/docker/compose/releases/download/1.17.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
-#make a new ssh key
-ssh-keygen -t rsa -C "howardzchung@gmail.com"
+
