@@ -118,6 +118,11 @@
             "url": "https://watchpartyapp.herokuapp.com",
             "description": "A React/Node.js application for watching videos with your friends"
         },
+          {
+              "name": "MultiWatch",
+              "url": "https://play.google.com/store/apps/details?id=io.gravitech.multiwatch",
+              "description": "React Native stopwatch application supporting multiple timers"
+          },
         {
           "name": "tradebot",
           "url": "https://github.com/howardchung/tradebot",
