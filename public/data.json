@@ -115,7 +115,7 @@
       "content": [
         {
             "name": "WatchParty",
-            "url": "https://watchpartyapp.herokuapp.com",
+            "url": "https://www.watchparty.me",
             "description": "A React/Node.js application for watching videos with your friends"
         },
           {
@@ -166,7 +166,7 @@
         },
         {
             "name": "CakeWalk",
-            "url": "https://www.cakewalkapp.com",
+            "url": "https://join.cakewalkapp.com",
             "title": "Software Engineer",
             "start_date": {
                 "month": 12,
