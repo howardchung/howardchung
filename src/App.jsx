@@ -1,23 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class App extends Component {
-  state = {};
+  state = {
+    data: null,
+    factIndex: 0
+  };
 
   componentDidMount() {
     window
-      .fetch('./data.json')
-      .then(resp => resp.json())
-      .then(data => {
-        this.setState(data);
+      .fetch("./data.json")
+      .then((resp) => resp.json())
+      .then((data) => {
+        this.setState({
+          data,
+          factIndex: Math.floor(Math.random() * data.facts.length)
+        });
+        setInterval(
+          () =>
+            this.setState({
+              factIndex: (this.state.factIndex + 1) % data.facts.length
+            }),
+          2000
+        );
       });
   }
 
   render() {
-    const data = this.state;
-    if (Object.keys(data).length === 0) {
+    const data = this.state.data;
+    if (!data) {
       return null;
     }
-    const fact = data.facts[Math.floor(Math.random() * data.facts.length)];
     const json = {
       full_name: data.full_name,
       phone: data.phone,
@@ -32,23 +44,26 @@ class App extends Component {
       birth_latlng: data.birth_latlng,
       languages: data.languages,
       activities: data.activities,
-      skills: data.skills,
+      skills: data.skills
     };
     return (
       <div className="tile is-ancestor">
-        <div className="tile is-vertical is-8">
+        <div className="tile is-vertical is-4">
           <div className="tile">
             <div className="tile is-parent is-vertical">
               <article className="tile is-child notification is-primary">
                 <p className="title">{data.full_name}</p>
-                <p className="subtitle">
-                  {data.occupation}
-                </p>
+                <p className="subtitle">{data.occupation}</p>
                 <div>
-                  {data.links.map(l => (
-                    <a href={l.url} target="_blank" title={l.name}>
+                  {data.links.map((l) => (
+                    <a
+                      href={l.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      title={l.name}
+                    >
                       <i
-                        style={{ fontSize: '40px', marginRight: '16px' }}
+                        style={{ fontSize: "40px", marginRight: "16px" }}
                         className={l.fa}
                       />
                     </a>
@@ -56,39 +71,43 @@ class App extends Component {
                 </div>
                 <figure className="image">
                   <img
+                    alt="howard"
                     src="./profile.jpg"
                     style={{
-                      height: '250px',
-                      width: 'initial',
-                      paddingTop: '10px',
+                      height: "400px",
+                      width: "initial",
+                      paddingTop: "10px"
                     }}
                   />
                 </figure>
-                {/*
-                <h2>Did you know?</h2>
-                <blockquote>{fact}</blockquote>
-                */}
+                {data.facts[this.state.factIndex]}
               </article>
+            </div>
+          </div>
+        </div>
+        <div className="tile is-vertical is-4">
+          <div className="tile">
+            <div className="tile is-parent is-vertical">
               <article className="tile is-child notification is-warning">
                 <p className="title">{data.projects.title}</p>
                 <p className="subtitle">{data.projects.subtitle}</p>
                 <ul>
-                  {data.projects.content.map(p => (
+                  {data.projects.content.map((p) => (
                     <li>
                       <span
                         className={
-                          'tag' +
+                          "tag" +
                           (p.end_date && p.end_date.year
-                            ? ' is-info'
-                            : ' is-success')
+                            ? " is-info"
+                            : " is-success")
                         }
-                        style={{ minWidth: '100px', marginRight: '5px' }}
+                        style={{ minWidth: "100px", marginRight: "5px" }}
                       >
                         {(p.start_date && p.start_date.year) +
-                          ' - ' +
-                          ((p.end_date && p.end_date.year) || '')}
+                          " - " +
+                          ((p.end_date && p.end_date.year) || "")}
                       </span>
-                      <a href={p.url || '#'} target="_blank">
+                      <a href={p.url || "#"} target="_blank">
                         {p.name}
                       </a>
                       <span> - </span>
@@ -97,44 +116,27 @@ class App extends Component {
                   ))}
                 </ul>
               </article>
-            </div>
-            <div className="tile is-parent">
-              <article className="tile is-child notification is-info">
-                <p className="title">{data.bio.title}</p>
-                <p className="subtitle">{data.bio.subtitle}</p>
-                <div>
-                  <p
-                    className="is-size-6 box"
-                    style={{ whiteSpace: 'pre-wrap' }}
-                  >
-                    {data.bio.content.join('\n\n')}
-                  </p>
-                </div>
+              <article className="tile is-child notification is-danger">
+                <p className="title">{data.sides.title}</p>
+                <p className="subtitle">{data.sides.subtitle}</p>
+                <ul>
+                  {data.sides.content.map((side) => (
+                    <li>
+                      <a href={side.url}>{side.name}</a>
+                      <span> - </span>
+                      <span>{side.description}</span>
+                    </li>
+                  ))}
+                </ul>
               </article>
             </div>
-          </div>
-          <div className="tile is-parent">
-            <article className="tile is-child notification is-danger">
-              <p className="title">{data.sides.title}</p>
-              <p className="subtitle">{data.sides.subtitle}</p>
-              <ul>
-                {data.sides.content.map(side => (
-                  <li>
-                    <a href={side.url}>{side.name}</a>
-                    <span> - </span>
-                    <span>{side.description}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
           </div>
         </div>
         <div className="tile is-parent">
           <article className="tile is-child notification is-success">
             <p className="title">{data.json.title}</p>
-            <p className="subtitle">{data.json.subtitle}</p>
             <div>
-              <pre style={{ background: 'black', color: 'white' }}>
+              <pre style={{ background: "black", color: "white" }}>
                 {JSON.stringify(json, null, 2)}
               </pre>
             </div>

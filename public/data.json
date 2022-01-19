@@ -10,172 +10,158 @@
     "hand_span_cm": 23,
     "shoe_size": 11,
     "birth_time": "1993-01-05T01:54:00.000+08:00",
-    "birth_latlng": "22.309289, 114.174459",
+    "birth_location": "22.309289, 114.174459",
     "languages": ["en"],
     "activities": [
-        "programming", 
-        "ultimate", 
-        "hiking",
-        "chess",
-        "piano",
-        "cooking", 
-        "board games"
+      "programming",
+      "ultimate",
+      "hiking",
+      "chess",
+      "piano",
+      "cooking",
+      "board games"
     ],
     "skills": [
-        "JavaScript",
-        "TypeScript",
-        "Node.js",
-        "React",
-        "C#",
-        "Python",
-        "PHP",
-        "Java",
-        "C++",
-        "Go",
-        "SQL (PostgreSQL / MSSQL)",
-        "NoSQL (Cassandra / MongoDB / Redis)",
-        "Containers (Docker / Kubernetes)",
-        "Continuous Integration (Travis CI / Jenkins)",
-        "Cloud (GCP / Azure / AWS)",
-        "Git",
-        "Perforce"
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "React",
+      "C#",
+      "Python",
+      "PHP",
+      "Java",
+      "C++",
+      "Go",
+      "SQL (PostgreSQL / MSSQL)",
+      "NoSQL (Cassandra / MongoDB / Redis)",
+      "Containers (Docker / Kubernetes)",
+      "Cloud (GCP / Azure / AWS)",
+      "Git"
     ],
-    "bio": { 
-        "title": "Bio",
-        "subtitle": "A readable summary",
-        "content": [
-            "I've worked at Valve on projects including Steam Chat, Steam Events and SteamTV, and at Microsoft on the data ingestion services and APIs for esports-related user experiences on Bing.",
-            "I also helped pioneer the development of the first React applications on Bing, including a new homepage for tablets.",
-            "Before that, I worked on Azure SQL Database, where I built PowerShell commandlets for the managed backup service and helped develop long-term database backups.",
-            "I graduated from Duke University in 2015 with a B.S. in Computer Science.",
-            "I also work on various open source projects, including co-founding The OpenDota Project, a service that provides detailed data from the replay files of the game Dota 2."
-        ]
-    },
     "json": {
-        "title": "JSON",
-        "subtitle": "A parseable summary"
+      "title": "JSON"
     },
     "facts": [
-        "I like seafood, particularly fish.",
-        "I can't whistle.",
-        "I can't snap my fingers.",
-        "My favorite brand of soy sauce is Kikkoman.",
-        "I dropped out of high school.",
-        "My favorite film is Finding Nemo (2003).",
-        "I know the first 120 digits of pi.",
-        "I can say I don't speak a language in numerous languages.",
-        "I prefer vim over emacs.",
-        "My favorite data structure is the hash table.",
-        "I don't like cheese.",
-        "I can wiggle my ears.",
-        "I held a school record in rope climbing for three years.",
-        "I once ate Chipotle for two straight weeks.",
-        "I once solved a Rubik's Cube in 42 seconds.",
-        "I studied at Duke University.",
-        "I'm a minimalist.",
-        "I can use chopsticks.",
-        "I have a mild obsession with bread.",
-        "I don't like carbonated drinks.",
-        "I prefer spaces to tabs.",
-        "I like reading.",
-        "Inconsistency annoys me.",
-        "I enjoy watching speedruns.",
-        "I like organizing things."
+      "I like seafood, particularly fish.",
+      "I can't whistle.",
+      "I can't snap my fingers.",
+      "My favorite brand of soy sauce is Kikkoman.",
+      "I dropped out of high school.",
+      "My favorite film is Finding Nemo (2003).",
+      "I know the first 120 digits of pi.",
+      "I can say I don't speak a language in numerous languages.",
+      "I prefer vim over emacs.",
+      "My favorite data structure is the hash table.",
+      "I don't like cheese.",
+      "I can wiggle my ears.",
+      "I held a school record in rope climbing for three years.",
+      "I once ate Chipotle for two straight weeks.",
+      "I once solved a Rubik's Cube in 42 seconds.",
+      "I studied at Duke University.",
+      "I'm a minimalist.",
+      "I can use chopsticks.",
+      "I have a mild obsession with bread.",
+      "I don't like carbonated drinks.",
+      "I prefer spaces to tabs.",
+      "I like reading.",
+      "Inconsistency annoys me.",
+      "I enjoy watching speedruns.",
+      "I like organizing things."
     ],
     "links": [
-        {
-            "name": "GitHub",
-            "url": "https://github.com/howardchung",
-            "fa": "fab fa-github-square"
-        },
-        {
-            "name": "LinkedIn",
-            "url": "https://www.linkedin.com/in/howardzchung",
-            "fa": "fab fa-linkedin"
-        },
-        {
-            "name": "Twitter",
-            "url": "https://twitter.com/howardzchung",
-            "fa": "fab fa-twitter-square"
-        },
-        {
-            "name": "Facebook",
-            "url": "https://facebook.com/howardzchung",
-            "fa": "fab fa-facebook-square"
-        },
-        {
-            "name": "Resume",
-            "url": "./resume.pdf",
-            "fa": "fas fa-file"
-        }
+      {
+        "name": "GitHub",
+        "url": "https://github.com/howardchung",
+        "fa": "fab fa-github-square"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/howardzchung",
+        "fa": "fab fa-linkedin"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/howardzchung",
+        "fa": "fab fa-twitter-square"
+      },
+      {
+        "name": "Facebook",
+        "url": "https://facebook.com/howardzchung",
+        "fa": "fab fa-facebook-square"
+      },
+      {
+        "name": "Resume",
+        "url": "./resume.pdf",
+        "fa": "fas fa-file"
+      }
     ],
     "sides": {
       "title": "Projects",
       "subtitle": "Small asides",
       "content": [
         {
-            "name": "WatchParty",
-            "url": "https://www.watchparty.me",
-            "description": "A React/Node.js application for watching videos with your friends"
+          "name": "WatchParty",
+          "url": "https://www.watchparty.me",
+          "description": "A React/Node.js application for watching videos with your friends"
         },
-          {
-              "name": "MultiWatch",
-              "url": "https://play.google.com/store/apps/details?id=io.gravitech.multiwatch",
-              "description": "React Native stopwatch application supporting multiple timers"
-          },
+        {
+          "name": "MultiWatch",
+          "url": "https://play.google.com/store/apps/details?id=io.gravitech.multiwatch",
+          "description": "React Native stopwatch application supporting multiple timers"
+        },
         {
           "name": "tradebot",
           "url": "https://github.com/howardchung/tradebot",
           "description": "A bot for automated stock trading on Robinhood"
         },
         {
-            "name": "Pixels Against Humanity",
-            "url": "https://pixelsagainsthumanity.herokuapp.com",
-            "description": "A Node.js implementation of Cards Against Humanity"
+          "name": "Pixels Against Humanity",
+          "url": "https://pixelsagainsthumanity.herokuapp.com",
+          "description": "A Node.js implementation of Cards Against Humanity"
         },
         {
-            "name": "wscache",
-            "url": "https://github.com/howardchung/wscache",
-            "description": "A general purpose cache for web applications"
+          "name": "wscache",
+          "url": "https://github.com/howardchung/wscache",
+          "description": "A general purpose cache for web applications"
         },
         {
-            "name": "TransTracker",
-            "url": "https://transtracker.netlify.com",
-            "description": "An improved bus tracking interface for the RapidRide B Line"
+          "name": "TransTracker",
+          "url": "https://transtracker.netlify.com",
+          "description": "An improved bus tracking interface for the RapidRide B Line"
         }
-      ]  
+      ]
     },
     "projects": {
-        "title": "Experience",
-        "subtitle": "Things I've done",
-        "content": [
+      "title": "Experience",
+      "subtitle": "Things I've done",
+      "content": [
         {
-            "name": "The OpenDota Project",
-            "url": "https://www.opendota.com",
-            "title": "Co-Founder",
-            "start_date": {
-                "month": 8,
-                "year": 2014
-            },
-            "description": [
-                "Open source project providing detailed data from Dota 2 replay files",
-                "React UI combined with a Node.js backend deployed on Google Cloud and Netlify",
-                "Over 120 contributors, 800,000 registered users, 150 million API requests per month",
-                "https://www.opendota.com"
-            ]
+          "name": "The OpenDota Project",
+          "url": "https://www.opendota.com",
+          "title": "Co-Founder",
+          "start_date": {
+            "month": 8,
+            "year": 2014
+          },
+          "description": [
+            "Open source project providing detailed data from Dota 2 replay files",
+            "React UI combined with a Node.js backend deployed on Google Cloud and Netlify",
+            "Over 120 contributors, 800,000 registered users, 150 million API requests per month",
+            "https://www.opendota.com"
+          ]
         },
         {
-            "name": "CakeWalk",
-            "url": "https://join.cakewalkapp.com",
-            "title": "Software Engineer",
-            "start_date": {
-                "month": 12,
-                "year": 2019
-            },
-            "description": [
-                "Restaurant waitlist application currently in use by Kizuki Ramen and Izakaya in Seattle",
-                "React/React Native/JavaScript development on application running on iOS and AWS"
-            ]
+          "name": "CakeWalk",
+          "url": "https://join.cakewalkapp.com",
+          "title": "Software Engineer",
+          "start_date": {
+            "month": 12,
+            "year": 2019
+          },
+          "description": [
+            "Restaurant waitlist application currently in use by Kizuki Ramen and Izakaya in Seattle",
+            "React/React Native/JavaScript development on application running on iOS and AWS"
+          ]
         },
         {
           "name": "Valve",
@@ -197,56 +183,58 @@
           ]
         },
         {
-            "name": "Microsoft",
-            "url": "https://www.microsoft.com",
-            "title": "Software Engineer II",
-            "start_date": {
-                "month": 8,
-                "year": 2015
-            },
-            "end_date": {
-              "month": 9,
-              "year": 2018
-            },
-            "description": [
-                "C#/React development on Bing, Azure SQL DB",
-                "Developed esports answers on Bing for multiple titles, including League of Legends, Dota 2, and Overwatch",
-                "Designed and implemented a multithreaded C# data ingestion service covering more than 10 esports titles",
-                "Pioneered development of React/TypeScript applications on Bing, including a new homepage for tablet devices with personalized feed",
-                "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
-            ]
+          "name": "Microsoft",
+          "url": "https://www.microsoft.com",
+          "title": "Software Engineer II",
+          "start_date": {
+            "month": 8,
+            "year": 2015
+          },
+          "end_date": {
+            "month": 9,
+            "year": 2018
+          },
+          "description": [
+            "C#/React development on Bing, Azure SQL DB",
+            "Developed esports answers on Bing for multiple titles, including League of Legends, Dota 2, and Overwatch",
+            "Designed and implemented a multithreaded C# data ingestion service covering more than 10 esports titles",
+            "Pioneered development of React/TypeScript applications on Bing, including a new homepage for tablet devices with personalized feed",
+            "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
+          ]
         },
         {
-            "name": "Duke University",
-            "url": "https://www.duke.edu",
-            "title": "B.S. Computer Science",
-            "start_date": {
-                "month": 8,
-                "year": 2011
-            },
-            "end_date": {
-                "month": 5,
-                "year": 2015
-            },
-            "description": []
+          "name": "Duke University",
+          "url": "https://www.duke.edu",
+          "title": "B.S. Computer Science",
+          "start_date": {
+            "month": 8,
+            "year": 2011
+          },
+          "end_date": {
+            "month": 5,
+            "year": 2015
+          },
+          "description": []
         },
         {
-            "name": "Microsoft",
-            "url": "https://www.microsoft.com",
-            "title": "Software Engineer Intern",
-            "start_date": {
-                "month": 5,
-                "year": 2014
-            },
-            "end_date": {
-                "month": 8,
-                "year": 2014
-            },
-            "description": [
-                "Azure SQL DB",
-                "Improved build times for test configuration tool by 10x using incremental build",
-                "Implemented automated certificate rotation for database test runners"
-            ]
-        }]
+          "name": "Microsoft",
+          "url": "https://www.microsoft.com",
+          "title": "Software Engineer Intern",
+          "start_date": {
+            "month": 5,
+            "year": 2014
+          },
+          "end_date": {
+            "month": 8,
+            "year": 2014
+          },
+          "description": [
+            "Azure SQL DB",
+            "Improved build times for test configuration tool by 10x using incremental build",
+            "Implemented automated certificate rotation for database test runners"
+          ]
+        }
+      ]
     }
-}
+  }
+  
