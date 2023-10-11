@@ -1,240 +1,225 @@
 {
-    "full_name": "Howard Chung",
-    "occupation": "Software Engineer",
-    "phone": 5035679740,
-    "email": "howardzchung@gmail.com",
-    "url": "https://www.howardchung.net",
-    "gender": "male",
-    "height_cm": 177,
-    "right_handed": true,
-    "hand_span_cm": 23,
-    "shoe_size": 11,
-    "birth_time": "1993-01-05T01:54:00.000+08:00",
-    "birth_location": "22.309289, 114.174459",
-    "languages": ["en"],
-    "activities": [
-      "programming",
-      "ultimate",
-      "hiking",
-      "chess",
-      "piano",
-      "cooking",
-      "board games"
-    ],
-    "skills": [
-      "JavaScript",
-      "TypeScript",
-      "Node.js",
-      "React",
-      "C#",
-      "Python",
-      "PHP",
-      "Java",
-      "C++",
-      "Go",
-      "SQL (PostgreSQL / MSSQL)",
-      "NoSQL (Cassandra / MongoDB / Redis)",
-      "Containers (Docker / Kubernetes)",
-      "Cloud (GCP / Azure / AWS)",
-      "Git"
-    ],
-    "json": {
-      "title": "JSON"
+  "full_name": "Howard Chung",
+  "occupation": "Software Engineer",
+  "phone": 5035679740,
+  "email": "howardzchung@gmail.com",
+  "url": "https://www.howardchung.net",
+  "gender": "male",
+  "height_cm": 177,
+  "right_handed": true,
+  "hand_span_cm": 23,
+  "shoe_size": 11,
+  "birth_time": "1993-01-05T01:54:00.000+08:00",
+  "birth_location": "22.309289, 114.174459",
+  "languages": ["en"],
+  "activities": [
+    "programming",
+    "ultimate",
+    "hiking",
+    "chess",
+    "piano",
+    "cooking",
+    "board games"
+  ],
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "React",
+    "C#",
+    "Python",
+    "PHP/Hack",
+    "Java",
+    "Go",
+    "SQL (PostgreSQL, MSSQL)",
+    "NoSQL (Cassandra, Redis)",
+    "Cloud (Google, Azure, AWS, Hetzner)",
+    "Docker",
+    "Git"
+  ],
+  "facts": [
+    "I like seafood, particularly fish.",
+    "I can't whistle or snap my fingers.",
+    "My favorite brand of soy sauce is Kikkoman.",
+    "I dropped out of high school.",
+    "My favorite film is Finding Nemo (2003).",
+    "I know the first 100 digits of pi.",
+    "I can say I don't speak a language in over 10 languages.",
+    "I think vim is better than emacs.",
+    "I don't like cheese.",
+    "I can wiggle my ears.",
+    "I held a school record in rope climbing for three years.",
+    "I once ate Chipotle for two straight weeks.",
+    "I once solved a Rubik's Cube in 42 seconds.",
+    "I studied computer science at Duke University.",
+    "I don't like carbonated drinks.",
+    "I prefer spaces to tabs."
+  ],
+  "bio": "I graduated from Duke University in 2015. I enjoy traveling and have visited all 50 states and most of the US National Parks!",
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/howardchung",
+      "fa": "fab fa-github-square"
     },
-    "facts": [
-      "I like seafood, particularly fish.",
-      "I can't whistle.",
-      "I can't snap my fingers.",
-      "My favorite brand of soy sauce is Kikkoman.",
-      "I dropped out of high school.",
-      "My favorite film is Finding Nemo (2003).",
-      "I know the first 120 digits of pi.",
-      "I can say I don't speak a language in numerous languages.",
-      "I prefer vim over emacs.",
-      "My favorite data structure is the hash table.",
-      "I don't like cheese.",
-      "I can wiggle my ears.",
-      "I held a school record in rope climbing for three years.",
-      "I once ate Chipotle for two straight weeks.",
-      "I once solved a Rubik's Cube in 42 seconds.",
-      "I studied at Duke University.",
-      "I'm a minimalist.",
-      "I can use chopsticks.",
-      "I have a mild obsession with bread.",
-      "I don't like carbonated drinks.",
-      "I prefer spaces to tabs.",
-      "I like reading.",
-      "Inconsistency annoys me.",
-      "I enjoy watching speedruns.",
-      "I like organizing things."
-    ],
-    "links": [
-      {
-        "name": "GitHub",
-        "url": "https://github.com/howardchung",
-        "fa": "fab fa-github-square"
-      },
-      {
-        "name": "LinkedIn",
-        "url": "https://www.linkedin.com/in/howardzchung",
-        "fa": "fab fa-linkedin"
-      },
-      {
-        "name": "Twitter",
-        "url": "https://twitter.com/howardzchung",
-        "fa": "fab fa-twitter-square"
-      },
-      {
-        "name": "Facebook",
-        "url": "https://facebook.com/howardzchung",
-        "fa": "fab fa-facebook-square"
-      },
-      {
-        "name": "Resume",
-        "url": "./resume.pdf",
-        "fa": "fas fa-file"
-      }
-    ],
-    "sides": {
-      "title": "Projects",
-      "subtitle": "Small asides",
-      "content": [
-        {
-          "name": "WatchParty",
-          "url": "https://www.watchparty.me",
-          "description": "A React/Node.js application for watching videos with your friends"
-        },
-        {
-          "name": "MultiWatch",
-          "url": "https://play.google.com/store/apps/details?id=io.gravitech.multiwatch",
-          "description": "React Native stopwatch application supporting multiple timers"
-        },
-        {
-          "name": "tradebot",
-          "url": "https://github.com/howardchung/tradebot",
-          "description": "A bot for automated stock trading on Robinhood"
-        },
-        {
-          "name": "Pixels Against Humanity",
-          "url": "https://pixelsagainsthumanity.herokuapp.com",
-          "description": "A Node.js implementation of Cards Against Humanity"
-        },
-        {
-          "name": "wscache",
-          "url": "https://github.com/howardchung/wscache",
-          "description": "A general purpose cache for web applications"
-        },
-        {
-          "name": "TransTracker",
-          "url": "https://transtracker.netlify.com",
-          "description": "An improved bus tracking interface for the RapidRide B Line"
-        }
-      ]
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/howardzchung",
+      "fa": "fab fa-linkedin"
     },
-    "projects": {
-      "title": "Experience",
-      "subtitle": "Things I've done",
-      "content": [
-        {
-          "name": "The OpenDota Project",
-          "url": "https://www.opendota.com",
-          "title": "Co-Founder",
-          "start_date": {
-            "month": 8,
-            "year": 2014
-          },
-          "description": [
-            "Open source project providing detailed data from Dota 2 replay files",
-            "React UI combined with a Node.js backend deployed on Google Cloud and Netlify",
-            "Over 120 contributors, 800,000 registered users, 150 million API requests per month",
-            "https://www.opendota.com"
-          ]
-        },
-        {
-          "name": "CakeWalk",
-          "url": "https://join.cakewalkapp.com",
-          "title": "Software Engineer",
-          "start_date": {
-            "month": 12,
-            "year": 2019
-          },
-          "description": [
-            "Restaurant waitlist application currently in use by Kizuki Ramen and Izakaya in Seattle",
-            "React/React Native/JavaScript development on application running on iOS and AWS"
-          ]
-        },
-        {
-          "name": "Valve",
-          "url": "https://www.valvesoftware.com",
-          "title": "Software Engineer",
-          "start_date": {
-            "month": 9,
-            "year": 2018
-          },
-          "end_date": {
-            "month": 12,
-            "year": 2019
-          },
-          "description": [
-            "React/React Native/PHP/C++ development on projects including Steam Chat, Steam Events, and SteamTV",
-            "Added cross-platform (iOS/Android) support to SteamTV video player, and image preview to timeline seeking",
-            "Developed chat features (animated stickers/effects/flairs) for Steam sales and other events",
-            "Built partner-facing event editor for Steam partners to create custom sale pages and upload event assets"
-          ]
-        },
-        {
-          "name": "Microsoft",
-          "url": "https://www.microsoft.com",
-          "title": "Software Engineer II",
-          "start_date": {
-            "month": 8,
-            "year": 2015
-          },
-          "end_date": {
-            "month": 9,
-            "year": 2018
-          },
-          "description": [
-            "C#/React development on Bing, Azure SQL DB",
-            "Developed esports answers on Bing for multiple titles, including League of Legends, Dota 2, and Overwatch",
-            "Designed and implemented a multithreaded C# data ingestion service covering more than 10 esports titles",
-            "Pioneered development of React/TypeScript applications on Bing, including a new homepage for tablet devices with personalized feed",
-            "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
-          ]
-        },
-        {
-          "name": "Duke University",
-          "url": "https://www.duke.edu",
-          "title": "B.S. Computer Science",
-          "start_date": {
-            "month": 8,
-            "year": 2011
-          },
-          "end_date": {
-            "month": 5,
-            "year": 2015
-          },
-          "description": []
-        },
-        {
-          "name": "Microsoft",
-          "url": "https://www.microsoft.com",
-          "title": "Software Engineer Intern",
-          "start_date": {
-            "month": 5,
-            "year": 2014
-          },
-          "end_date": {
-            "month": 8,
-            "year": 2014
-          },
-          "description": [
-            "Azure SQL DB",
-            "Improved build times for test configuration tool by 10x using incremental build",
-            "Implemented automated certificate rotation for database test runners"
-          ]
-        }
-      ]
+    {
+      "name": "Facebook",
+      "url": "https://facebook.com/howardzchung",
+      "fa": "fab fa-facebook-square"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://instagram.com/howardzchung",
+      "fa": "fab fa-instagram"
+    },
+    {
+      "name": "Resume",
+      "url": "./resume.pdf",
+      "fa": "fas fa-file"
     }
+  ],
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Things I've made",
+    "content": [
+      {
+        "name": "WatchParty",
+        "url": "https://www.watchparty.me",
+        "description": "Co-watching service for watching videos together with your friends"
+      },
+      {
+        "name": "The OpenDota Project",
+        "url": "https://www.opendota.com",
+        "description": "A Dota 2 advanced statistics service used by millions"
+      },
+      {
+        "name": "OpenCFB",
+        "url": "https://www.opencfb.com",
+        "description": "Applying the Elo rating system to college football"
+      },
+      {
+        "name": "Jeopardy.app",
+        "url": "https://jeopardy.app",
+        "description": "Implementation of the trivia game show Jeopardy for online multiplayer"
+      },
+      {
+        "name": "Bachelor Bingo",
+        "url": "https://bachelorbingo.com",
+        "description": "Play Bingo while watching episodes of The Bachelor"
+      },
+      {
+        "name": "Robyn for President",
+        "url": "https://sunbreakelection.netlify.app",
+        "description": "A live-updating election tracker map built for an ultimate frisbee tournament theme"
+      },
+      {
+        "name": "CakeWalk",
+        "url": "https://cakewalkapp.com",
+        "description": "Custom restaurant waitlist application previously used by Kizuki Ramen"
+      },
+      {
+        "name": "Pixels Against Humanity",
+        "url": "https://pah.howardchung.net/",
+        "description": "Implementation of Cards Against Humanity for online multiplayer"
+      },
+      {
+        "name": "That's What Yvonne Said",
+        "url": "https://thatswhatyvonnesaid.com",
+        "description": "A collection of things my sister Yvonne has said"
+      },
+      {
+        "name": "Poetry for Neanderthals",
+        "url": "https://poetryforneanderthals.netlify.app",
+        "description": "A web app for playing the party game Poetry for Neanderthals"
+      },
+      {
+        "name": "howardchung.net",
+        "url": "https://howardchung.net",
+        "description": "A personal website using React.js"
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "",
+    "content": [
+      {
+        "name": "The OpenDota Project",
+        "url": "https://www.opendota.com",
+        "title": "Co-Founder",
+        "start_date": {
+          "month": 8,
+          "year": 2014
+        },
+        "description": [
+          "Open source project providing detailed data from Dota 2 replay files",
+          "React UI combined with a Node.js backend deployed on Google Cloud and Netlify",
+          "Over 120 contributors, 800,000 registered users, 150 million API requests per month",
+          "https://www.opendota.com"
+        ]
+      },
+      {
+        "name": "Valve",
+        "url": "https://www.valvesoftware.com",
+        "title": "Software Engineer",
+        "start_date": {
+          "month": 9,
+          "year": 2018
+        },
+        "end_date": {
+          "month": 12,
+          "year": 2019
+        },
+        "description": [
+          "React/React Native/PHP/C++ development on projects including Steam Chat, Steam Events, and SteamTV",
+          "Added cross-platform (iOS/Android) support to SteamTV video player, and image preview to timeline seeking",
+          "Developed chat features (animated stickers/effects/flairs) for Steam sales and other events",
+          "Built partner-facing event editor for Steam partners to create custom sale pages and upload event assets"
+        ]
+      },
+      {
+        "name": "Microsoft",
+        "url": "https://www.microsoft.com",
+        "title": "Software Engineer II",
+        "start_date": {
+          "month": 8,
+          "year": 2015
+        },
+        "end_date": {
+          "month": 9,
+          "year": 2018
+        },
+        "description": [
+          "C#/React development on Bing, Azure SQL DB",
+          "Developed esports answers on Bing for multiple titles, including League of Legends, Dota 2, and Overwatch",
+          "Designed and implemented a multithreaded C# data ingestion service covering more than 10 esports titles",
+          "Pioneered development of React/TypeScript applications on Bing, including a new homepage for tablet devices with personalized feed",
+          "Added PowerShell commandlets to Azure SDK for Backup/Restore functionality"
+        ]
+      },
+      {
+        "name": "Microsoft",
+        "url": "https://www.microsoft.com",
+        "title": "Software Engineer Intern",
+        "start_date": {
+          "month": 5,
+          "year": 2014
+        },
+        "end_date": {
+          "month": 8,
+          "year": 2014
+        },
+        "description": [
+          "Azure SQL DB",
+          "Improved build times for test configuration tool by 10x using incremental build",
+          "Implemented automated certificate rotation for database test runners"
+        ]
+      }
+    ]
   }
-  
+}

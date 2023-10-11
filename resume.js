@@ -72,7 +72,7 @@ const docDefinition = {
         style: "subheading"
       },
       {
-        ul: data.projects.content.map(function(c) {
+        ul: data.experience.content.map(function(c) {
           var first_line = [c.name];
           if (c.title) {
             first_line.push(c.title);

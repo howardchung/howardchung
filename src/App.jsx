@@ -15,13 +15,13 @@ class App extends Component {
           data,
           factIndex: Math.floor(Math.random() * data.facts.length)
         });
-        setInterval(
-          () =>
-            this.setState({
-              factIndex: (this.state.factIndex + 1) % data.facts.length
-            }),
-          2000
-        );
+        // setInterval(
+        //   () =>
+        //     this.setState({
+        //       factIndex: (this.state.factIndex + 1) % data.facts.length
+        //     }),
+        //   2000
+        // );
       });
   }
 
@@ -50,7 +50,7 @@ class App extends Component {
       <div className="tile is-ancestor">
         <div className="tile is-vertical is-4">
           <div className="tile">
-            <div className="tile is-parent is-vertical">
+            <div style={{ textAlign: 'center' }} className="tile is-parent is-vertical">
               <article className="tile is-child notification is-primary">
                 <p className="title">{data.full_name}</p>
                 <p className="subtitle">{data.occupation}</p>
@@ -76,11 +76,16 @@ class App extends Component {
                     style={{
                       height: "400px",
                       width: "initial",
-                      paddingTop: "10px"
+                      paddingTop: "10px",
+                      margin: "0 auto",
                     }}
                   />
                 </figure>
-                {data.facts[this.state.factIndex]}
+                <div>Howard in 2009</div>
+                <br />
+                <div>
+                {data.bio}
+                </div>
               </article>
             </div>
           </div>
@@ -88,41 +93,13 @@ class App extends Component {
         <div className="tile is-vertical is-4">
           <div className="tile">
             <div className="tile is-parent is-vertical">
-              <article className="tile is-child notification is-warning">
+              <article className="tile is-child notification is-danger">
                 <p className="title">{data.projects.title}</p>
                 <p className="subtitle">{data.projects.subtitle}</p>
                 <ul>
-                  {data.projects.content.map((p) => (
+                  {data.projects.content.map((side) => (
                     <li>
-                      <span
-                        className={
-                          "tag" +
-                          (p.end_date && p.end_date.year
-                            ? " is-info"
-                            : " is-success")
-                        }
-                        style={{ minWidth: "100px", marginRight: "5px" }}
-                      >
-                        {(p.start_date && p.start_date.year) +
-                          " - " +
-                          ((p.end_date && p.end_date.year) || "")}
-                      </span>
-                      <a href={p.url || "#"} target="_blank">
-                        {p.name}
-                      </a>
-                      <span> - </span>
-                      <span>{p.title}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-              <article className="tile is-child notification is-danger">
-                <p className="title">{data.sides.title}</p>
-                <p className="subtitle">{data.sides.subtitle}</p>
-                <ul>
-                  {data.sides.content.map((side) => (
-                    <li>
-                      <a href={side.url}>{side.name}</a>
+                      <a href={side.url} target="_blank" rel="noreferrer">{side.name}</a>
                       <span> - </span>
                       <span>{side.description}</span>
                     </li>
@@ -134,7 +111,7 @@ class App extends Component {
         </div>
         <div className="tile is-parent">
           <article className="tile is-child notification is-success">
-            <p className="title">{data.json.title}</p>
+            <p className="title">JSON</p>
             <div>
               <pre style={{ background: "black", color: "white" }}>
                 {JSON.stringify(json, null, 2)}
