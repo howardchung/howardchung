@@ -113,19 +113,14 @@
         "description": "Play Bingo while watching episodes of The Bachelor"
       },
       {
-        "name": "Robyn for President",
-        "url": "https://sunbreakelection.netlify.app",
-        "description": "A live-updating election tracker map built for an ultimate frisbee tournament theme"
-      },
-      {
-        "name": "CakeWalk",
-        "url": "https://cakewalkapp.com",
-        "description": "Custom restaurant waitlist application previously used by Kizuki Ramen"
-      },
-      {
         "name": "Pixels Against Humanity",
         "url": "https://pah.howardchung.net/",
         "description": "Implementation of Cards Against Humanity for online multiplayer"
+      },
+      {
+        "name": "Robyn for President",
+        "url": "https://sunbreakelection.netlify.app",
+        "description": "A live-updating election tracker map built for an ultimate frisbee tournament theme"
       },
       {
         "name": "That's What Yvonne Said",
@@ -136,6 +131,21 @@
         "name": "Poetry for Neanderthals",
         "url": "https://poetryforneanderthals.netlify.app",
         "description": "A web app for playing the party game Poetry for Neanderthals"
+      },
+      {
+        "name": "clock",
+        "url": "https://howardchung.github.io/clock",
+        "description": "Easy-to-use browser-based alarm clock"
+      },
+      {
+        "name": "MultiWatch",
+        "url": "https://play.google.com/store/apps/details?id=io.gravitech.multiwatch",
+        "description": "React Native Android app supporting multiple simultaneous stopwatches"
+      },
+      {
+        "name": "CakeWalk",
+        "url": "https://cakewalkapp.com",
+        "description": "Custom restaurant waitlist application previously used by Kizuki Ramen"
       },
       {
         "name": "howardchung.net",
