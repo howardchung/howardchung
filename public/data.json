@@ -90,32 +90,38 @@
       {
         "name": "WatchParty",
         "url": "https://www.watchparty.me",
+        "github": "howardchung/watchparty",
         "description": "Co-watching service for watching videos together with your friends"
       },
       {
-        "name": "The OpenDota Project",
+        "name": "OpenDota",
         "url": "https://www.opendota.com",
+        "github": "odota/core",
         "description": "A Dota 2 advanced statistics service used by millions"
-      },
-      {
-        "name": "OpenCFB",
-        "url": "https://www.opencfb.com",
-        "description": "Applying the Elo rating system to college football"
       },
       {
         "name": "Jeopardy.app",
         "url": "https://jeopardy.app",
-        "description": "Implementation of the trivia game show Jeopardy for online multiplayer"
-      },
-      {
-        "name": "Bachelor Bingo",
-        "url": "https://bachelorbingo.com",
-        "description": "Play Bingo while watching episodes of The Bachelor"
+        "github": "howardchung/jeopardy",
+        "description": "Play the trivia game show Jeopardy with friends online"
       },
       {
         "name": "Pixels Against Humanity",
         "url": "https://pah.howardchung.net/",
-        "description": "Implementation of Cards Against Humanity for online multiplayer"
+        "github": "howardchung/PixelsAgainstHumanity",
+        "description": "Play Cards Against Humanity with friends online"
+      },
+      {
+        "name": "OpenCFB",
+        "url": "https://www.opencfb.com",
+        "github": "howardchung/opencfb",
+        "description": "College football rankings powered by the Elo rating system"
+      },
+      {
+        "name": "Bachelor Bingo",
+        "url": "https://bachelorbingo.com",
+        "github": "howardchung/bachelorbingo",
+        "description": "Play Bingo on your phone while watching The Bachelor"
       },
       {
         "name": "Robyn for President",
@@ -125,22 +131,26 @@
       {
         "name": "That's What Yvonne Said",
         "url": "https://thatswhatyvonnesaid.com",
+        "github": "howardchung/yvonne",
         "description": "A collection of things my sister Yvonne has said"
       },
       {
         "name": "Poetry for Neanderthals",
         "url": "https://poetryforneanderthals.netlify.app",
+        "github": "howardchung/poetryfn",
         "description": "A web app for playing the party game Poetry for Neanderthals"
+      },
+      {
+        "name": "Robyn for President",
+        "url": "https://sunbreakelection.netlify.app",
+        "github": "howardchung/robynforpresident",
+        "description": "A live-updating election tracker map built for an ultimate frisbee tournament theme"
       },
       {
         "name": "clock",
         "url": "https://howardchung.github.io/clock",
+        "github": "howardchung/clock",
         "description": "Easy-to-use browser-based alarm clock"
-      },
-      {
-        "name": "MultiWatch",
-        "url": "https://play.google.com/store/apps/details?id=io.gravitech.multiwatch",
-        "description": "React Native Android app supporting multiple simultaneous stopwatches"
       },
       {
         "name": "CakeWalk",

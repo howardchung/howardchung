@@ -3,26 +3,32 @@ import React, { Component } from "react";
 class App extends Component {
   state = {
     data: null,
-    factIndex: 0
+    factIndex: 0,
+    github: null,
   };
 
-  componentDidMount() {
-    window
-      .fetch("./data.json")
-      .then((resp) => resp.json())
-      .then((data) => {
-        this.setState({
-          data,
-          factIndex: Math.floor(Math.random() * data.facts.length)
-        });
-        // setInterval(
-        //   () =>
-        //     this.setState({
-        //       factIndex: (this.state.factIndex + 1) % data.facts.length
-        //     }),
-        //   2000
-        // );
+  async componentDidMount() {
+    const data = await (await window.fetch("./data.json")).json();
+    this.setState({
+      data,
+      factIndex: Math.floor(Math.random() * data.facts.length),
+    });
+    try {
+      const github = await (await window.fetch('https://api.github.com/users/howardchung/repos?per_page=100')).json();
+      const odota = await (await window.fetch('https://api.github.com/users/odota/repos?per_page=100')).json();
+      this.setState({
+        github: [...github, ...odota],
       });
+    } catch (e) {
+      console.warn(e);
+    }
+    // setInterval(
+    //   () =>
+    //     this.setState({
+    //       factIndex: (this.state.factIndex + 1) % data.facts.length
+    //     }),
+    //   2000
+    // );
   }
 
   render() {
@@ -97,13 +103,15 @@ class App extends Component {
                 <p className="title">{data.projects.title}</p>
                 <p className="subtitle">{data.projects.subtitle}</p>
                 <ul>
-                  {data.projects.content.map((side) => (
-                    <li>
+                  {data.projects.content.map((side) => {
+                    const repo = this.state.github?.find(repo => repo.full_name === side.github);
+                    return <li>
                       <a href={side.url} target="_blank" rel="noreferrer">{side.name}</a>
+                      {repo && <span> - <a href={repo?.html_url} target="_blank">★ {repo?.stargazers_count}</a></span>}
                       <span> - </span>
                       <span>{side.description}</span>
                     </li>
-                  ))}
+                  })}
                 </ul>
               </article>
             </div>
