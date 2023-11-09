@@ -124,11 +124,6 @@
         "description": "Play Bingo on your phone while watching The Bachelor"
       },
       {
-        "name": "Robyn for President",
-        "url": "https://sunbreakelection.netlify.app",
-        "description": "A live-updating election tracker map built for an ultimate frisbee tournament theme"
-      },
-      {
         "name": "That's What Yvonne Said",
         "url": "https://thatswhatyvonnesaid.com",
         "github": "howardchung/yvonne",
