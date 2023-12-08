@@ -89,7 +89,7 @@ class App extends Component {
                 </figure>
                 <div>Howard in 2009</div>
                 <br />
-                <pre>
+                <pre style={{ background: 'black', color: 'white', whiteSpace: 'pre-wrap', textAlign: 'left' }}>
                 {data.bio}
                 </pre>
               </article>
