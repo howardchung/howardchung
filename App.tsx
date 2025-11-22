@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function useData<T>(url: string) {
+function useFetch<T>(url: string) {
   const [data, setData] = useState<T | null>(null);
   useEffect(() => {
     if (url) {
@@ -21,11 +21,11 @@ function useData<T>(url: string) {
 }
 
 const App = () => {
-  const data = useData<{ facts: string[] } & any>("/data.json");
-  const githubData = useData<any[]>(
+  const data = useFetch<{ facts: string[] } & any>("/data.json");
+  const githubData = useFetch<any[]>(
     "https://api.github.com/users/howardchung/repos?per_page=100",
   ) ?? [];
-  const odotaData = useData<any[]>(
+  const odotaData = useFetch<any[]>(
     "https://api.github.com/users/odota/repos?per_page=100",
   ) ?? [];
   const github = [...githubData, ...odotaData];
