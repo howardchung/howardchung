@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "vite --host",
-    "rsbuild": "vite build",
+    "build": "npm run resume && vite build",
     "preview": "vite preview",
-    "build": "npm run resume && npm run rsbuild",
     "resume": "node resume.ts",
     "prettier": "npx prettier --write ."
   },
