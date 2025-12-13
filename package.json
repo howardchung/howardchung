@@ -10,6 +10,18 @@
     "resume": "node resume.ts",
     "prettier": "npx prettier --write ."
   },
+  "dependencies": {
+    "pdfmake": "^0.2.20"
+  },
+  "devDependencies": {
+    "@types/pdfmake": "^0.2.12",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/howardchung/howardchung.github.io"
@@ -18,11 +30,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/howardchung/howardchung.github.io/issues"
-  },
-  "dependencies": {
-    "pdfmake": "^0.2.20",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1"
   },
   "browserslist": {
     "production": [
@@ -35,12 +42,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/pdfmake": "^0.2.12",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "typescript": "^5.9.3",
-    "vite": "^7.2.6"
   }
 }
