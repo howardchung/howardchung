@@ -7,7 +7,7 @@
     "start": "vite --host",
     "build": "npm run resume && vite build",
     "preview": "vite preview",
-    "resume": "node resume.ts",
+    "resume": "node --experimental-strip-types resume.ts",
     "prettier": "npx prettier --write ."
   },
   "dependencies": {
