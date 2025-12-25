@@ -29,7 +29,7 @@ const App = () => {
     ) ?? [];
   const odotaData =
     useFetch<Repos>("https://api.github.com/users/odota/repos?per_page=100") ?? [];
-  const githubRepos = [...howardData, ...odotaData].filter(repo => repo.full_name !== 'odota/web' && repo.full_name !== 'odota/docs');
+  const githubRepos = [...howardData, ...odotaData].filter(repo => repo.full_name !== "odota/web" && repo.full_name !== "odota/docs");
   githubRepos.sort(
     (a: Repo, b: Repo) => b.stargazers_count - a.stargazers_count,
   );
@@ -132,7 +132,7 @@ const App = () => {
                       </a>
                     </span>
                     <div>
-                      <img src={`${repo.full_name.replace("/", "_")}.png`} />
+                      <img style={{ width: "50%" }} src={`${repo.full_name.replace("/", "_")}.png`} />
                     </div>
                   </li>
                 );
