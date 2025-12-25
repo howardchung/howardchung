@@ -29,7 +29,7 @@ const App = () => {
     ) ?? [];
   const odotaData =
     useFetch<Repos>("https://api.github.com/users/odota/repos?per_page=100") ?? [];
-  const githubRepos = [...howardData, ...odotaData].filter(repo => repo.full_name !== 'odota/web');
+  const githubRepos = [...howardData, ...odotaData].filter(repo => repo.full_name !== 'odota/web' && repo.full_name !== 'odota/docs');
   githubRepos.sort(
     (a: Repo, b: Repo) => b.stargazers_count - a.stargazers_count,
   );
