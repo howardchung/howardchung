@@ -14,28 +14,28 @@
   "languages": ["en"],
   "activities": [
     "programming",
+    "traveling",
+    "eating",
     "ultimate",
-    "hiking",
+    "pickleball",
+    "curling",
     "chess",
     "piano",
-    "cooking",
     "board games"
   ],
   "skills": [
-    "JavaScript",
     "TypeScript",
+    "JavaScript",
     "Node.js",
     "React",
-    "C#",
+    "Go",
     "Python",
+    "C#",
     "PHP/Hack",
     "Java",
-    "Go",
-    "SQL (PostgreSQL, MSSQL)",
+    "SQL",
     "NoSQL (Cassandra, Redis)",
-    "Cloud (Google, Azure, AWS, Hetzner)",
-    "Docker",
-    "Git"
+    "Docker"
   ],
   "facts": [
     "I like seafood, particularly fish.",
@@ -55,7 +55,8 @@
     "I don't like carbonated drinks.",
     "I prefer spaces to tabs."
   ],
-  "bio": "I graduated from Duke University in 2015. I enjoy traveling and have visited all 50 states and most of the US National Parks!",
+  "caption": "Howard in 2009",
+  "bio": "Hi, I'm Howard. When I'm not writing code, I'm probably traveling, trying new restaurants, or playing some kind of sport.",
   "links": [
     {
       "name": "GitHub",
@@ -85,84 +86,30 @@
   ],
   "projects": {
     "title": "Projects",
-    "subtitle": "Things I've made",
-    "content": [
-      {
-        "name": "WatchParty",
-        "url": "https://www.watchparty.me",
-        "github": "howardchung/watchparty",
-        "description": "Co-watching service for watching videos together with your friends"
-      },
-      {
-        "name": "OpenDota",
-        "url": "https://www.opendota.com",
-        "github": "odota/core",
-        "description": "A Dota 2 advanced statistics service used by millions"
-      },
-      {
-        "name": "Jeopardy.app",
-        "url": "https://jeopardy.app",
-        "github": "howardchung/jeopardy",
-        "description": "Play the trivia game show Jeopardy with friends online"
-      },
-      {
-        "name": "Pixels Against Humanity",
-        "url": "https://pah.howardchung.net/",
-        "github": "howardchung/PixelsAgainstHumanity",
-        "description": "Play Cards Against Humanity with friends online"
-      },
-      {
-        "name": "OpenCFB",
-        "url": "https://www.opencfb.com",
-        "github": "howardchung/opencfb",
-        "description": "College football rankings powered by the Elo rating system"
-      },
-      {
-        "name": "Bachelor Bingo",
-        "url": "https://bachelorbingo.com",
-        "github": "howardchung/bachelorbingo",
-        "description": "Play Bingo on your phone while watching The Bachelor"
-      },
-      {
-        "name": "That's What Yvonne Said",
-        "url": "https://thatswhatyvonnesaid.com",
-        "github": "howardchung/yvonne",
-        "description": "A collection of things my sister Yvonne has said"
-      },
-      {
-        "name": "Poetry for Neanderthals",
-        "url": "https://poetryforneanderthals.netlify.app",
-        "github": "howardchung/poetryfn",
-        "description": "A web app for playing the party game Poetry for Neanderthals"
-      },
-      {
-        "name": "Robyn for President",
-        "url": "https://sunbreakelection.netlify.app",
-        "github": "howardchung/robynforpresident",
-        "description": "A live-updating election tracker map built for an ultimate frisbee tournament theme"
-      },
-      {
-        "name": "clock",
-        "url": "https://howardchung.github.io/clock",
-        "github": "howardchung/clock",
-        "description": "Easy-to-use browser-based alarm clock"
-      },
-      {
-        "name": "CakeWalk",
-        "url": "https://cakewalkapp.com",
-        "description": "Custom restaurant waitlist application previously used by Kizuki Ramen"
-      },
-      {
-        "name": "howardchung.net",
-        "url": "https://howardchung.net",
-        "description": "A personal website using React.js"
-      }
-    ]
+    "subtitle": "Things I've made"
+  },
+  "json": {
+    "title": "JSON",
+    "subtitle": "Machine-readable me"
   },
   "experience": {
     "title": "Experience",
     "subtitle": "",
     "content": [
+      {
+        "name": "WatchParty",
+        "url": "https://www.watchparty.me",
+        "title": "Founder",
+        "start_date": {
+          "month": 3,
+          "year": 2020
+        },
+        "description": [
+          "Platform supporting co-watching of online videos in private virtual rooms with synchronized playback and multiple watch modes",
+          "React UI with Node.js/TypeScript backend",
+          "Over 150k monthly active users and 1000 stars on GitHub"
+        ]
+      },
       {
         "name": "The OpenDota Project",
         "url": "https://www.opendota.com",
@@ -172,10 +119,9 @@
           "year": 2014
         },
         "description": [
-          "Open source project providing detailed data from Dota 2 replay files",
+          "Open source project providing a data platform and web UI using data parsed from Dota 2 replay files",
           "React UI combined with a Node.js backend deployed on Google Cloud and Netlify",
-          "Over 120 contributors, 800,000 registered users, 150 million API requests per month",
-          "https://www.opendota.com"
+          "Over 120 contributors, 800k registered users, 150 million API requests per month"
         ]
       },
       {

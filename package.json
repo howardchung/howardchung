@@ -8,19 +8,21 @@
     "build": "npm run resume && vite build",
     "preview": "vite preview",
     "resume": "node --experimental-strip-types resume.ts",
+    "capture": "sudo node capture.ts",
     "prettier": "npx prettier --write ."
   },
   "dependencies": {
-    "pdfmake": "^0.2.20"
+    "capture-website": "^5.1.0",
+    "pdfmake": "^0.2.21"
   },
   "devDependencies": {
     "@types/pdfmake": "^0.2.12",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "typescript": "^5.9.3",
-    "vite": "^7.2.6"
+    "vite": "^7.3.0"
   },
   "repository": {
     "type": "git",

@@ -1,4 +1,4 @@
-import data from "./public/data.json" with { type: 'json' };
+import data from "./public/data.json" with { type: "json" };
 import fs from "node:fs";
 import * as pdfMake from "pdfmake/build/pdfmake.js";
 import "pdfmake/build/vfs_fonts.js";
@@ -109,6 +109,6 @@ const docDefinition = {
 };
 
 var pdfDoc = pdfMake.createPdf(docDefinition);
-pdfDoc.getBuffer(result => {
-  fs.writeFileSync('./public/resume.pdf', result);
+pdfDoc.getBuffer((result) => {
+  fs.writeFileSync("./public/resume.pdf", result);
 });
