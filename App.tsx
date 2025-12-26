@@ -7,7 +7,7 @@ function useFetch<T>(url: string) {
     if (url) {
       let ignore = false;
       fetch(url)
-        .then((response) => response.ok ? response.json() : [])
+        .then((response) => (response.ok ? response.json() : []))
         .then((json) => {
           if (!ignore) {
             setData(json);
@@ -21,6 +21,15 @@ function useFetch<T>(url: string) {
   return data;
 }
 
+const colors = [
+  "is-primary",
+  "is-link",
+  "is-info",
+  "is-warning",
+  "is-danger",
+  "is-success",
+];
+
 const App = () => {
   const data = useFetch<{ facts: string[] } & any>("/data.json");
   const howardData =
@@ -28,11 +37,20 @@ const App = () => {
       "https://api.github.com/users/howardchung/repos?per_page=100",
     ) ?? [];
   const odotaData =
-    useFetch<Repos>("https://api.github.com/users/odota/repos?per_page=100") ?? [];
-  const githubRepos = [...howardData, ...odotaData].filter(repo => repo.full_name !== "odota/web" && repo.full_name !== "odota/docs");
-  githubRepos.sort(
-    (a: Repo, b: Repo) => b.stargazers_count - a.stargazers_count,
+    useFetch<Repos>("https://api.github.com/users/odota/repos?per_page=100") ??
+    [];
+  const githubRepos = [...howardData, ...odotaData].filter(
+    (repo) => repo.full_name !== "odota/web" && repo.full_name !== "odota/docs",
   );
+  githubRepos.sort((a: Repo, b: Repo) => {
+    if (a.homepage?.startsWith("https://www.npmjs.com")) {
+      return 1;
+    }
+    if (b.homepage?.startsWith("https://www.npmjs.com")) {
+      return -1;
+    }
+    return b.stargazers_count - a.stargazers_count;
+  });
   // setInterval(
   //   () =>
   //     this.setState({
@@ -65,7 +83,7 @@ const App = () => {
         <div style={{ padding: "10px" }}>
           <p className="title">{data.full_name}</p>
           <p className="subtitle">{data.occupation}</p>
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: "center" }}>
             {data.links.map((l: any) => (
               <a
                 key={l.url}
@@ -93,7 +111,7 @@ const App = () => {
               }}
             />
           </figure>
-          <div style={{ textAlign: 'center' }}>{data.caption}</div>
+          <div style={{ textAlign: "center" }}>{data.caption}</div>
           <br />
           <pre
             style={{
@@ -108,12 +126,12 @@ const App = () => {
         <div style={{ padding: "10px" }}>
           <p className="title">{data.projects.title}</p>
           <p className="subtitle">{data.projects.subtitle}</p>
-          <ul>
+          <div style={{ display: 'flex', gap: '4px', flexDirection: 'column' }}>
             {githubRepos
               .filter((repo: Repo) => repo.homepage && !repo.fork)
               .map((repo: Repo) => {
                 return (
-                  <li key={repo.id}>
+                  <div key={repo.id}>
                     <span>
                       <a href={repo?.homepage ?? ""}>
                         {(repo.description?.includes(":") &&
@@ -131,13 +149,26 @@ const App = () => {
                         (★{repo?.stargazers_count})
                       </a>
                     </span>
-                    <div>
-                      <img style={{ width: "50%" }} src={`${repo.full_name.replace("/", "_")}.png`} />
-                    </div>
-                  </li>
+                    {repo.language && (
+                      <>
+                      <span> </span>
+                      <span
+                        className={`tag ${colors[cyrb53(repo.language ?? "") % colors.length]}`}
+                      >
+                        {repo.language}
+                      </span>
+                      </>
+                    )}
+                    {!repo.homepage?.startsWith("https://www.npmjs.com") && <div>
+                      <img
+                        style={{ width: "50%" }}
+                        src={repo.homepage?.endsWith(".jpg") ? repo.homepage : `${repo.full_name.replace("/", "_")}.png`}
+                      />
+                    </div>}
+                  </div>
                 );
               })}
-          </ul>
+          </div>
         </div>
       </div>
       <div className="column">
@@ -152,5 +183,34 @@ const App = () => {
     </div>
   );
 };
+
+// cyrb53 (c) 2018 bryc (github.com/bryc). License: Public domain. Attribution appreciated.
+// A fast and simple 64-bit (or 53-bit) string hash function with decent collision resistance.
+// Largely inspired by MurmurHash2/3, but with a focus on speed/simplicity.
+// See https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript/52171480#52171480
+// https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
+export const cyrb53 = (str: string, seed = 0) => {
+  let h1 = 0xdeadbeef ^ seed,
+    h2 = 0x41c6ce57 ^ seed;
+  for (let i = 0, ch; i < str.length; i++) {
+    ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507);
+  h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
+  h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+};
+// If we want all 64 bits of the output:
+/*
+return [h2>>>0, h1>>>0];
+// or
+return (h2>>>0).toString(16).padStart(8,0)+(h1>>>0).toString(16).padStart(8,0);
+// or 
+return 4294967296n * BigInt(h2) + BigInt(h1);
+*/
 
 export default App;

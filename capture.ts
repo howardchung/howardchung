@@ -1,4 +1,5 @@
 import captureWebsite from "capture-website";
+import { existsSync } from "node:fs";
 
 const githubData = await fetch(
   "https://api.github.com/users/howardchung/repos?per_page=100",
@@ -11,15 +12,18 @@ const odotaJson = await odotaData.json();
 const combined: Repos = [...githubJson, ...odotaJson];
 
 for (let repo of combined) {
-  if (repo.homepage && !repo.fork) {
-    await captureWebsite.file(
-      repo.homepage,
-      `./public/${repo.full_name.replace("/", "_")}.png`,
-      {
-        launchOptions: {
-          args: ["--no-sandbox", "--disable-setuid-sandbox"],
-        },
+  const fileName = `./public/${repo.full_name.replace("/", "_")}.png`;
+  if (
+    repo.homepage &&
+    !repo.fork &&
+    !repo.homepage.startsWith("https://www.npmjs.com") &&
+    !repo.homepage.endsWith(".jpg") &&
+    !existsSync(fileName)
+  ) {
+    await captureWebsite.file(repo.homepage, fileName, {
+      launchOptions: {
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
       },
-    );
+    });
   }
 }
