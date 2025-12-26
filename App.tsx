@@ -126,45 +126,59 @@ const App = () => {
         <div style={{ padding: "10px" }}>
           <p className="title">{data.projects.title}</p>
           <p className="subtitle">{data.projects.subtitle}</p>
-          <div style={{ display: 'flex', gap: '4px', flexDirection: 'column' }}>
+          <div style={{ display: "flex", gap: "8px", flexDirection: "column" }}>
             {githubRepos
               .filter((repo: Repo) => repo.homepage && !repo.fork)
               .map((repo: Repo) => {
                 return (
-                  <div key={repo.id}>
-                    <span>
-                      <a href={repo?.homepage ?? ""}>
-                        {(repo.description?.includes(":") &&
-                          repo.description?.split(":")[0]) ||
-                          repo.full_name}
-                      </a>
-                    </span>
-                    <span> - </span>
-                    <span>
-                      {repo.description?.split(":")[1] || repo.description}
-                    </span>
-                    <span> </span>
-                    <span>
-                      <a href={repo.html_url} target="_blank">
-                        (★{repo?.stargazers_count})
-                      </a>
-                    </span>
-                    {repo.language && (
-                      <>
-                      <span> </span>
-                      <span
-                        className={`tag ${colors[cyrb53(repo.language ?? "") % colors.length]}`}
-                      >
-                        {repo.language}
-                      </span>
-                      </>
-                    )}
-                    {!repo.homepage?.startsWith("https://www.npmjs.com") && <div>
-                      <img
-                        style={{ width: "50%" }}
-                        src={repo.homepage?.endsWith(".jpg") ? repo.homepage : `${repo.full_name.replace("/", "_")}.png`}
-                      />
-                    </div>}
+                  <div
+                    key={repo.id}
+                    style={{
+                      position: "relative",
+                      height: 300,
+                      backgroundColor: "black",
+                      backgroundRepeat: "no-repeat",
+                      backgroundImage: `url(${
+                        repo.homepage?.endsWith(".jpg")
+                          ? repo.homepage
+                          : `${repo.full_name.replace("/", "_")}.png`
+                      })`,
+                      backgroundSize: "contain",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        padding: "4px",
+                        width: "100%",
+                        background: "black",
+                      }}
+                    >
+                      <div style={{ display: 'flex', gap: '4px' }}>
+                        <a href={repo?.homepage ?? ""}>
+                          {(repo.description?.includes(":") &&
+                            repo.description?.split(":")[0]) ||
+                            repo.full_name}
+                        </a>
+                        {repo.language && (
+                          <span
+                            className={`tag ${colors[cyrb53(repo.language ?? "") % colors.length]}`}
+                          >
+                            {repo.language}
+                          </span>
+                        )}
+                        <span className="tag is-dark">
+                          <a href={repo.html_url} target="_blank">
+                            ★{repo?.stargazers_count}
+                          </a>
+                        </span>
+                      </div>
+                      <div>
+                        {repo.description?.split(":")[1] || repo.description}
+                      </div>
+                    </div>
                   </div>
                 );
               })}
