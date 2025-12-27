@@ -16,11 +16,15 @@ for (let repo of combined) {
   if (
     repo.homepage &&
     !repo.fork &&
-    !repo.homepage.startsWith("https://www.npmjs.com") &&
     !repo.homepage.endsWith(".jpg") &&
     !existsSync(fileName)
   ) {
-    await captureWebsite.file(repo.homepage, fileName, {
+    let picUrl = repo.homepage;
+    if (picUrl.startsWith("https://www.npmjs.com")) {
+      // Screenshot the GitHub page for npm packages
+      picUrl = repo.html_url;
+    }
+    await captureWebsite.file(picUrl, fileName, {
       launchOptions: {
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
       },

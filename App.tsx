@@ -43,8 +43,10 @@ const App = () => {
     (repo) => repo.full_name !== "odota/web" && repo.full_name !== "odota/docs",
   );
   githubRepos.sort((a: Repo, b: Repo) => {
-    const aScore = a.stargazers_count + (a.homepage?.startsWith("https://www.npmjs.com") ? -1000000 : 0);
-    const bScore = b.stargazers_count + (b.homepage?.startsWith("https://www.npmjs.com") ? -1000000 : 0);
+    const aScore = a.stargazers_count;
+    // + (a.homepage?.startsWith("https://www.npmjs.com") ? -1000000 : 0);
+    const bScore = b.stargazers_count;
+    // + (b.homepage?.startsWith("https://www.npmjs.com") ? -1000000 : 0);
     return bScore - aScore;
   });
   // setInterval(
