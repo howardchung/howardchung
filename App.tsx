@@ -28,7 +28,10 @@ const colors = [
   "is-warning",
   "is-danger",
   "is-success",
+  "is-dark",
 ];
+
+const isDevProject = (url: string | null) => url?.startsWith("https://www.npmjs.com") || url?.startsWith("https://github.com");
 
 const App = () => {
   const data = useFetch<{ facts: string[] } & any>("/data.json");
@@ -43,12 +46,19 @@ const App = () => {
     (repo) => repo.full_name !== "odota/web" && repo.full_name !== "odota/docs",
   );
   githubRepos.sort((a: Repo, b: Repo) => {
-    const aScore = a.stargazers_count;
-    // + (a.homepage?.startsWith("https://www.npmjs.com") ? -1000000 : 0);
-    const bScore = b.stargazers_count;
-    // + (b.homepage?.startsWith("https://www.npmjs.com") ? -1000000 : 0);
+    const aScore = a.stargazers_count + (isDevProject(a.homepage) ? -100000 : 0);
+    const bScore = b.stargazers_count + (isDevProject(b.homepage) ? -100000 : 0);
     return bScore - aScore;
   });
+  const languages = new Set<string>(githubRepos.map(repo => repo.language ?? ""));
+  const colorMap = new Map<string, string>();
+  let i = 0;
+  for (let language of languages) {
+    if (language) {
+      colorMap.set(language, colors[i % colors.length]);
+      i += 1;
+    }
+  }
   // setInterval(
   //   () =>
   //     this.setState({
@@ -162,7 +172,7 @@ const App = () => {
                         </a>
                         {repo.language && (
                           <span
-                            className={`tag ${colors[cyrb53(repo.language ?? "") % colors.length]}`}
+                            className={`tag ${colorMap.get(repo.language ?? "")}`}
                           >
                             {repo.language}
                           </span>
@@ -195,34 +205,5 @@ const App = () => {
     </div>
   );
 };
-
-// cyrb53 (c) 2018 bryc (github.com/bryc). License: Public domain. Attribution appreciated.
-// A fast and simple 64-bit (or 53-bit) string hash function with decent collision resistance.
-// Largely inspired by MurmurHash2/3, but with a focus on speed/simplicity.
-// See https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript/52171480#52171480
-// https://github.com/bryc/code/blob/master/jshash/experimental/cyrb53.js
-export const cyrb53 = (str: string, seed = 0) => {
-  let h1 = 0xdeadbeef ^ seed,
-    h2 = 0x41c6ce57 ^ seed;
-  for (let i = 0, ch; i < str.length; i++) {
-    ch = str.charCodeAt(i);
-    h1 = Math.imul(h1 ^ ch, 2654435761);
-    h2 = Math.imul(h2 ^ ch, 1597334677);
-  }
-  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507);
-  h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
-  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
-  h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
-
-  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
-};
-// If we want all 64 bits of the output:
-/*
-return [h2>>>0, h1>>>0];
-// or
-return (h2>>>0).toString(16).padStart(8,0)+(h1>>>0).toString(16).padStart(8,0);
-// or 
-return 4294967296n * BigInt(h2) + BigInt(h1);
-*/
 
 export default App;
