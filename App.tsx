@@ -170,6 +170,7 @@ const App = () => {
                             repo.description?.split(":")[0]) ||
                             repo.full_name}
                         </a>
+                        <span>({new Date(repo.created_at).getFullYear()})</span>
                         {repo.language && (
                           <span
                             className={`tag ${colorMap.get(repo.language ?? "")}`}
