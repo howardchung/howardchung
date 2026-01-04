@@ -168,7 +168,7 @@ const App = () => {
                         <a href={repo?.homepage ?? ""}>
                           {(repo.description?.includes(":") &&
                             repo.description?.split(":")[0]) ||
-                            repo.full_name}
+                            (repo.full_name.startsWith("odota") ? repo.full_name : repo.name)}
                         </a>
                         <span>({new Date(repo.created_at).getFullYear()})</span>
                         {repo.language && (
