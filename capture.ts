@@ -24,7 +24,11 @@ for (let repo of combined) {
       // Screenshot the GitHub page for npm packages
       picUrl = repo.html_url;
     }
+    console.log('capturing %s', picUrl);
     await captureWebsite.file(picUrl, fileName, {
+      delay: 5,
+      overwrite: true,
+      darkMode: true,
       launchOptions: {
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
       },
