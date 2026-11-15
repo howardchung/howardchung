@@ -13,16 +13,16 @@
   },
   "dependencies": {
     "capture-website": "^5.1.0",
-    "pdfmake": "^0.2.21"
+    "pdfmake": "^0.3.14"
   },
   "devDependencies": {
-    "@types/pdfmake": "^0.2.12",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.0"
+    "@types/pdfmake": "^0.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
   },
   "repository": {
     "type": "git",

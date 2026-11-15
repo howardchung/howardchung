@@ -1,8 +1,10 @@
 import data from "./public/data.json" with { type: "json" };
 import fs from "node:fs";
-import * as pdfMake from "pdfmake/build/pdfmake.js";
-import "pdfmake/build/vfs_fonts.js";
+import pdfMake from "pdfmake/build/pdfmake.js";
+import pdfFonts from "pdfmake/build/vfs_fonts.js";
 import type { Content } from "pdfmake/interfaces";
+
+pdfMake.addVirtualFileSystem(pdfFonts);
 
 // const fonts = {
 //   Roboto: {
@@ -109,6 +111,5 @@ const docDefinition = {
 };
 
 var pdfDoc = pdfMake.createPdf(docDefinition);
-pdfDoc.getBuffer((result) => {
-  fs.writeFileSync("./public/resume.pdf", result);
-});
+const result = await pdfDoc.getBuffer();
+fs.writeFileSync("./public/resume.pdf", result);
